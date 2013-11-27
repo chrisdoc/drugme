@@ -2,7 +2,7 @@
 <Page xmlns="http://prototypes.infragistics.com/"
                                                           Id="d2466f9c-2730-467f-945f-9309cd51788b">
     <Page.Content>
-        <Content Width="800" Height="600" Background="White" Id="e351f5f6-464b-4c6b-a41b-ec0dffb42941">
+        <Content Width="800" Height="700" Background="White" Id="e351f5f6-464b-4c6b-a41b-ec0dffb42941">
             <Layer Layout="Stretch" Id="11192022-aa26-445d-9651-61487bff1245" Panel.Layout="Stretch" />
         </Content>
     </Page.Content>
@@ -16,7 +16,7 @@
                 </Add>
                 <Add Property="Panel.Children" Target="11192022-aa26-445d-9651-61487bff1245">
                     <Add.Item>
-                        <Rectangle Thickness="0" CornerRadius="20" Background="#FF81ABE0" Id="0e44748d-2ce8-42f1-a053-ddf2357fc5e0" Panel.Bounds="0,500,800{5,2147483647},100{5,2147483647}" />
+                        <Rectangle Thickness="0" CornerRadius="20" Background="#FF81ABE0" Id="0e44748d-2ce8-42f1-a053-ddf2357fc5e0" Panel.Bounds="0,600,800{5,2147483647},100{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="11192022-aa26-445d-9651-61487bff1245">
@@ -31,12 +31,12 @@
                 </Add>
                 <Add Property="Panel.Children" Target="11192022-aa26-445d-9651-61487bff1245">
                     <Add.Item>
-                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="07d42442-9a4e-4a7d-b349-aa3b021610e6" Panel.Bounds="0,519,100{5,2147483647},81{5,2147483647}" />
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="07d42442-9a4e-4a7d-b349-aa3b021610e6" Panel.Bounds="0,619,100{5,2147483647},81{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="11192022-aa26-445d-9651-61487bff1245">
                     <Add.Item>
-                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="64ca46e9-e408-4d52-87e3-819c2c7c2150" Panel.Bounds="700,519,100{5,2147483647},81{5,2147483647}" />
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="64ca46e9-e408-4d52-87e3-819c2c7c2150" Panel.Bounds="700,619,100{5,2147483647},81{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="11192022-aa26-445d-9651-61487bff1245">
@@ -51,43 +51,44 @@
                 </Add>
                 <Add Property="Panel.Children" Target="11192022-aa26-445d-9651-61487bff1245">
                     <Add.Item>
-                        <Title Text="(C) Endalkachew Asnake, Kieslich Christoph, Stemmer Bernhard, Lindorfer Manuel&#xD;      FH Hagenberg, Mobile Computing, 2013&#xD; " Foreground="#FFD7EDF2" FontSize="18" FontStyle="Normal" Id="bfa3b40b-2311-47dc-aae6-4236b77b9580" Panel.Bounds="52,531,736{5,2147483647},53{5,2147483647}" />
+                        <Title Text="(C) Endalkachew Asnake, Kieslich Christoph, Stemmer Bernhard, Lindorfer Manuel&#xD;      FH Hagenberg, Mobile Computing, 2013&#xD; " Foreground="#FFD7EDF2" FontSize="18" FontStyle="Normal" Id="bfa3b40b-2311-47dc-aae6-4236b77b9580" Panel.Bounds="52,631,736{5,2147483647},53{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="11192022-aa26-445d-9651-61487bff1245">
                     <Add.Item>
-                        <TextBox Text="Testname" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="b38c0f48-d3bc-456f-8ae7-b427d6995be5" Panel.Bounds="388,228,120{5,2147483647},5*{5,2147483647}" />
+                        <TextBox Text="Testname" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="b38c0f48-d3bc-456f-8ae7-b427d6995be5" Panel.Bounds="376,281,120{5,2147483647},5*{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="11192022-aa26-445d-9651-61487bff1245">
                     <Add.Item>
-                        <Label Text="Username" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="7856d0f5-6c0f-4caa-8a6d-7d2142294233" Panel.Bounds="315,231,0*{5,2147483647},0*{5,2147483647}" />
+                        <Label Text="Username" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="7856d0f5-6c0f-4caa-8a6d-7d2142294233" Panel.Bounds="303,284,0*{5,2147483647},0*{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="11192022-aa26-445d-9651-61487bff1245">
                     <Add.Item>
-                        <PasswordBox Password="Testpassword" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="6fa5cf4b-3a46-45ff-b721-01de7f626dfe" Panel.Bounds="388,262,120{5,2147483647},5*{5,2147483647}" />
+                        <PasswordBox Password="Testpassword" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="6fa5cf4b-3a46-45ff-b721-01de7f626dfe" Panel.Bounds="376,315,120{5,2147483647},5*{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="11192022-aa26-445d-9651-61487bff1245">
                     <Add.Item>
-                        <Label Text="Password" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="51a38f2e-a65e-44c1-b957-e271099b9cb0" Panel.Bounds="315,265,0*,0*" />
+                        <Label Text="Password" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="51a38f2e-a65e-44c1-b957-e271099b9cb0" Panel.Bounds="303,318,0*,0*" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="11192022-aa26-445d-9651-61487bff1245">
                     <Add.Item>
-                        <CheckBox Text="Remember my password" IsChecked="True" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="4d01857a-e6e3-4cea-b67b-8722b00f21d0" Panel.Bounds="325,293,0*{5,2147483647},0*{5,2147483647}" />
+                        <CheckBox Text="Remember my password" IsChecked="True" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="4d01857a-e6e3-4cea-b67b-8722b00f21d0" Panel.Bounds="313,346,0*{5,2147483647},0*{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="11192022-aa26-445d-9651-61487bff1245">
                     <Add.Item>
-                        <Button Text="Login" Background="#FF81ABE0" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="1cbbd3f4-1ec6-4523-bbc9-f15b703794e7" Panel.Bounds="315,331,193{5,2147483647},35{5,2147483647}">
+                        <Button Text="Login" Background="#FF81ABE0" CornerRadius="5" BorderThickness="0" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="1cbbd3f4-1ec6-4523-bbc9-f15b703794e7" Panel.Bounds="303,384,193{5,2147483647},35{5,2147483647}">
                             <Button.Click>
                                 <CommandNavigate Screen="/HomeScreen.screen" State="3d2af707-a25a-44c5-9ce6-1c85743ab70c" Created="11/27/2013 12:47:31" />
                             </Button.Click>
                         </Button>
                     </Add.Item>
                 </Add>
+                <Set Property="Content.Height" Value="700" Target="e351f5f6-464b-4c6b-a41b-ec0dffb42941" />
             </KeyFrame>
         </Scene>
     </Page.Scenes>

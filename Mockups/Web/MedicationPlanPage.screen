@@ -2,7 +2,7 @@
 <Page xmlns="http://prototypes.infragistics.com/"
                                                           Id="3e54dfcd-d8f6-48b2-a647-f5bf07311805">
     <Page.Content>
-        <Content Width="800" Height="600" Background="White" Id="b2cd1aa8-113a-44b8-923c-dcea4b0c1f2d">
+        <Content Width="800" Height="700" Background="White" Id="b2cd1aa8-113a-44b8-923c-dcea4b0c1f2d">
             <Layer Layout="Stretch" Id="04833e5b-b75b-4a0c-9cce-9cd71254efca" Panel.Layout="Stretch" />
         </Content>
     </Page.Content>
@@ -36,53 +36,368 @@
                 </Add>
                 <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
                     <Add.Item>
-                        <Rectangle Thickness="0" CornerRadius="20" Background="#FF81ABE0" Id="a26da2e8-6cc0-4895-bca8-5af03c45414b" Panel.Bounds="0,500,800{5,2147483647},100{5,2147483647}" />
+                        <Rectangle Thickness="0" CornerRadius="20" Background="#FF81ABE0" Id="a26da2e8-6cc0-4895-bca8-5af03c45414b" Panel.Bounds="0,600,800{5,2147483647},100{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
                     <Add.Item>
-                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="7352af41-b4b2-4130-b7e2-12b08db86f16" Panel.Bounds="0,519,100{5,2147483647},81{5,2147483647}" />
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="7352af41-b4b2-4130-b7e2-12b08db86f16" Panel.Bounds="0,619,100{5,2147483647},81{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
                     <Add.Item>
-                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="9166317d-3674-4ece-b427-3c8d4eb268de" Panel.Bounds="700,519,100{5,2147483647},81{5,2147483647}" />
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="9166317d-3674-4ece-b427-3c8d4eb268de" Panel.Bounds="700,619,100{5,2147483647},81{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
                     <Add.Item>
-                        <Title Text="(C) Endalkachew Asnake, Kieslich Christoph, Stemmer Bernhard, Lindorfer Manuel&#xD;      FH Hagenberg, Mobile Computing, 2013&#xD; " Foreground="#FFD7EDF2" FontSize="18" FontStyle="Normal" Id="05244a86-b58d-4efa-8751-495e27cfd228" Panel.Bounds="52,531,736{5,2147483647},53{5,2147483647}" />
+                        <Title Text="(C) Endalkachew Asnake, Kieslich Christoph, Stemmer Bernhard, Lindorfer Manuel&#xD;      FH Hagenberg, Mobile Computing, 2013&#xD; " Foreground="#FFD7EDF2" FontSize="18" FontStyle="Normal" Id="05244a86-b58d-4efa-8751-495e27cfd228" Panel.Bounds="52,631,736{5,2147483647},53{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
                     <Add.Item>
-                        <Title Text="MediPlan 1" Foreground="#FF282828" FontSize="34" FontStyle="Normal|Bold" Id="89d79813-e0f7-455d-84bb-d708970cee1c" Panel.Bounds="306,153,0*{5,2147483647},0*{5,2147483647}" />
+                        <Title Text="MediPlan 1" Foreground="#FF282828" FontSize="34" FontStyle="Normal|Bold" Id="89d79813-e0f7-455d-84bb-d708970cee1c" Panel.Bounds="306,115,0*{5,2147483647},0*{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
                     <Add.Item>
-                        <TextBox Text="Parkemed" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="6e9202c0-5d7c-4336-8d9b-9aa4a61cc130" Panel.Bounds="359,211,165{5,2147483647},0*{5,2147483647}" />
+                        <TextBox Text="Parkemed" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="6e9202c0-5d7c-4336-8d9b-9aa4a61cc130" Panel.Bounds="359,173,229{5,2147483647},5*{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
                     <Add.Item>
-                        <Label Text="Medication" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="859733c6-27d1-4b8b-857e-ab25554a2977" Panel.Bounds="276,214,0*{5,2147483647},0*{5,2147483647}" />
+                        <Label Text="Medication" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="859733c6-27d1-4b8b-857e-ab25554a2977" Panel.Bounds="251,174,0*{5,2147483647},0*{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
                     <Add.Item>
-                        <Label Text="Form" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="4ce8b1b8-9cf7-44c3-8d5b-e652c5d040d6" Panel.Bounds="276,248,0*,0*" />
+                        <Label Text="Form" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="4ce8b1b8-9cf7-44c3-8d5b-e652c5d040d6" Panel.Bounds="251,208,0*,0*" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
                     <Add.Item>
-                        <ComboBox Hint="Tablet" FontStyle="" Id="521a9f87-db1f-424c-8deb-eeda96ead6ff" Panel.Bounds="359,243,165{5,2147483647},28{5,2147483647}">
+                        <ComboBox Hint="Select a medication form" FontStyle="" Id="521a9f87-db1f-424c-8deb-eeda96ead6ff" Panel.Bounds="359,205,229{5,2147483647},28{5,2147483647}">
+                            <Item Text="Tablet" Id="b14223d5-58ae-438f-8d13-157ac7b5e986" />
                             <Item Text="Fluid" Id="8d84a752-ad2e-4f0e-b6fc-673e7b165207" />
                             <Item Text="Spray" Id="8c876e14-133d-4a64-b42b-05f5092b1af8" />
                             <Item Text="Injection" Id="53112697-47cd-4495-8a52-cfd8fe53a44f" />
                         </ComboBox>
                     </Add.Item>
                 </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="Frequency" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="f4403e4d-6f30-4295-a7a1-e1030cb1e1e4" Panel.Bounds="251,245,0*,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <ComboBox Hint="Select a frequency" FontStyle="" Id="76ea248b-f8fc-4bcb-9cff-2e59d35521a1" Panel.Bounds="359,240,229{5,2147483647},28{5,2147483647}">
+                            <Item Text="Daily" Id="29443d52-066f-4529-a742-0c4399595e88" />
+                            <Item Text="Indiviual" Id="b6770a2d-8f18-49ab-a075-f408ea622154">
+                                <Item.Click>
+                                    <CommandNext SceneId="ae219ba8-2172-4ca3-b0c3-47e2b496884e" Created="11/27/2013 14:46:47" />
+                                </Item.Click>
+                            </Item>
+                        </ComboBox>
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="Interval" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="48716705-b727-40cd-894b-ec1b1a8f6fc8" Panel.Bounds="251,319,0*,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Morning" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="e16e6636-9165-4709-a849-f2675584b7b7" Panel.Bounds="333,313,0*{5,2147483647},0*{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Noon" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="27aecdf2-b5ff-48cd-a92f-25182e4e1fa1" Panel.Bounds="333,341,0*,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Evening" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="d5829da1-35ee-458b-a86c-4b826be28ea7" Panel.Bounds="333,369,0*,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <TextBox Text="01.12.2013" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="909bc7aa-2a41-476a-b938-c5351ddf74f2" Panel.Bounds="330,403,80,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="Start date" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="ae9cc934-1c40-493b-87a6-ee13b901f5e4" Panel.Bounds="251,406,0*,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="End date" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="0f70b7b1-ade1-42da-aa40-5ff424db6fc3" Panel.Bounds="439,406,0*,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <TextBox Text="14.12.2013" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="65221792-43a9-458f-a6e8-2b4efde2fa67" Panel.Bounds="508,403,80,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <TextArea Text="Take it with water and right before dinner" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="ceb3ab1c-6683-4286-8157-46ee5c049edb" Panel.Bounds="251,465,337{5,2147483647},75{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="Intake information" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="7f845929-4743-4869-8d82-d0d970ce03e6" Panel.Bounds="251,443,0*,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Button Text="Modify medication plan" Background="#FF48C157" BorderColor="#FF48C157" Foreground="White" FontSize="13" FontStyle="Normal" Id="29ce71ea-c722-47df-9a74-61b5e95c30c8" Panel.Bounds="251,557,337{5,2147483647},30{5,2147483647}">
+                            <Button.Click>
+                                <CommandNavigate Screen="/ProfileScreen.screen" State="39c04af1-bd3b-4f7b-8ce8-bbe2e89ebe49" Created="11/27/2013 15:07:35" />
+                            </Button.Click>
+                        </Button>
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="Amount" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="a326f777-1528-4f71-a814-c911c13af0f6" Panel.Bounds="439,319,49*,18*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <TextBox Text="0" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="14881be1-2880-45b2-9da1-699c4a2f244f" Panel.Bounds="506,316,80,24*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="Amount" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="15d6e5f6-c475-4449-9cad-5678e45dc3f6" Panel.Bounds="439,347,49*,18*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <TextBox Text="0" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="abda3767-fdba-4331-90e9-5715aa50ecf9" Panel.Bounds="506,344,80,24*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="Amount" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="26e18836-1159-4c4d-8545-38d827da2d84" Panel.Bounds="439,375,49*,18*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <TextBox Text="0" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="607c5c5d-f189-4af6-b054-0b3e3634f0bd" Panel.Bounds="506,372,80,24*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Button Text="Logout" Background="#FF75D181" CornerRadius="15" BorderThickness="0" Foreground="White" FontSize="13" FontStyle="Normal" Id="8a632123-b8cc-44a5-8520-2d07b4c4e633" Panel.Bounds="720,65,80{5,2147483647},35{5,2147483647}">
+                            <Button.Click>
+                                <CommandNavigate Screen="/LoginPage.screen" State="cfd491f7-f018-40c0-b3ce-7b8812175029" Created="11/27/2013 15:17:31" />
+                            </Button.Click>
+                        </Button>
+                    </Add.Item>
+                </Add>
+                <Set Property="Content.Height" Value="700" Target="b2cd1aa8-113a-44b8-923c-dcea4b0c1f2d" />
+            </KeyFrame>
+        </Scene>
+        <Scene Title="Disconnected State" StateGroup="d4269867-caf8-48c2-acc5-7ae977d8623b" ParentScene="d4269867-caf8-48c2-acc5-7ae977d8623b" Created="11/27/2013 13:53:09" Id="067f317d-6c9b-4386-828c-90b55022d8e7">
+            <KeyFrame Id="5355b537-fcdc-42d0-83f5-2033cd349e75">
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Mo" IsChecked="True" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="f82ba79c-da19-4bb6-a58a-2341e9db78f7" Panel.Bounds="251,282,43*,30*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Tu" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="c6840976-5334-4e62-a55e-15e49c1bfbdb" Panel.Bounds="304,282,39*,30*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="We" IsChecked="True" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="0f2fb27b-b0ea-480a-ab55-2c2290013ca7" Panel.Bounds="351,282,43*,30*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Th" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="0b9a6208-90d8-4b21-8ddf-a5ce3686b450" Panel.Bounds="400,282,39*,30*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Fr" IsChecked="True" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="7409d947-836d-48b0-8847-3d0c64e57d2c" Panel.Bounds="451,282,36*,30*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Sa" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="addede04-8b82-4441-942b-e53f0342b87d" Panel.Bounds="499,282,38*,30*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Su" IsChecked="True" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="098d0911-aee7-40b9-86d3-6bcc41773c16" Panel.Bounds="549,282,39*,30*" />
+                    </Add.Item>
+                </Add>
+                <Set Property="Button.CornerRadius" Value="5" Target="29ce71ea-c722-47df-9a74-61b5e95c30c8" />
+                <Move To="251,551" Target="29ce71ea-c722-47df-9a74-61b5e95c30c8" />
+            </KeyFrame>
+        </Scene>
+        <Scene Title="Disconnected State" StateGroup="067f317d-6c9b-4386-828c-90b55022d8e7" ParentScene="067f317d-6c9b-4386-828c-90b55022d8e7" Created="11/27/2013 13:58:00" Id="10bcd684-79be-4fac-9891-72f2667486b2">
+            <KeyFrame Id="436c6094-3d42-41c3-8c60-58ea1df2b354" />
+        </Scene>
+        <Scene Title="Tapped/Clicked Indiviual" StateGroup="d4269867-caf8-48c2-acc5-7ae977d8623b" ParentScene="d4269867-caf8-48c2-acc5-7ae977d8623b" Created="11/27/2013 14:46:47" Id="ae219ba8-2172-4ca3-b0c3-47e2b496884e">
+            <KeyFrame Id="d8f48fd9-39c9-403b-b76a-5947058b58a8">
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Mo" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="731cdb85-02c0-4c33-9a27-b19def10071c" Panel.Bounds="251,283,43*,30*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Tu" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="d099b0ab-c915-4ab5-bb1d-fd41494d32eb" Panel.Bounds="304,283,39*,30*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="We" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="c3d2bf95-2490-4099-8e1d-b7a330172d41" Panel.Bounds="351,283,43*,30*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Th" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="c3ce6891-8216-4632-855a-06679538c3c3" Panel.Bounds="400,283,39*,30*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Fr" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="74079b1b-ab6f-4fe0-915e-a7ad8b557d56" Panel.Bounds="451,283,36*,30*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Sa" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="cad59f5e-646d-44c4-b9ce-2a08339c68e7" Panel.Bounds="499,283,38*,30*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <CheckBox Text="Su" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="c090a458-3ab3-4e85-8217-3cb92c282cce" Panel.Bounds="549,283,39*,30*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Control.Click" Target="29443d52-066f-4529-a742-0c4399595e88">
+                    <Add.Item>
+                        <CommandSwitchTo SceneId="d4269867-caf8-48c2-acc5-7ae977d8623b" Created="11/27/2013 14:47:43" />
+                    </Add.Item>
+                </Add>
+                <Remove Property="Control.Click" Target="b6770a2d-8f18-49ab-a075-f408ea622154">
+                    <Remove.Item>
+                        <CommandNext SceneId="ae219ba8-2172-4ca3-b0c3-47e2b496884e" Created="11/27/2013 14:46:47" />
+                    </Remove.Item>
+                </Remove>
+            </KeyFrame>
+        </Scene>
+        <Scene Title="Disconnected State" StateGroup="ae219ba8-2172-4ca3-b0c3-47e2b496884e" ParentScene="ae219ba8-2172-4ca3-b0c3-47e2b496884e" Created="11/27/2013 14:49:54" Id="418a510e-78f6-40ba-8a4b-824820568ca1">
+            <KeyFrame Id="75e70a20-5e43-460d-aa7d-8478b3ce62c7">
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="Amount" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="7122c67c-6870-4647-a1cc-1693f46ceac4" Panel.Bounds="441,319,0*,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <TextBox Text="0" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="f6893357-8e3b-44ec-a0ed-012f308d7813" Panel.Bounds="508,316,80,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="Amount" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="4f0fbdbb-fd0b-499e-8176-d7140d3c522c" Panel.Bounds="441,347,0*,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <TextBox Text="0" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="050d7666-643e-4271-9f3d-317293c0a2f5" Panel.Bounds="508,344,80,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="Amount" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="64ce0e58-f018-41b1-84f6-2297555ed632" Panel.Bounds="441,375,49*,18*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <TextBox Text="0" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="50641d92-a874-4607-b2a9-66e9fa36cc02" Panel.Bounds="508,372,80,24*" />
+                    </Add.Item>
+                </Add>
+                <Set Property="CheckBox.IsChecked" Value="False" Target="e16e6636-9165-4709-a849-f2675584b7b7" />
+            </KeyFrame>
+        </Scene>
+        <Scene Title="Disconnected State" StateGroup="418a510e-78f6-40ba-8a4b-824820568ca1" ParentScene="418a510e-78f6-40ba-8a4b-824820568ca1" Created="11/27/2013 14:52:00" Id="6851d768-5f98-4e12-8558-747eb0a7de20">
+            <KeyFrame Id="5eb41774-f70c-4ab5-a95a-d1f339d9ca12">
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="Amount" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="1bc4e31e-5992-4dad-8181-0907c9b21c74" Panel.Bounds="441,347,49*,18*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <TextBox Text="0" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="77ac9355-2b21-419c-b4ad-24d7dbbd611c" Panel.Bounds="508,344,80,24*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="Amount" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="a2b4f2f9-9932-4cff-917e-1df63b33cbb4" Panel.Bounds="441,375,49*,18*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <TextBox Text="0" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="85d40a24-8371-4402-8579-8d76b9b2ef07" Panel.Bounds="508,372,80,24*" />
+                    </Add.Item>
+                </Add>
+                <Set Property="CheckBox.IsChecked" Value="False" Target="27aecdf2-b5ff-48cd-a92f-25182e4e1fa1" />
+                <Set Property="CheckBox.IsChecked" Value="False" Target="e16e6636-9165-4709-a849-f2675584b7b7" />
+            </KeyFrame>
+        </Scene>
+        <Scene Title="Disconnected State" StateGroup="d4269867-caf8-48c2-acc5-7ae977d8623b" ParentScene="d4269867-caf8-48c2-acc5-7ae977d8623b" Created="11/27/2013 14:57:13" Id="3469a286-ed00-4572-884c-565a9c4c0e32">
+            <KeyFrame Id="579e6c99-386b-4b3f-b223-7bdf6afb464b">
+                <Set Property="Control.Opacity" Value="1" Target="a326f777-1528-4f71-a814-c911c13af0f6" />
+                <Set Property="Control.Opacity" Value="1" Target="14881be1-2880-45b2-9da1-699c4a2f244f" />
+                <Remove Property="Control.Click" Target="e16e6636-9165-4709-a849-f2675584b7b7">
+                    <Remove.Item>
+                        <CommandNext SceneId="3469a286-ed00-4572-884c-565a9c4c0e32" AutoRevertDuration="0" Created="11/27/2013 14:58:08" />
+                    </Remove.Item>
+                </Remove>
+            </KeyFrame>
+        </Scene>
+        <Scene Title="Disconnected State" StateGroup="d4269867-caf8-48c2-acc5-7ae977d8623b" ParentScene="d4269867-caf8-48c2-acc5-7ae977d8623b" Created="11/27/2013 14:58:47" Id="bacd123a-4a9d-4af7-8485-d55fd68da348">
+            <KeyFrame Id="f788c02e-672e-4ca2-91ac-1d075b8601a3">
+                <Set Property="Control.Opacity" Value="1" Target="15d6e5f6-c475-4449-9cad-5678e45dc3f6" />
+                <Set Property="Control.Opacity" Value="1" Target="abda3767-fdba-4331-90e9-5715aa50ecf9" />
+                <Remove Property="Control.Click" Target="27aecdf2-b5ff-48cd-a92f-25182e4e1fa1">
+                    <Remove.Item>
+                        <CommandNext SceneId="bacd123a-4a9d-4af7-8485-d55fd68da348" Created="11/27/2013 14:58:47" />
+                    </Remove.Item>
+                </Remove>
+            </KeyFrame>
+        </Scene>
+        <Scene Title="Disconnected State" StateGroup="d4269867-caf8-48c2-acc5-7ae977d8623b" ParentScene="d4269867-caf8-48c2-acc5-7ae977d8623b" Created="11/27/2013 14:59:08" Id="9fedbd2f-5a31-4b00-a70c-2eac0636ff37">
+            <KeyFrame Id="d0c27b37-6130-4d79-a6dd-67485f11f373">
+                <Set Property="Control.Opacity" Value="1" Target="26e18836-1159-4c4d-8545-38d827da2d84" />
+                <Set Property="Control.Opacity" Value="1" Target="607c5c5d-f189-4af6-b054-0b3e3634f0bd" />
+                <Remove Property="Control.Click" Target="d5829da1-35ee-458b-a86c-4b826be28ea7">
+                    <Remove.Item>
+                        <CommandNext SceneId="9fedbd2f-5a31-4b00-a70c-2eac0636ff37" Created="11/27/2013 14:59:08" />
+                    </Remove.Item>
+                </Remove>
+            </KeyFrame>
+        </Scene>
+        <Scene Title="Disconnected State" StateGroup="3469a286-ed00-4572-884c-565a9c4c0e32" ParentScene="3469a286-ed00-4572-884c-565a9c4c0e32" Created="11/27/2013 15:04:15" Id="b82a2588-ecee-441c-9cb8-c540488ca2b7">
+            <KeyFrame Id="61b1a933-e43e-4211-8083-70d09145f318">
+                <Set Property="Control.Opacity" Value="1" Target="15d6e5f6-c475-4449-9cad-5678e45dc3f6" />
+                <Set Property="Control.Opacity" Value="1" Target="abda3767-fdba-4331-90e9-5715aa50ecf9" />
+                <Remove Property="Control.Click" Target="27aecdf2-b5ff-48cd-a92f-25182e4e1fa1">
+                    <Remove.Item>
+                        <CommandNext SceneId="b82a2588-ecee-441c-9cb8-c540488ca2b7" Created="11/27/2013 15:04:15" />
+                    </Remove.Item>
+                </Remove>
             </KeyFrame>
         </Scene>
     </Page.Scenes>

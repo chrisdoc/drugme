@@ -2,7 +2,7 @@
 <Page xmlns="http://prototypes.infragistics.com/"
                                                           Id="48e0372c-a5be-4ac6-ae9e-38c29e90d054">
     <Page.Content>
-        <Content Width="800" Height="600" Background="White" Id="fc254a69-e7a8-42a5-8191-15965fbd6c60">
+        <Content Width="800" Height="700" Background="White" Id="fc254a69-e7a8-42a5-8191-15965fbd6c60">
             <Layer Layout="Stretch" Id="a703f9d8-a8ce-4491-bf23-fe6075e59eb6" Panel.Layout="Stretch" />
         </Content>
     </Page.Content>
@@ -36,22 +36,22 @@
                 </Add>
                 <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
                     <Add.Item>
-                        <Rectangle Thickness="0" CornerRadius="20" Background="#FF81ABE0" Id="cd93815e-f359-4565-84f1-e76815b0d122" Panel.Bounds="0,500,800{5,2147483647},100{5,2147483647}" />
+                        <Rectangle Thickness="0" CornerRadius="20" Background="#FF81ABE0" Id="cd93815e-f359-4565-84f1-e76815b0d122" Panel.Bounds="0,600,800{5,2147483647},100{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
                     <Add.Item>
-                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="724e51a4-6fef-4005-b345-e38405032d78" Panel.Bounds="0,519,100{5,2147483647},81{5,2147483647}" />
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="724e51a4-6fef-4005-b345-e38405032d78" Panel.Bounds="0,619,100{5,2147483647},81{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
                     <Add.Item>
-                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="db0d440d-e73c-41cf-8e6b-a6e1e0e740a1" Panel.Bounds="700,519,100{5,2147483647},81{5,2147483647}" />
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="db0d440d-e73c-41cf-8e6b-a6e1e0e740a1" Panel.Bounds="700,619,100{5,2147483647},81{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
                     <Add.Item>
-                        <Title Text="(C) Endalkachew Asnake, Kieslich Christoph, Stemmer Bernhard, Lindorfer Manuel&#xD;      FH Hagenberg, Mobile Computing, 2013&#xD; " Foreground="#FFD7EDF2" FontSize="18" FontStyle="Normal" Id="cc2c3f12-1a4b-4615-96e1-4e3b2121867a" Panel.Bounds="52,531,736{5,2147483647},53{5,2147483647}" />
+                        <Title Text="(C) Endalkachew Asnake, Kieslich Christoph, Stemmer Bernhard, Lindorfer Manuel&#xD;      FH Hagenberg, Mobile Computing, 2013&#xD; " Foreground="#FFD7EDF2" FontSize="18" FontStyle="Normal" Id="cc2c3f12-1a4b-4615-96e1-4e3b2121867a" Panel.Bounds="52,631,736{5,2147483647},53{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
@@ -132,7 +132,7 @@
                 </Add>
                 <Add Property="Panel.Children" Before="db03441e-1e64-4fce-a2a6-1fb11928ccbf" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
                     <Add.Item>
-                        <Rectangle Thickness="0" Background="#FFC0D5EF" Id="71b3b116-918e-4fad-8512-2eb472f18553" Panel.Bounds="191,344,450{5,2147483647},50{5,2147483647}">
+                        <Rectangle Thickness="0" CornerRadius="5" Background="#FFC0D5EF" Id="71b3b116-918e-4fad-8512-2eb472f18553" Panel.Bounds="191,344,450{5,2147483647},50{5,2147483647}">
                             <Rectangle.Click>
                                 <CommandNavigate Screen="/MedicationPlanPage.screen" State="d4269867-caf8-48c2-acc5-7ae977d8623b" Created="11/27/2013 13:10:25" />
                             </Rectangle.Click>
@@ -141,7 +141,7 @@
                 </Add>
                 <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
                     <Add.Item>
-                        <Rectangle Thickness="0" Background="#FFC0D5EF" Id="e0df77a9-2945-4b06-995b-3a849c88039a" Panel.Bounds="191,398,450{5,2147483647},50{5,2147483647}" />
+                        <Rectangle Thickness="0" CornerRadius="5" Background="#FFC0D5EF" Id="e0df77a9-2945-4b06-995b-3a849c88039a" Panel.Bounds="191,398,450{5,2147483647},50{5,2147483647}" />
                     </Add.Item>
                 </Add>
                 <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
@@ -187,7 +187,7 @@
                 </Add>
                 <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
                     <Add.Item>
-                        <Button Text="+ Add new plan" Background="#FF8AB1D3" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="79d56b3f-a4d8-42e8-ae0d-558700fda08a" Panel.Bounds="534,315,107{5,2147483647},26{5,2147483647}">
+                        <Button Text="+ Add new plan" Background="#FF8AB1D3" CornerRadius="5" BorderThickness="0" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="79d56b3f-a4d8-42e8-ae0d-558700fda08a" Panel.Bounds="534,311,107{5,2147483647},26{5,2147483647}">
                             <Button.Click>
                                 <CommandNavigate Screen="/NewMedicationPlan.screen" State="e3e91d84-2abe-4638-b2ff-93d60916dc18" Created="11/27/2013 13:11:50" />
                             </Button.Click>
@@ -196,9 +196,57 @@
                 </Add>
                 <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
                     <Add.Item>
-                        <Button Text="Confirm" Background="#FF48C157" BorderColor="#FF48C157" Foreground="White" FontSize="13" FontStyle="Normal" Id="7451279d-4096-4279-b21f-3b111357223e" Panel.Bounds="191,459,450{5,2147483647},30{5,2147483647}" />
+                        <Button Text="Confirm" Background="#FF48C157" BorderColor="#FF48C157" CornerRadius="5" Foreground="White" FontSize="13" FontStyle="Normal" Id="7451279d-4096-4279-b21f-3b111357223e" Panel.Bounds="191,459,450{5,2147483647},30{5,2147483647}">
+                            <Button.Click>
+                                <CommandNext SceneId="6a9d4d5e-5ee6-41a9-8e4d-a757baa0408f" Created="11/27/2013 15:08:53" />
+                            </Button.Click>
+                        </Button>
                     </Add.Item>
                 </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Button Text="Logout" Background="#FF75D181" CornerRadius="15" BorderThickness="0" Foreground="White" FontSize="13" FontStyle="Normal" Id="545b8654-b978-469f-af23-b64159292dd5" Panel.Bounds="720,65,80{5,2147483647},35{5,2147483647}">
+                            <Button.Click>
+                                <CommandNavigate Screen="/LoginPage.screen" State="cfd491f7-f018-40c0-b3ce-7b8812175029" Created="11/27/2013 15:17:50" />
+                            </Button.Click>
+                        </Button>
+                    </Add.Item>
+                </Add>
+                <Set Property="Content.Height" Value="700" Target="fc254a69-e7a8-42a5-8191-15965fbd6c60" />
+            </KeyFrame>
+        </Scene>
+        <Scene Title="Tapped/Clicked Confirm" StateGroup="39c04af1-bd3b-4f7b-8ce8-bbe2e89ebe49" ParentScene="39c04af1-bd3b-4f7b-8ce8-bbe2e89ebe49" Created="11/27/2013 15:08:53" Id="6a9d4d5e-5ee6-41a9-8e4d-a757baa0408f">
+            <KeyFrame Id="1f2576fb-d516-475c-92c6-f32a98f0d6bc">
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Rectangle CornerRadius="5" Background="White" Id="70752811-9286-44c1-8e9d-3f599aca8f92" Panel.Bounds="267,212,265{5,2147483647},123{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Label Text="All currently active medication plans have been forwarded to patient &quot;Max Mustermann&quot;" Align="Center" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="3242c8f2-4826-45b3-934c-444f1d39923c" Panel.Bounds="303,228,206{5,2147483647},67{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Button Text="OK" Background="#FF5FB5CC" CornerRadius="5" BorderThickness="0" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="78b981c8-38ac-4d13-8bea-2567d1f039f9" Panel.Bounds="360,293,80{5,2147483647},35{5,2147483647}">
+                            <Button.Click>
+                                <CommandNavigate Screen="/HomeScreen.screen" State="3d2af707-a25a-44c5-9ce6-1c85743ab70c" Created="11/27/2013 15:11:32" />
+                            </Button.Click>
+                        </Button>
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Button Text="Logout" Background="#FF75D181" CornerRadius="15" BorderThickness="0" Foreground="White" FontSize="13" FontStyle="Normal" Id="8059b8b2-9283-4685-8634-7ad056983fb8" Panel.Bounds="720,65,80{5,2147483647},35{5,2147483647}">
+                            <Button.Click>
+                                <CommandNavigate Screen="/LoginPage.screen" State="cfd491f7-f018-40c0-b3ce-7b8812175029" Created="11/27/2013 15:18:00" />
+                            </Button.Click>
+                        </Button>
+                    </Add.Item>
+                </Add>
+                <Set Property="Content.Height" Value="700" Target="fc254a69-e7a8-42a5-8191-15965fbd6c60" />
+                <Move To="191,468" Target="7451279d-4096-4279-b21f-3b111357223e" />
             </KeyFrame>
         </Scene>
     </Page.Scenes>
