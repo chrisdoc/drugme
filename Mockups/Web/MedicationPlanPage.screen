@@ -1,0 +1,89 @@
+﻿<?Infragistics.Models format="xaml" version="17"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                          Id="3e54dfcd-d8f6-48b2-a647-f5bf07311805">
+    <Page.Content>
+        <Content Width="800" Height="600" Background="White" Id="b2cd1aa8-113a-44b8-923c-dcea4b0c1f2d">
+            <Layer Layout="Stretch" Id="04833e5b-b75b-4a0c-9cce-9cd71254efca" Panel.Layout="Stretch" />
+        </Content>
+    </Page.Content>
+    <Page.Scenes>
+        <Scene Title="Start" Created="11/27/2013 13:08:52" Id="d4269867-caf8-48c2-acc5-7ae977d8623b">
+            <KeyFrame Id="859b48a8-49ad-4cdf-add4-51dc3e886307">
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Rectangle Thickness="0" CornerRadius="20" Background="#FF81ABE0" Id="5f4d309a-5229-454f-ba76-de42124f0b3c" Panel.Bounds="0,0,800{5,2147483647},100{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="4d4ef9fe-f4b3-40cc-955d-0b4a376dd5c0" Panel.Bounds="699,0,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="e7d75478-3453-4aa5-9e91-108c80ffcbc0" Panel.Bounds="0,0,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Image SourcePath="assets/medic2.png" Id="26a8c8d9-16de-4ca6-b68c-d98ea623fd13" Panel.Bounds="137,12,85{5,2147483647},76{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Title Text="Medication Plan Monitoring System" Foreground="#FFD7EDF2" FontSize="26" FontStyle="Normal" Id="377d59a8-05a9-4f19-8f27-12ebffc7532e" Panel.Bounds="231,31,431{5,2147483647},38{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Rectangle Thickness="0" CornerRadius="20" Background="#FF81ABE0" Id="a26da2e8-6cc0-4895-bca8-5af03c45414b" Panel.Bounds="0,500,800{5,2147483647},100{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="7352af41-b4b2-4130-b7e2-12b08db86f16" Panel.Bounds="0,519,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="9166317d-3674-4ece-b427-3c8d4eb268de" Panel.Bounds="700,519,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Title Text="(C) Endalkachew Asnake, Kieslich Christoph, Stemmer Bernhard, Lindorfer Manuel&#xD;      FH Hagenberg, Mobile Computing, 2013&#xD; " Foreground="#FFD7EDF2" FontSize="18" FontStyle="Normal" Id="05244a86-b58d-4efa-8751-495e27cfd228" Panel.Bounds="52,531,736{5,2147483647},53{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Title Text="MediPlan 1" Foreground="#FF282828" FontSize="34" FontStyle="Normal|Bold" Id="89d79813-e0f7-455d-84bb-d708970cee1c" Panel.Bounds="306,153,0*{5,2147483647},0*{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <TextBox Text="Parkemed" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="6e9202c0-5d7c-4336-8d9b-9aa4a61cc130" Panel.Bounds="359,211,165{5,2147483647},0*{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="Medication" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="859733c6-27d1-4b8b-857e-ab25554a2977" Panel.Bounds="276,214,0*{5,2147483647},0*{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <Label Text="Form" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="4ce8b1b8-9cf7-44c3-8d5b-e652c5d040d6" Panel.Bounds="276,248,0*,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="04833e5b-b75b-4a0c-9cce-9cd71254efca">
+                    <Add.Item>
+                        <ComboBox Hint="Tablet" FontStyle="" Id="521a9f87-db1f-424c-8deb-eeda96ead6ff" Panel.Bounds="359,243,165{5,2147483647},28{5,2147483647}">
+                            <Item Text="Fluid" Id="8d84a752-ad2e-4f0e-b6fc-673e7b165207" />
+                            <Item Text="Spray" Id="8c876e14-133d-4a64-b42b-05f5092b1af8" />
+                            <Item Text="Injection" Id="53112697-47cd-4495-8a52-cfd8fe53a44f" />
+                        </ComboBox>
+                    </Add.Item>
+                </Add>
+            </KeyFrame>
+        </Scene>
+    </Page.Scenes>
+</Page>

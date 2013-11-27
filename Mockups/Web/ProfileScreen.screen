@@ -1,0 +1,205 @@
+﻿<?Infragistics.Models format="xaml" version="17"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                          Id="48e0372c-a5be-4ac6-ae9e-38c29e90d054">
+    <Page.Content>
+        <Content Width="800" Height="600" Background="White" Id="fc254a69-e7a8-42a5-8191-15965fbd6c60">
+            <Layer Layout="Stretch" Id="a703f9d8-a8ce-4491-bf23-fe6075e59eb6" Panel.Layout="Stretch" />
+        </Content>
+    </Page.Content>
+    <Page.Scenes>
+        <Scene Title="Start" Created="11/27/2013 12:50:28" Id="39c04af1-bd3b-4f7b-8ce8-bbe2e89ebe49">
+            <KeyFrame Id="3f06b410-6fba-422b-aee5-20a885168ec9">
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Rectangle Thickness="0" CornerRadius="20" Background="#FF81ABE0" Id="db03441e-1e64-4fce-a2a6-1fb11928ccbf" Panel.Bounds="0,0,800{5,2147483647},100{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="c9be4967-ebc6-4e6b-93cd-3b17b7b17564" Panel.Bounds="699,0,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="0399bc67-b18d-4fc9-8efa-ad7d9009ca41" Panel.Bounds="0,0,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Image SourcePath="assets/medic2.png" Id="831b11db-772b-4d44-b761-47b56c02bb93" Panel.Bounds="137,12,85{5,2147483647},76{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Title Text="Medication Plan Monitoring System" Foreground="#FFD7EDF2" FontSize="26" FontStyle="Normal" Id="ed6a3c25-b407-442e-9276-ca4bb4f9bcb0" Panel.Bounds="231,31,431{5,2147483647},38{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Rectangle Thickness="0" CornerRadius="20" Background="#FF81ABE0" Id="cd93815e-f359-4565-84f1-e76815b0d122" Panel.Bounds="0,500,800{5,2147483647},100{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="724e51a4-6fef-4005-b345-e38405032d78" Panel.Bounds="0,519,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="db0d440d-e73c-41cf-8e6b-a6e1e0e740a1" Panel.Bounds="700,519,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Title Text="(C) Endalkachew Asnake, Kieslich Christoph, Stemmer Bernhard, Lindorfer Manuel&#xD;      FH Hagenberg, Mobile Computing, 2013&#xD; " Foreground="#FFD7EDF2" FontSize="18" FontStyle="Normal" Id="cc2c3f12-1a4b-4615-96e1-4e3b2121867a" Panel.Bounds="52,531,736{5,2147483647},53{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Image SourcePath="assets/avatar.png" Id="75f358e7-4432-42a1-85d5-0c353be832f3" Panel.Bounds="206,123,175{5,2147483647},163{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Label Text="Max Mustermann" Foreground="#FF282828" FontSize="24" FontStyle="Normal|Bold" Id="4fc6e451-b54a-4a14-bc16-79f35a03de06" Panel.Bounds="386,148,0*,34" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Label Text="EC: 1234 123456789" Foreground="#FF282828" FontSize="16" FontStyle="Normal" Id="1389dc92-9d29-4f8d-ac44-874ec5c8de7e" Panel.Bounds="386,182,0*,18" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Button Text="+" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="5e9e2606-63ed-434e-a8cd-bd9581a7027b" Panel.Bounds="338,262,24{5,2147483647},24{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Label Text="Address&#xD;" Foreground="#FF282828" FontSize="16" FontStyle="Normal" Id="132146e9-d160-4d2a-b9a7-551e8ee551f9" Panel.Bounds="386,259,0*,18" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Label Text="Date of birth" Foreground="#FF282828" FontSize="16" FontStyle="Normal" Id="e6b1b728-6f9f-4bcb-8ff4-912dda77b2c0" Panel.Bounds="386,231,0*,18" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <TextBox Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="a293400f-2777-4707-94cb-cf6565da6a5e" Panel.Bounds="507,256,120{5,2147483647},0*{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <TextBox Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="536fcbcc-ff45-455d-a025-cebefeb7f71f" Panel.Bounds="507,228,120,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Label Text="MediPlan 1" Foreground="#FF282828" FontSize="16" FontStyle="Normal|Bold" Id="c9702f9f-7778-4c54-ba40-9e9775ed0041" Panel.Bounds="225,351,151,22*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Label Text="Parkemed" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="4543b4da-b0d8-4356-bcfc-230435b3e95c" Panel.Bounds="225,372,132,18*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Triangle Type="Triangle" Thickness="0" IsClosed="True" RotationAngle="90.111342824144" Background="#FF1C416F" Id="9cab0277-fe2f-405c-a2b7-5b7b14fa28a4" Panel.Bounds="612,353,24,37">
+                            <Triangle.StartPoint>
+                                <Point X="97" Y="48" Id="6d7cb9a6-572e-4c4b-85b8-89b44a114b92" />
+                            </Triangle.StartPoint>
+                            <Triangle.Segments>
+                                <Segment Id="72579e65-b7dc-44b1-b664-1897c892455e">
+                                    <Segment.EndPoint>
+                                        <Point X="2" Y="97" Id="5543c890-75ed-487f-858b-6a4c9e6a50fb" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                                <Segment Id="938c7c3b-06c6-4657-b40c-80cf3090e5bd">
+                                    <Segment.EndPoint>
+                                        <Point X="3" Y="-3" Id="e431c047-9b06-42ef-98e5-53ce13f78d8c" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                                <Segment Id="244e1326-7b14-45bc-85bc-853797bf78ee">
+                                    <Segment.EndPoint>
+                                        <Point X="97" Y="48" Id="20ccc24e-b2e6-496b-88b6-b278f9294bc6" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                            </Triangle.Segments>
+                        </Triangle>
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Before="db03441e-1e64-4fce-a2a6-1fb11928ccbf" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FFC0D5EF" Id="71b3b116-918e-4fad-8512-2eb472f18553" Panel.Bounds="191,344,450{5,2147483647},50{5,2147483647}">
+                            <Rectangle.Click>
+                                <CommandNavigate Screen="/MedicationPlanPage.screen" State="d4269867-caf8-48c2-acc5-7ae977d8623b" Created="11/27/2013 13:10:25" />
+                            </Rectangle.Click>
+                        </Rectangle>
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FFC0D5EF" Id="e0df77a9-2945-4b06-995b-3a849c88039a" Panel.Bounds="191,398,450{5,2147483647},50{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Label Text="MediPlan 2" Foreground="#FF282828" FontSize="16" FontStyle="Normal|Bold" Id="7a1c5b77-f4c9-4415-a2ca-0663475f44ee" Panel.Bounds="225,405,151,22*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Label Text="Natrium" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="d1f5bc84-3941-4bb2-a9de-0abeb158aaba" Panel.Bounds="225,426,132,18*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Triangle Type="Triangle" Thickness="0" IsClosed="True" RotationAngle="90.111342824144" Background="#FF1C416F" Id="2676a7b0-da66-41ca-9225-1944b8962346" Panel.Bounds="612,407,24,37">
+                            <Triangle.StartPoint>
+                                <Point X="97" Y="48" Id="34c6bdd3-5c02-4863-8295-176471b6c7f7" />
+                            </Triangle.StartPoint>
+                            <Triangle.Segments>
+                                <Segment Id="1ace91de-0ae6-4415-8f5e-b511b43b95e7">
+                                    <Segment.EndPoint>
+                                        <Point X="2" Y="97" Id="651fdefa-bd84-4500-bc54-ec7c92aec7a4" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                                <Segment Id="44955f3d-413a-4107-99ff-03ae1f0ed8fe">
+                                    <Segment.EndPoint>
+                                        <Point X="3" Y="-3" Id="eb77591e-23e7-4152-aa9f-7d8de60d8a13" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                                <Segment Id="8e864981-82ca-47fb-b65d-84a38b388326">
+                                    <Segment.EndPoint>
+                                        <Point X="97" Y="48" Id="c06bd1de-b880-45ab-a873-eeed44dfb19b" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                            </Triangle.Segments>
+                        </Triangle>
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Label Text="Active medication plans" Foreground="#FF282828" FontSize="13" FontStyle="Normal|Bold" Id="9dc00def-32e4-46ee-a279-ad757636bdb2" Panel.Bounds="191,315,0*,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Button Text="+ Add new plan" Background="#FF8AB1D3" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="79d56b3f-a4d8-42e8-ae0d-558700fda08a" Panel.Bounds="534,315,107{5,2147483647},26{5,2147483647}">
+                            <Button.Click>
+                                <CommandNavigate Screen="/NewMedicationPlan.screen" State="e3e91d84-2abe-4638-b2ff-93d60916dc18" Created="11/27/2013 13:11:50" />
+                            </Button.Click>
+                        </Button>
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="a703f9d8-a8ce-4491-bf23-fe6075e59eb6">
+                    <Add.Item>
+                        <Button Text="Confirm" Background="#FF48C157" BorderColor="#FF48C157" Foreground="White" FontSize="13" FontStyle="Normal" Id="7451279d-4096-4279-b21f-3b111357223e" Panel.Bounds="191,459,450{5,2147483647},30{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+            </KeyFrame>
+        </Scene>
+    </Page.Scenes>
+</Page>

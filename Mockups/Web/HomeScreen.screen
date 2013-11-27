@@ -1,0 +1,207 @@
+﻿<?Infragistics.Models format="xaml" version="17"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                          Id="6d95f4fc-7aaa-4683-a3a9-a8e6133d7fc5">
+    <Page.Content>
+        <Content Width="800" Height="600" Background="White" Id="662ba406-7b3e-492f-b902-7d197c409aeb">
+            <Layer Layout="Stretch" Id="40722642-1517-402e-8afe-f712f5cd629b" Panel.Layout="Stretch" />
+        </Content>
+    </Page.Content>
+    <Page.Scenes>
+        <Scene Title="Start" Created="11/27/2013 12:39:50" Id="3d2af707-a25a-44c5-9ce6-1c85743ab70c">
+            <KeyFrame Id="c3e2c9dc-4afa-4cb3-a0a8-10b0df4ec4d2">
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Rectangle Thickness="0" CornerRadius="20" Background="#FF81ABE0" Id="fa14d673-468d-4753-bd57-9bf211074913" Panel.Bounds="0,0,800{5,2147483647},100{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="4e2b0e4b-42bf-4224-a99a-685202eea38e" Panel.Bounds="699,0,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="8d935b79-d60e-4f5a-9f79-c016ce09a6e6" Panel.Bounds="0,0,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Image SourcePath="assets/medic2.png" Id="5ef4b31c-0626-45cb-b88f-59090e4749f6" Panel.Bounds="137,12,85{5,2147483647},76{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Title Text="Medication Plan Monitoring System" Foreground="#FFD7EDF2" FontSize="26" FontStyle="Normal" Id="6d299be2-58ab-45ec-b19c-8ca6cd0836e2" Panel.Bounds="231,31,431{5,2147483647},38{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Rectangle Thickness="0" CornerRadius="20" Background="#FF81ABE0" Id="890724b2-45fc-4b30-a3d9-d5f8c97e6f96" Panel.Bounds="0,500,800{5,2147483647},100{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="0d09b4c1-13cd-43ad-bf12-d26bc8f4e11f" Panel.Bounds="0,519,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="5a7fd5ec-cc15-4b69-8cfd-c9a93b01437d" Panel.Bounds="700,519,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Title Text="(C) Endalkachew Asnake, Kieslich Christoph, Stemmer Bernhard, Lindorfer Manuel&#xD;      FH Hagenberg, Mobile Computing, 2013&#xD; " Foreground="#FFD7EDF2" FontSize="18" FontStyle="Normal" Id="68d40ba4-39e0-4944-baf7-a1300c7e6b0a" Panel.Bounds="52,531,736{5,2147483647},53{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FFC0D5EF" Id="8214358e-fb09-43fd-a7ed-26152cf81653" Panel.Bounds="107,193,586{5,2147483647},72{5,2147483647}">
+                            <Rectangle.Click>
+                                <CommandNavigate Screen="/ProfileScreen.screen" State="39c04af1-bd3b-4f7b-8ce8-bbe2e89ebe49" Created="11/27/2013 12:59:17" />
+                            </Rectangle.Click>
+                        </Rectangle>
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Label Text="Patients" Foreground="#FF282828" FontSize="13" FontStyle="Normal|Bold" Id="2ff22693-f743-4a10-b54b-d798b7d7190d" Panel.Bounds="107,169,5*{5,2147483647},5*{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Image SourcePath="assets/avatar.png" Id="03dbefc7-1915-411b-b7e9-70895e1f514a" Panel.Bounds="113,197,64{5,2147483647},64{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Label Text="Max Mustermann" Foreground="#FF282828" FontSize="16" FontStyle="Normal|Bold" Id="f9c0c9c8-3771-4f34-a780-03b3ed7af8e2" Panel.Bounds="180,212,0*{5,2147483647},0*{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Label Text="EC: 1234 123456789" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="936bb473-ed0f-4d6c-af69-ccd543317758" Panel.Bounds="180,233,0*,0*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Triangle Type="Triangle" Thickness="0" IsClosed="True" RotationAngle="90.111342824144" Background="#FF1C416F" Id="cf0a51d2-4ecb-4c01-91a6-7ecffc5aae34" Panel.Bounds="643,208,37,43">
+                            <Triangle.StartPoint>
+                                <Point X="97" Y="48" Id="4814c03e-40f3-4612-b896-da3fa6d561e6" />
+                            </Triangle.StartPoint>
+                            <Triangle.Segments>
+                                <Segment Id="1511b333-a920-4c9a-b58c-8d04e3361941">
+                                    <Segment.EndPoint>
+                                        <Point X="2" Y="97" Id="668aa68f-38fe-4c1e-b78c-c6b05a29ac38" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                                <Segment Id="181bf7bb-a665-4e16-95bd-f7c68ec0d211">
+                                    <Segment.EndPoint>
+                                        <Point X="3" Y="-3" Id="8454da81-2b20-4297-87ba-57ea95805698" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                                <Segment Id="5201df4c-36c2-46f5-898b-edf5132cb1b8">
+                                    <Segment.EndPoint>
+                                        <Point X="97" Y="48" Id="a6555853-7b88-471a-9a1a-03c617e834cf" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                            </Triangle.Segments>
+                        </Triangle>
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FFC0D5EF" Id="3bc21664-82f1-4c01-bd9e-c405ffab1ce0" Panel.Bounds="107,271,586{5,2147483647},72{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Image SourcePath="assets/avatar2.png" Id="942dcfb5-f70f-4b7e-a9e7-b880416cb611" Panel.Bounds="113,275,64{5,2147483647},64{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Label Text="Michael Mustermann" Foreground="#FF282828" FontSize="16" FontStyle="Normal|Bold" Id="0dd9896d-f1eb-4505-ae2f-4aed354e982e" Panel.Bounds="180,290,142*,22*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Label Text="EC: 1234 123456789" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="83c4a8a7-dee0-4b7d-9a0d-e9127ba6f065" Panel.Bounds="180,311,123*,18*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Triangle Type="Triangle" Thickness="0" IsClosed="True" RotationAngle="90.111342824144" Background="#FF1C416F" Id="485ae053-b2e8-4238-aff8-4361b77b3588" Panel.Bounds="643,286,37,43">
+                            <Triangle.StartPoint>
+                                <Point X="97" Y="48" Id="7371ee0d-9643-4ae7-8a41-37197bca1580" />
+                            </Triangle.StartPoint>
+                            <Triangle.Segments>
+                                <Segment Id="d19e4524-9992-4804-b1d8-411c4edbc729">
+                                    <Segment.EndPoint>
+                                        <Point X="2" Y="97" Id="65df350c-605a-4832-836b-2b56d849a379" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                                <Segment Id="efebda8b-a665-4d8a-89f0-196d0aac9e34">
+                                    <Segment.EndPoint>
+                                        <Point X="3" Y="-3" Id="aeed038f-17f2-4573-9133-af5828bd3f5a" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                                <Segment Id="f2430027-f676-4e41-98d4-6879a63fb7e9">
+                                    <Segment.EndPoint>
+                                        <Point X="97" Y="48" Id="2a78e2bf-4794-4b76-9263-17a2dd58f799" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                            </Triangle.Segments>
+                        </Triangle>
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FFC0D5EF" Id="9defa6af-7752-4c90-9048-0c883873184d" Panel.Bounds="107,350,586{5,2147483647},72{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Triangle Type="Triangle" Thickness="0" IsClosed="True" RotationAngle="90.111342824144" Background="#FF1C416F" Id="2eb81924-f562-48a2-9f8b-935b4ba97e3e" Panel.Bounds="643,364,37,43">
+                            <Triangle.StartPoint>
+                                <Point X="97" Y="48" Id="98d089c0-a0d3-4444-a563-1f31e4672e6b" />
+                            </Triangle.StartPoint>
+                            <Triangle.Segments>
+                                <Segment Id="312ddbf1-f108-4f4e-845f-898f94862d3a">
+                                    <Segment.EndPoint>
+                                        <Point X="2" Y="97" Id="3eaa1ef5-21ea-4ee2-83cb-97fc6f67993e" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                                <Segment Id="15363eca-5216-4dc9-8346-2bd7eb4cb453">
+                                    <Segment.EndPoint>
+                                        <Point X="3" Y="-3" Id="1a6c2ffc-e3bc-4406-9cf9-dcd11403b54d" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                                <Segment Id="c4865cd5-fc68-4082-aa98-0d517b821f10">
+                                    <Segment.EndPoint>
+                                        <Point X="97" Y="48" Id="389a7a0d-134a-4271-8ed0-da40be101da3" />
+                                    </Segment.EndPoint>
+                                </Segment>
+                            </Triangle.Segments>
+                        </Triangle>
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Image SourcePath="assets/avatar3.png" Id="ecf6b8f3-8f3e-4713-9aad-3fa72779a0d4" Panel.Bounds="113,353,64{5,2147483647},64{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Label Text="Martina Musterfrau" Foreground="#FF282828" FontSize="16" FontStyle="Normal|Bold" Id="74af485d-9ad2-4bff-b3ef-4f1ca73121eb" Panel.Bounds="180,368,142*,22*" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="40722642-1517-402e-8afe-f712f5cd629b">
+                    <Add.Item>
+                        <Label Text="EC: 1234 123456789" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="22c4af4e-6495-4a2c-ac5f-e90513f63d72" Panel.Bounds="180,389,123*,18*" />
+                    </Add.Item>
+                </Add>
+            </KeyFrame>
+        </Scene>
+    </Page.Scenes>
+</Page>

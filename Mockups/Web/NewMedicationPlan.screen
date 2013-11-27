@@ -1,0 +1,60 @@
+﻿<?Infragistics.Models format="xaml" version="17"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                          Id="91e59a63-ac79-4e36-98b2-9c297d6e3ea0">
+    <Page.Content>
+        <Content Width="800" Height="600" Background="White" Id="061c2adf-b2ba-4574-b8cd-7de5fd9cdae8">
+            <Layer Layout="Stretch" Id="403eff0b-9470-4a1e-8a16-fde8855fef58" Panel.Layout="Stretch" />
+        </Content>
+    </Page.Content>
+    <Page.Scenes>
+        <Scene Title="Start" Created="11/27/2013 13:11:14" Id="e3e91d84-2abe-4638-b2ff-93d60916dc18">
+            <KeyFrame Id="e18e056b-60b5-47e7-99e2-f8c5c46d52ff">
+                <Add Property="Panel.Children" Target="403eff0b-9470-4a1e-8a16-fde8855fef58">
+                    <Add.Item>
+                        <Rectangle Thickness="0" CornerRadius="20" Background="#FF81ABE0" Id="8e746a9b-a6f4-46e8-a1ff-e7d0eb7df91a" Panel.Bounds="0,0,800{5,2147483647},100{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="403eff0b-9470-4a1e-8a16-fde8855fef58">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="5acc9ee4-36ef-4c49-a10e-bcb4f3ffb27f" Panel.Bounds="699,0,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="403eff0b-9470-4a1e-8a16-fde8855fef58">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="5098b12c-3f2b-4bb4-945a-c87e215388b3" Panel.Bounds="0,0,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="403eff0b-9470-4a1e-8a16-fde8855fef58">
+                    <Add.Item>
+                        <Image SourcePath="assets/medic2.png" Id="3a478ff9-f862-42cc-9fe4-a5f035a200d8" Panel.Bounds="137,12,85{5,2147483647},76{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="403eff0b-9470-4a1e-8a16-fde8855fef58">
+                    <Add.Item>
+                        <Title Text="Medication Plan Monitoring System" Foreground="#FFD7EDF2" FontSize="26" FontStyle="Normal" Id="7f36dea9-a8e0-4db7-9123-6334625004b5" Panel.Bounds="231,31,431{5,2147483647},38{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="403eff0b-9470-4a1e-8a16-fde8855fef58">
+                    <Add.Item>
+                        <Rectangle Thickness="0" CornerRadius="20" Background="#FF81ABE0" Id="dd7dd00e-645b-4217-ac12-c03fb4134175" Panel.Bounds="0,500,800{5,2147483647},100{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="403eff0b-9470-4a1e-8a16-fde8855fef58">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="56770e71-a27a-4ea3-8f64-c1e1e0239d40" Panel.Bounds="0,519,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="403eff0b-9470-4a1e-8a16-fde8855fef58">
+                    <Add.Item>
+                        <Rectangle Thickness="0" Background="#FF81ABE0" Id="eb3675d5-e896-4179-83dc-672e28afc26d" Panel.Bounds="700,519,100{5,2147483647},81{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="403eff0b-9470-4a1e-8a16-fde8855fef58">
+                    <Add.Item>
+                        <Title Text="(C) Endalkachew Asnake, Kieslich Christoph, Stemmer Bernhard, Lindorfer Manuel&#xD;      FH Hagenberg, Mobile Computing, 2013&#xD; " Foreground="#FFD7EDF2" FontSize="18" FontStyle="Normal" Id="74533730-ab97-497a-b722-202fd83c4c3c" Panel.Bounds="52,531,736{5,2147483647},53{5,2147483647}" />
+                    </Add.Item>
+                </Add>
+            </KeyFrame>
+        </Scene>
+    </Page.Scenes>
+</Page>
