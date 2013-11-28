@@ -1,0 +1,54 @@
+﻿<?Infragistics.Models format="xaml" version="17"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                          Id="6d7da9fe-a7fa-4c50-821b-220384c0c3b0">
+    <Page.Content>
+        <Content Width="300" Height="450" Background="White" Id="0705a592-9648-41c8-8243-0dc8f54985c4">
+            <Content.Layers>
+                <Layer Layout="Stretch" Id="e99eed72-65c1-48e4-8711-cfb90a4ae41e" Panel.Layout="Stretch" />
+            </Content.Layers>
+        </Content>
+    </Page.Content>
+    <Page.Scenes>
+        <Scene Title="Start" Created="11/28/2013 11:05:58" Id="3f4ca7b1-a7a3-4ef4-86ce-96543f2efd2b">
+            <Scene.KeyFrames>
+                <KeyFrame Id="de70f5d3-c97a-4cb7-9dc2-28050e7e2f49">
+                    <KeyFrame.Operations>
+                        <Add Property="Panel.Children" Target="e99eed72-65c1-48e4-8711-cfb90a4ae41e">
+                            <Add.Item>
+                                <ContainerBox Color="Transparent" Background="White" Thickness="0" Id="b9ea9921-17fa-40a5-85b7-87cee5492083" Panel.Bounds="0,0,300{5,2147483647},450{5,2147483647}">
+                                    <ContainerBox.Content>
+                                        <Container Layout="Stretch" ClipToContainer="True" Id="b83d20cf-418f-4770-a8bf-3c4c7557d944" Panel.Bounds="0,0,300*,450*">
+                                            <Container.Children>
+                                                <Rectangle Thickness="0" Background="#FF1F497D" Id="a0073fa5-90e9-42ba-9e63-df5be3d564b9" Panel.Bounds="0,0,300{5,2147483647},72{5,2147483647}" />
+                                                <Group GroupName="Group" Id="27690e7c-d471-4063-a33c-9f0bab674c63" Name="Heading" Panel.Bounds="13,11,138*,51*">
+                                                    <Group.Children>
+                                                        <Title Text="Monitor your medications" Foreground="#FFE2E2E2" FontSize="12" FontStyle="Normal|Italic" Id="8983047c-50f4-4bfd-986c-fff06fd42f45" Panel.Bounds="36,34,137*,17*" />
+                                                        <Title Text="DrugMe" Foreground="#FF4281D0" FontSize="28" FontStyle="Normal|Bold" Id="cd39e13c-1003-43e3-9f82-b6bd543388e8" Panel.Bounds="35,0,111*,39*" />
+                                                    </Group.Children>
+                                                </Group>
+                                                <Image SourcePath="assets/medic2.png" Id="eedbf4a6-1330-442f-9212-5850a03f8ec3" Panel.Bounds="4,19,38{5,2147483647},34{5,2147483647}" />
+                                                <PasswordBox Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="1b01ae9c-d29c-4a6c-bd1d-507ac307ca37" Panel.Bounds="144,206,120{5,2147483647},0*{5,2147483647}" />
+                                                <Label Text="Firstname" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="bc301c84-48b5-4c26-b204-eb791bd83ca2" Panel.Bounds="35,147,0*{5,2147483647},0*{5,2147483647}" />
+                                                <Label Text="Lastname" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="df8aee91-b604-439e-b966-c231d0e02936" Panel.Bounds="35,178,0*,0*" />
+                                                <Label Text="E-Card number" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="89e76dcb-bd25-4d8f-a9bf-e9dad7096670" Panel.Bounds="35,209,0*,0*" />
+                                                <Button Text="Register" Background="#FF275B9D" CornerRadius="5" BorderThickness="0" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="3355cbbc-46cb-44ac-aefd-6e5c48ccd451" Panel.Bounds="35,244,229{5,2147483647},35{5,2147483647}">
+                                                    <Button.Click>
+                                                        <CommandNavigate Screen="/Home.screen" State="4369e474-0f55-461c-99fc-1581af3708a9" Created="11/28/2013 11:27:59" />
+                                                    </Button.Click>
+                                                </Button>
+                                                <TextBox Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="43c66f0a-471f-470c-9b84-b702bf5f2677" Panel.Bounds="144,144,120{5,2147483647},0*{5,2147483647}" />
+                                                <TextBox Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="549cb326-80ea-4a1e-8644-32793e985c3f" Panel.Bounds="144,175,120,0*" />
+                                            </Container.Children>
+                                        </Container>
+                                    </ContainerBox.Content>
+                                </ContainerBox>
+                            </Add.Item>
+                        </Add>
+                        <Set Property="Content.Width" Value="300" Target="0705a592-9648-41c8-8243-0dc8f54985c4" />
+                        <Set Property="Content.Height" Value="450" Target="0705a592-9648-41c8-8243-0dc8f54985c4" />
+                    </KeyFrame.Operations>
+                </KeyFrame>
+            </Scene.KeyFrames>
+        </Scene>
+    </Page.Scenes>
+</Page>
