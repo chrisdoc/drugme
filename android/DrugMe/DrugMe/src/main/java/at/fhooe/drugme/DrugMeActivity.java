@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -16,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -39,6 +41,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -54,6 +57,8 @@ import static com.squareup.okhttp.internal.Util.readFully;
 import com.google.android.gms.*;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
+
+import org.joda.time.DateTime;
 
 public class DrugMeActivity extends Activity  {
 
@@ -87,8 +92,9 @@ public class DrugMeActivity extends Activity  {
 
 
     MedicationAdapter mAdapter;
+    MedicationPlan mPlan;
+    List<Medication> mMedications;
 
-    ArrayList<Medication> mMedicationList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,15 +102,11 @@ public class DrugMeActivity extends Activity  {
 
         ButterKnife.inject(this);
 
-       // DownloadWebPageTask task =new DownloadWebPageTask();
-       // task.execute(new String[]{"https://gist.github.com/chriskies/7672921/raw/370f7fe03d6fc6f35e16ac1538253f544247a824/medication.json"});
-
-
-
 
         context = getApplicationContext();
 
-
+        mPlan= new MedicationPlan();
+        mMedications=new ArrayList<Medication>();
         // Check device for Play Services APK. If check succeeds, proceed with
         //  GCM registration.
         if (checkPlayServices()) {
@@ -117,11 +119,48 @@ public class DrugMeActivity extends Activity  {
         } else {
             Log.i(TAG, "No valid Google Play Services APK found.");
         }
-        mMedicationList= new ArrayList<Medication>();
-        mAdapter= new MedicationAdapter(this,R.layout.row_medication_list,mMedicationList);
+        //mMedicationList= new ArrayList<Medication>();
+        mAdapter= new MedicationAdapter(this,R.layout.row_medication_list,mMedications);
+        mAdapter.sort(new Comparator<Medication>() {
+            @Override
+            public int compare(Medication lhs, Medication rhs) {
+
+              return new DateTime(lhs.getNextMedicationTime()).compareTo(new DateTime(rhs));
+
+            }
+        });
         medicationListView.setAdapter(mAdapter);
+        medicationListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(DrugMeActivity.this, MedicationDetailsActivity.class);
+                i.putExtra("medication",mMedications.get(position));
+                startActivity(i);
+            }
+        });
+        loadMedicationPlan();
+
 
     }
+
+    private void loadMedicationPlan() {
+        SharedPreferences prefs = getSharedPreferences(getString(R.string.shared_pref_name),0);
+        String json=  prefs.getString(getString(R.string.pref_medication_plan),"");
+        mPlan=new Gson().fromJson(json,MedicationPlan.class);
+        mMedications.clear();
+        mMedications.addAll(mPlan.getMedications());
+        mAdapter.notifyDataSetChanged();
+
+        mAdapter.sort(new Comparator<Medication>() {
+            @Override
+            public int compare(Medication lhs, Medication rhs) {
+
+                return new DateTime(lhs.getNextMedicationTime()).compareTo(new DateTime(rhs.getNextMedicationTime()));
+
+            }
+        });
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -301,12 +340,23 @@ public class DrugMeActivity extends Activity  {
 
 
     @Subscribe
-    public void answerAvailable(MedicationPlan plan) {
-
-        mMedicationList.clear();
-        mMedicationList.addAll(plan.getMedications());
+    public void newMedicationPlan(MedicationPlan plan) {
+        mPlan=plan;
+        //mMedicationList.clear();
+        //mMedicationList.addAll(plan.getMedications());
         Log.d(TAG,"otto "+plan);
+        mMedications.clear();
+        mMedications.addAll(mPlan.getMedications());
+
         mAdapter.notifyDataSetChanged();
+        mAdapter.sort(new Comparator<Medication>() {
+            @Override
+            public int compare(Medication lhs, Medication rhs) {
+
+                return new DateTime(lhs.getNextMedicationTime()).compareTo(new DateTime(rhs));
+
+            }
+        });
         Crouton.makeText(this,"Medication plan has been updated", Style.INFO).show();
     }
     private class DownloadWebPageTask extends AsyncTask<String, Void, String> {

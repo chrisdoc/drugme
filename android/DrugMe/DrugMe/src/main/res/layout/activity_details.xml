@@ -1,6 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:background="@drawable/layout_bg"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+
+        android:id="@+id/medication_detail_infoLayout"
+        android:padding="10dp">
+
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dip"
+            android:contentDescription="TODO"
+            android:src="@drawable/ic_launcher" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon"
+            android:id="@+id/medication_detail_layout_time">
+
+            <ImageView
+                android:id="@+id/icon_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dip"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="6dip"
+
+                android:src="@drawable/ic_action_time"
+                />
+
+            <TextView
+                android:id="@+id/medication_detail_time"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_toRightOf="@id/icon_time"
+                android:gravity="center_vertical"
+                android:text="03 hours and 45 minutes"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon"
+            android:id="@+id/medication_detail_layout_weight"
+            android:layout_below="@id/medication_detail_layout_time"
+
+            >
+
+            <ImageView
+                android:id="@+id/icon_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="6dip"
+                android:layout_marginLeft="6dip"
+                android:src="@drawable/ic_action_weight"
+                 />
+
+            <TextView
+                android:id="@+id/medication_detail_pill"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_toRightOf="@id/icon_time"
+                android:gravity="center_vertical"
+                android:text="1 pill"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:id="@+id/medication_detail_nameLayout"
+        android:background="@drawable/layout_bg"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parkemet"
+            android:id="@+id/medication_detail_name"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Take it with water"
+            android:id="@+id/medication_detail_info"
+            android:layout_below="@id/medication_detail_name"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="@drawable/layout_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:padding="10dp"
+        android:id="@+id/medication_detail_nameLayout">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medication plan"
+            android:id="@+id/medication_detail_plan"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/medication_detail_timeline"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1.0"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+
+            android:layout_below="@id/medication_detail_plan">
+
+            <View
+                android:id="@+id/medication_detail_timepassed"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:layout_weight="0.7"
+                android:background="@color/color_light_green"></View>
+
+            <View
+                android:id="@+id/medication_detail_timetogo"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:layout_weight="0.3"
+                android:background="@color/color_red"></View>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01.12.2013"
+            android:id="@+id/medication_detail_startdate"
+            android:textSize="12sp"
+            android:layout_below="@id/medication_detail_timeline"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="07.12.2013"
+            android:id="@+id/medication_detail_enddate"
+            android:layout_below="@id/medication_detail_timeline"
+            android:textSize="12sp"
+            android:layout_alignParentRight="true"
+
+            />
+
+
+    </RelativeLayout>
+</LinearLayout>

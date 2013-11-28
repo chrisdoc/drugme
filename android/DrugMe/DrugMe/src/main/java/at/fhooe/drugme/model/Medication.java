@@ -5,6 +5,13 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.Expose;
 
+import org.joda.time.DateTime;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Date;
+
 public class Medication implements Parcelable{
 
     @Expose
@@ -124,6 +131,7 @@ public class Medication implements Parcelable{
         }
     };
 
+
     private Medication(Parcel in) {
         info=in.readString();
         startdate=in.readString();
@@ -133,6 +141,66 @@ public class Medication implements Parcelable{
         dose=in.readString();
 
 
+    }
+    public Date getNextMedicationTime(){
+      String[] intakes=intake.split("-");
+        Date now=new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(now);
+        ArrayList<Date> times = new ArrayList<Date>();
+
+        if(!intakes[0].equals("0")){
+            calendar.setTime(now);
+            int hours = calendar.get(Calendar.HOUR_OF_DAY);
+            if(hours>=8){
+                calendar.add(Calendar.DAY_OF_MONTH, 1);
+            } 
+            calendar.set(Calendar.HOUR_OF_DAY,8);
+            calendar.set(Calendar.MINUTE,0);
+            calendar.set(Calendar.SECOND,0);
+            times.add(calendar.getTime());
+
+        }
+        if(!intakes[1].equals("0")){
+            calendar.setTime(now);
+            int hours = calendar.get(Calendar.HOUR_OF_DAY);
+            if(hours>=12){
+                calendar.add(Calendar.DAY_OF_MONTH,1);
+            }
+            calendar.set(Calendar.HOUR_OF_DAY,12);
+            calendar.set(Calendar.MINUTE,0);
+            calendar.set(Calendar.SECOND,0);
+            times.add(calendar.getTime());
+        }
+        if(!intakes[2].equals("0")){
+            calendar.setTime(now);
+            int hours = calendar.get(Calendar.HOUR_OF_DAY);
+            if(hours>=18){
+                calendar.add(Calendar.DAY_OF_MONTH,1);
+            }
+            calendar.set(Calendar.HOUR_OF_DAY,18);
+            calendar.set(Calendar.MINUTE,0);
+            calendar.set(Calendar.SECOND,0);
+            times.add(calendar.getTime());
+        }
+
+      Collections.sort(times);
+      return times.get(0);
+    }
+    public int getNextMedicationValue(){
+
+        DateTime next=new DateTime(getNextMedicationTime());
+        String[] intakes=intake.split("-");
+        if(next.getHourOfDay()==8){
+            return Integer.parseInt(intakes[0]);
+        }
+        else if(next.getHourOfDay()==12){
+            return Integer.parseInt(intakes[1]);
+        }
+        else if(next.getHourOfDay()==18){
+            return Integer.parseInt(intakes[2]);
+        }
+        return -1;
     }
 }
 

@@ -24,6 +24,7 @@ import static com.squareup.okhttp.internal.Util.readFully;
 public class MedicationTask extends AsyncTask<String, Void, String> {
     String TAG="DragMe";
 
+    MedicationTaskListener listener=null;
     @Override
     protected String doInBackground(String... urls) {
         OkHttpClient client = new OkHttpClient();
@@ -62,10 +63,18 @@ public class MedicationTask extends AsyncTask<String, Void, String> {
         return response;
     }
 
+    public void setListener(MedicationTaskListener listener) {
+        this.listener = listener;
+    }
+
+
     @Override
     protected void onPostExecute(String result) {
         Gson gson = new Gson();
         MedicationPlan plan=gson.fromJson(result, MedicationPlan.class);
+        if(listener!=null){
+            listener.medicationTaskFinished(plan);
+        }
 
     }
 
