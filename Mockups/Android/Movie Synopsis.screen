@@ -1,0 +1,132 @@
+﻿<?Infragistics.Models format="xaml" version="16"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                          Id="dd632f47-6623-44ff-adb7-cc1100999b30">
+    <Page.Content>
+        <Content Width="300" Height="450" Background="White" Id="cb3a4d4e-c4ab-4738-a532-8ef3657f7441">
+            <Layer Layout="Stretch" Id="8cbf9668-e9a6-49c8-8198-0a1aa0164cb1" Panel.Layout="Stretch" />
+        </Content>
+    </Page.Content>
+    <Page.Scenes>
+        <Scene Title="Start" Created="08/15/2012 00:03:42" Id="a228946f-e361-417a-902b-e0221f41a624">
+            <KeyFrame Id="3d38036b-3709-44aa-9b41-41a63746fcf0">
+                <Add Property="Panel.Children" Target="8cbf9668-e9a6-49c8-8198-0a1aa0164cb1">
+                    <Add.Item>
+                        <Image SourcePath="assets/background.png" Id="4ee88847-b00a-4ded-b1c0-716d0f28bbc5" Name="Iphone background" ControlExtensions.Locked="True" Panel.Bounds="-327,-145,976,732" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="8cbf9668-e9a6-49c8-8198-0a1aa0164cb1">
+                    <Add.Item>
+                        <ContainerBox Color="Transparent" Background="#FFE2E2E2" Thickness="0" Id="f5eee620-cc23-47f8-b0d9-e51708c78262" Panel.Bounds="0,0,300{5,2147483647},450{5,2147483647}">
+                            <Container Layout="Stretch" ClipToContainer="True" Id="9d6e1b1b-cff2-4be3-a1db-766df86574c7">
+                                <Rectangle Thickness="0" Background="#FF48453C" Id="a13c3a68-f92d-4858-adb5-b106a7b46356" Panel.Bounds="0,0,300{5,2147483647},51{5,2147483647}" />
+                                <Group GroupName="Group" Id="6d56a44a-a2f7-48a3-9712-0869758cf91c" Name="heading" Panel.Bounds="-6,-101,369*,40*">
+                                    <Rectangle Color="#FF363636" Background="#FFF68324" Id="916670b7-576c-4f4f-a0a7-908494537c52" Panel.Bounds="6,106,300{5,2147483647},39{5,2147483647}" />
+                                    <Line Type="Line" Thickness="1" RotationAngle="90" Color="#FF1C1C1C" Background="Transparent" Opacity="0.2" Id="96c62f80-86d8-4b1c-ac76-19e4eb993926" Panel.Bounds="-13,142,336,4">
+                                        <Line.StartPoint>
+                                            <Point Id="cd45f8a6-c5ec-4735-b34a-8bb0f694aee6" />
+                                        </Line.StartPoint>
+                                        <Line.Segments>
+                                            <Segment Id="9e6fc199-d86c-4aa4-ad74-47e5d4084a3e">
+                                                <Segment.EndPoint>
+                                                    <Point X="336" Id="d674cfc8-68af-418d-9e80-9b0f3c26f980" />
+                                                </Segment.EndPoint>
+                                            </Segment>
+                                        </Line.Segments>
+                                    </Line>
+                                    <Line Type="Line" Thickness="1" RotationAngle="90" Color="#FFE2E2E2" Background="Transparent" Opacity="0.6" Id="575c965b-3e14-401c-9fd0-230e79460b9d" Panel.Bounds="-3,107,336,4">
+                                        <Line.StartPoint>
+                                            <Point Id="dbeb1c52-4300-45e2-86ef-3fd7e32ad4bb" />
+                                        </Line.StartPoint>
+                                        <Line.Segments>
+                                            <Segment Id="89f394ed-70ed-4dc8-99fb-a70bc0668d25">
+                                                <Segment.EndPoint>
+                                                    <Point X="336" Id="c844ebb4-7587-495b-8baf-efc2054295d9" />
+                                                </Segment.EndPoint>
+                                            </Segment>
+                                        </Line.Segments>
+                                    </Line>
+                                </Group>
+                                <Title Text="Movie Details" Foreground="White" FontSize="16" FontStyle="Normal|Bold" Id="3a391129-9bac-4155-86f4-69814a4aba50" Panel.Bounds="89,13,0*,0*" />
+                                <Group GroupName="Group" Id="7165de53-bf48-46ed-8f97-ab00e5bd27a0" Panel.Bounds="9,11,68*,26*">
+                                    <Group.Click>
+                                        <CommandNavigate Screen="/Home.screen" State="4369e474-0f55-461c-99fc-1581af3708a9" Created="11/10/2012 19:27:31" />
+                                    </Group.Click>
+                                    <Rectangle Thickness="0" CornerRadius="5" Background="Black" Opacity="0.2" Id="d2c6bd6b-8015-4b7f-9ee5-8ff46aebf503" Panel.Bounds="0,0,68{5,2147483647},26{5,2147483647}" />
+                                    <Label Text="HOME" Foreground="White" FontSize="11" FontFamily="Arial" FontStyle="" Id="b5f9a457-718b-4492-add8-17ae429229ef" Panel.Bounds="18,7,36{5,2147483647},15{5,2147483647}" />
+                                </Group>
+                                <Button Text="Showtimes &amp; Tickets" Background="#FFAAAAAA" CornerRadius="3" BorderThickness="0" Foreground="White" FontSize="11" FontStyle="Normal" Id="ffe60749-85b2-4927-bf47-0b46bb075971" Panel.Bounds="12,414,124{5,2147483647},26{5,2147483647}" />
+                                <Button Text="Play Trailer" Background="#FFAAAAAA" CornerRadius="3" BorderThickness="0" Foreground="White" FontSize="11" FontStyle="Normal" Id="4dfcade7-76e2-4360-8a5f-b268f79d380c" Panel.Bounds="164,414,124{5,2147483647},26{5,2147483647}" />
+                                <Title Text="Marvel's The Avengers" Foreground="#FF717171" FontSize="14" FontStyle="Normal|Bold" Id="a6d5d245-ea41-41de-90a4-c34cffaae541" Panel.Bounds="130,64,0*,0*" />
+                                <Title Text="PG-13, 143 mins." Foreground="#FF8D8D8D" FontSize="9" FontStyle="Normal" Id="e0c78e91-956b-4ee5-9233-c2cbe5eb5ed8" Panel.Bounds="130,86,0*,0*" />
+                                <Title Text="Robert Downey Jr., Chris Evans, Mark Ruffalo" Foreground="#FF717171" FontSize="10" FontStyle="Normal" Id="ccb9798f-9465-4ed1-b325-1fa56667a485" Panel.Bounds="130,100,146,26" />
+                                <Label Text="Marvel Studios delivers the ultimate comic-book film, which ties together such characters as Iron Man (Robert Downey Jr.), Captain America (Chris Evans), The Hulk (Mark Ruffalo), and Thor (Chris Hemsworth) for a big-screen franchise team-up like no other. Taking center stage this time is Nick Fury (played once again by the note-perfect Samuel L. Jackson), leader of " Foreground="#FF555555" FontSize="11" FontStyle="" Id="9903b1c2-b917-423d-b0f9-4a643b378f35" Panel.Bounds="12,279,278{5,2147483647},0*{5,2147483647}" />
+                                <Triangle Type="Triangle" Thickness="1" IsClosed="True" RotationAngle="-419.370991561188" Color="Transparent" Background="#FF717171" Id="7426460e-ba2b-4cde-b8a0-9666d6a5e31d" Panel.Bounds="140,389,19,10">
+                                    <Triangle.StartPoint>
+                                        <Point X="1.14433860778809" Y="9.12463188171387" Id="7fb24e18-0636-43c3-af17-35adb1c98544" />
+                                    </Triangle.StartPoint>
+                                    <Triangle.Segments>
+                                        <Segment Id="12685972-973e-4d5c-8482-a51870947691">
+                                            <Segment.EndPoint>
+                                                <Point X="29.1833763122559" Y="8.87506771087646" Id="c2bb7ab4-168c-4105-b153-f73b9ddecc66" />
+                                            </Segment.EndPoint>
+                                        </Segment>
+                                        <Segment Id="e391ae69-75bc-4918-8027-110a36985ae4">
+                                            <Segment.EndPoint>
+                                                <Point X="14.4085369110107" Y="33.8291053771973" Id="bcef771b-db80-4c1e-a79e-9bd01004cbba" />
+                                            </Segment.EndPoint>
+                                        </Segment>
+                                        <Segment Id="9c9384bb-8e0c-4eee-ae5f-ae4456f93a18">
+                                            <Segment.EndPoint>
+                                                <Point X="1.14433860778809" Y="9.12463188171387" Id="fc30ecda-b0a0-4ef4-8a90-4d0fae44066f" />
+                                            </Segment.EndPoint>
+                                        </Segment>
+                                    </Triangle.Segments>
+                                </Triangle>
+                                <Line Type="Line" Thickness="1" RotationAngle="90" Color="#FFAAAAAA" Background="White" Id="62c07e32-f0c5-4719-a70f-34c467890050" Panel.Bounds="9,231,278{1,2147483647},6561{1,2147483647}">
+                                    <Line.StartPoint>
+                                        <Point X="-7" Id="c20cc5df-2d99-46fa-9158-988bc15390f0" />
+                                    </Line.StartPoint>
+                                    <Line.Segments>
+                                        <Segment Id="5766d2c1-f85d-4cfd-bdbd-b2ea44104bd8">
+                                            <Segment.EndPoint>
+                                                <Point X="271" Id="6c835070-c5e0-4959-b025-418b625605a4" />
+                                            </Segment.EndPoint>
+                                        </Segment>
+                                    </Line.Segments>
+                                </Line>
+                                <Line Type="Line" Thickness="1" RotationAngle="90" Color="#FFAAAAAA" Background="White" Id="9b950a38-e478-470f-95eb-08678ab55027" Panel.Bounds="8,252,279{1,2147483647},81{1,2147483647}">
+                                    <Line.StartPoint>
+                                        <Point X="-7" Id="ad8b61e1-2720-447d-aa28-18024e13d62f" />
+                                    </Line.StartPoint>
+                                    <Line.Segments>
+                                        <Segment Id="87f1efcd-4370-4b19-8a7e-841264dae821">
+                                            <Segment.EndPoint>
+                                                <Point X="272" Id="dd6a16da-b990-4f98-ad34-6de5f642b446" />
+                                            </Segment.EndPoint>
+                                        </Segment>
+                                    </Line.Segments>
+                                </Line>
+                                <Title Text="Synopsis" Foreground="#FF282828" FontSize="13" FontStyle="Bold" Id="c42e74a8-7f93-4aa8-84f4-5016c347f7bf" Panel.Bounds="12,259,51*,18*" />
+                                <Label Text="May 4, 2012" Foreground="#FF8D8D8D" FontSize="10" FontStyle="" Id="c600cb1f-d410-4199-aff8-50edcae240f2" Panel.Bounds="228,234,0*,0*" />
+                                <Label Text="Release date" Foreground="#FF8D8D8D" FontSize="10" FontStyle="Normal|Bold" Id="5b24a250-ce8b-451c-906b-3291315f9d3a" Panel.Bounds="11,234,0*,0*" />
+                                <Label Text="SHARE" Foreground="#FF555555" FontSize="11" FontFamily="Arial" FontStyle="" Id="0a02d922-a905-438d-8e40-55bd1c7894a1" Panel.Bounds="132,183,0*,0*" />
+                                <Icon Path="F1M18.0059204101563,5.00000619888306C15.0205078125,5,13.9688110351563,6.50390625,13.9688177108765,9.03711032867432L13.9688177108765,10.9688053131104 12.3925762176514,10.9688053131104 12.3925762176514,14.0020151138306 13.9688177108765,14.0020151138306 13.9688177108765,23.005916595459 18.0313167572021,23.005916595459 18.0313167572021,14.0020151138306 20.4639320373535,14.0020151138306 20.794921875,10.9688053131104 18.0313167572021,10.9688053131104 18.0360736846924,9.26562786102295C18.0360717773438,8.455078125,18.1123046875,8.02252197265625,19.2744178771973,8.02252578735352L21.0313053131104,8.02252578735352 21.0313053131104,5.00000619888306 18.0059204101563,5.00000619888306z M4.87499856948853,1.46031379699707E-06L21.1249942779541,1.46031379699707E-06C23.8184204101563,0,26,2.18157958984375,25.9999961853027,4.87500286102295L25.9999961853027,21.1249980926514C26,23.8184204101563,23.8184204101563,26,21.1249942779541,26L4.87499856948853,26C2.18157958984375,26,0,23.8184204101563,-2.98023223876953E-06,21.1249980926514L-2.98023223876953E-06,4.87500286102295C0,2.18157958984375,2.18157958984375,0,4.87499856948853,1.46031379699707E-06z" Color="#FF1C416F" CatalogId="Facebook" Id="bd20f670-be3d-433f-bd2d-1f756fa2abb1" Panel.Bounds="132,205,18,18" />
+                                <Icon Path="M 200,18.9736328125 C192.6416015625,22.2373046875 184.7333984375,24.44287109375 176.43359375,25.4345703125 184.904296875,20.3564453125 191.4111328125,12.3154296875 194.474609375,2.7333984375 186.5458984375,7.43603515625 177.7646484375,10.8505859375 168.41796875,12.6904296875 160.93359375,4.7158203125 150.26953125,-0.2666015625 138.4677734375,-0.2666015625 115.8076171875,-0.2666015625 97.43505859375,18.1044921875 97.43505859375,40.7646484375 97.43505859375,43.98046875 97.7978515625,47.1123046875 98.49755859375,50.11572265625 64.39599609375,48.404296875 34.1611328125,32.06884765625 13.923828125,7.24365234375 10.3916015625,13.3037109375 8.3681640625,20.35205078125 8.3681640625,27.8720703125 8.3681640625,42.10791015625 15.61181640625,54.6669921875 26.6220703125,62.025390625 19.89599609375,61.81201171875 13.56884765625,59.96630859375 8.037109375,56.89306640625 8.033203125,57.064453125 8.033203125,57.23583984375 8.033203125,57.4091796875 8.033203125,77.28955078125 22.17724609375,93.873046875 40.94775390625,97.6435546875 37.5048828125,98.5810546875 33.8798828125,99.0830078125 30.1376953125,99.0830078125 27.49365234375,99.0830078125 24.92333984375,98.8251953125 22.41748046875,98.3466796875 27.63916015625,114.6474609375 42.79248046875,126.51171875 60.748046875,126.841796875 46.705078125,137.84765625 29.0126953125,144.4072265625 9.7880859375,144.4072265625 6.47607421875,144.4072265625 3.2099609375,144.212890625 0,143.8330078125 18.15869140625,155.4755859375 39.72705078125,162.26953125 62.89892578125,162.26953125 138.3720703125,162.26953125 179.64453125,99.7451171875 179.64453125,45.5224609375 179.64453125,43.74365234375 179.6044921875,41.97412109375 179.525390625,40.2138671875 187.54296875,34.4287109375 194.4990234375,27.2021484375 200,18.9736328125 z" Color="#FF6397C4" CatalogId="Twitter" Id="152ced5e-697a-4b5c-ac59-43c8228a5731" Panel.Bounds="161,204,20,20" />
+                                <Image SourcePath="assets/avengers.jpg" Id="2f94549d-c0d2-4f25-a083-8a8b9f970a68" Name="avengers" Panel.Bounds="6,57,110{5,2147483647},167{5,2147483647}">
+                                    <Image.Click>
+                                        <CommandNext SceneId="1273b824-48e5-4b05-9009-b72d18bf26a7" AutoRevertEvent="Click" Created="08/15/2012 00:21:46" />
+                                    </Image.Click>
+                                </Image>
+                            </Container>
+                        </ContainerBox>
+                    </Add.Item>
+                </Add>
+            </KeyFrame>
+        </Scene>
+        <Scene Title="Tapped/Clicked avengers" ParentScene="a228946f-e361-417a-902b-e0221f41a624" Created="08/15/2012 00:21:46" Id="1273b824-48e5-4b05-9009-b72d18bf26a7">
+            <KeyFrame Duration="500" Id="22b7aa9c-0061-4092-9718-259894ed5415">
+                <Resize To="288,388" Target="2f94549d-c0d2-4f25-a083-8a8b9f970a68" Duration="500" />
+            </KeyFrame>
+        </Scene>
+    </Page.Scenes>
+</Page>

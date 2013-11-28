@@ -1,0 +1,215 @@
+﻿<?Infragistics.Models format="xaml" version="16"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                          xmlns:d="http://prototypes.infragistics.com/views/design"
+                                                          Id="ef82473d-d40b-423d-9ba1-90c191b9c4b3" d:Design.ShowOpeningAnimation="True">
+    <Page.Content>
+        <Content Width="300" Height="450" Background="White" Id="bd81054c-f825-4ae9-a05f-aba3835054bd">
+            <Layer Layout="Stretch" Id="6de914c4-aade-4f2c-ad8d-24cfafb41a39" Panel.Layout="Stretch" />
+        </Content>
+    </Page.Content>
+    <Page.Scenes>
+        <Scene Title="Start" Created="08/14/2012 23:22:56" Id="216840ed-eb85-4d6e-93f3-16e50dba7ac6">
+            <KeyFrame Duration="50" Id="2eaf4662-4210-4f41-8d11-d04e73381f25">
+                <Add Property="Panel.Children" Target="6de914c4-aade-4f2c-ad8d-24cfafb41a39">
+                    <Add.Item>
+                        <Image SourcePath="assets/background.png" Id="2cfa1655-48bf-4a65-93fe-9ddbc75f3936" Name="Iphone background" ControlExtensions.Locked="True" Panel.Bounds="-327,-145,976,732" />
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="6de914c4-aade-4f2c-ad8d-24cfafb41a39">
+                    <Add.Item>
+                        <ContainerBox Color="Transparent" Background="#FFE2E2E2" Thickness="0" Id="94c8f6e9-0924-4f12-9259-20a0a70ffeb1" Panel.Bounds="0,0,300{5,2147483647},450{5,2147483647}">
+                            <Container Layout="Stretch" ClipToContainer="True" Id="6abffb8a-a161-4292-8a11-8dafebe2fa14">
+                                <Rectangle Thickness="0" Background="#FF48453C" Id="ee3f3e82-3232-4f0a-bd95-ca5f8c1bb9a1" Panel.Bounds="-6,0,386{5,2147483647},51{5,2147483647}" />
+                                <Group GroupName="Group" Id="aa3f18e6-3aeb-484b-a01e-eeb9d22907f7" Name="heading" Panel.Bounds="-6,-101,369*,40*">
+                                    <Rectangle Color="#FF363636" Background="#FFF68324" Id="b09a7ec3-3301-43e2-b4c6-1dce4d91c55d" Panel.Bounds="-13,106,369{5,2147483647},39{5,2147483647}" />
+                                    <Line Type="Line" Thickness="1" RotationAngle="90" Color="#FF1C1C1C" Background="Transparent" Opacity="0.2" Id="b6b1c556-e1e0-40ea-9aef-6184509fc3e4" Panel.Bounds="-13,142,336,4">
+                                        <Line.StartPoint>
+                                            <Point Id="786a74ed-650f-4048-9ade-bd416bc9e1a3" />
+                                        </Line.StartPoint>
+                                        <Line.Segments>
+                                            <Segment Id="483b5d77-92ba-416e-ade1-f4d54d0a704a">
+                                                <Segment.EndPoint>
+                                                    <Point X="336" Id="6f7a7e77-9190-4b51-85c2-9e8829e0b8bf" />
+                                                </Segment.EndPoint>
+                                            </Segment>
+                                        </Line.Segments>
+                                    </Line>
+                                    <Line Type="Line" Thickness="1" RotationAngle="90" Color="#FFE2E2E2" Background="Transparent" Opacity="0.6" Id="d5e045f5-94f8-4b13-841b-1141472e9b81" Panel.Bounds="-3,107,336,4">
+                                        <Line.StartPoint>
+                                            <Point Id="b216c857-0c50-4730-bf32-2c7b41b6205a" />
+                                        </Line.StartPoint>
+                                        <Line.Segments>
+                                            <Segment Id="da201b4e-8b61-452e-912b-d35a799d2dd2">
+                                                <Segment.EndPoint>
+                                                    <Point X="336" Id="7e888e4e-688b-4be7-9656-c43c94981525" />
+                                                </Segment.EndPoint>
+                                            </Segment>
+                                        </Line.Segments>
+                                    </Line>
+                                </Group>
+                                <Title Text="Playing now near me" Foreground="White" FontSize="16" FontStyle="Normal|Bold" Id="cb496d7b-a830-4975-ba91-3193760b52b4" Panel.Bounds="88,13,78*,22*" />
+                                <Group GroupName="Group" Id="30ff378b-0b57-4cd5-b32c-5b736c5325a0" Panel.Bounds="10,11,68*,26*">
+                                    <Group.Click>
+                                        <CommandNavigate Screen="/Home.screen" State="4369e474-0f55-461c-99fc-1581af3708a9" Created="11/10/2012 19:08:50" />
+                                    </Group.Click>
+                                    <Rectangle Thickness="0" CornerRadius="5" Background="Black" Opacity="0.2" Id="83c188ae-bc7e-42d9-8d3d-6149362e6153" Panel.Bounds="0,0,68{5,2147483647},26{5,2147483647}" />
+                                    <Icon Path="M193.47705078125,1.96484375C193.18798828125,1.84375 192.85107421875,1.912109375 192.62939453125,2.1328125 192.62939453125,2.1328125 183.31982421875,9.4462890625 183.31982421875,9.4462890625 183.0166015625,9.748046875 183.0166015625,10.2431640625 183.31982421875,10.5458984375 183.31982421875,10.5458984375 192.62939453125,17.82421875 192.62939453125,17.82421875 192.77783203125,17.974609375 192.9765625,18.052734375 193.17822265625,18.052734375 193.27978515625,18.052734375 193.38037109375,18.0322265625 193.47705078125,17.994140625 193.76806640625,17.873046875 193.94091796875,17.58984375 193.94091796875,17.275390625 193.94091796875,17.275390625 193.94091796875,12.916015625 193.94091796875,12.916015625 203.89697265625,12.916015625 208.24951171875,15.7236328125 207.58837890625,24.6669921875 211.80517578125,10.359375 203.71142578125,7.125 193.94091796875,7.125 193.94091796875,7.125 193.94091796875,2.6826171875 193.94091796875,2.6826171875 193.94091796875,2.3681640625 193.76806640625,2.0849609375 193.47705078125,1.96484375z" Color="White" CatalogId="Back" Id="659268a4-236f-4746-9e30-13f8ae4c8972" Panel.Bounds="6,5,16,16" />
+                                    <Label Text="BACK" Foreground="White" FontSize="11" FontStyle="" Id="20a22d24-0456-4eac-8d37-b2fed3aac9c3" Panel.Bounds="28,5,36{5,2147483647},15{5,2147483647}" />
+                                </Group>
+                                <Image SourcePath="assets/brave.jpg" Opacity="0" Id="4bfd9fbb-1366-4515-b328-02d759384846" Name="brave" Panel.Bounds="11,108,86{5,2147483647},127{5,2147483647}" />
+                                <Image SourcePath="assets/darkknightrisesposter.jpg" Opacity="0" Id="567b826e-fb36-4af4-ac74-d0aeff210a7c" Panel.Bounds="203,108,86{5,2147483647},127{5,2147483647}" />
+                                <Image SourcePath="assets/madagascar.jpg" Opacity="0" Id="833d1459-d672-44be-9667-1512a5f7b596" Name="madagascar" Panel.Bounds="107,108,86{5,2147483647},127{5,2147483647}" />
+                                <Image SourcePath="assets/prometheus.jpg" Opacity="0" Id="5e4b872f-4dd5-4447-9e96-0766c8906937" Name="prometheus" Panel.Bounds="11,283,86{5,2147483647},127{5,2147483647}" />
+                                <Image SourcePath="assets/avengers.jpg" Opacity="0" Id="7650c704-b627-4d51-8029-cba3f9c81b9e" Name="avengers" Panel.Bounds="203,283,86{5,2147483647},127{5,2147483647}">
+                                    <Image.Click>
+                                        <CommandNavigate Screen="/Movie Synopsis.screen" State="a228946f-e361-417a-902b-e0221f41a624" Created="11/10/2012 19:10:20" />
+                                    </Image.Click>
+                                </Image>
+                                <Image SourcePath="assets/snowwhite.jpg" Opacity="0" Id="1c76c87e-14f4-4f27-9ec5-1cbbbecf8c59" Name="snowwhite" Panel.Bounds="108,283,86{5,2147483647},127{5,2147483647}" />
+                            </Container>
+                        </ContainerBox>
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="6de914c4-aade-4f2c-ad8d-24cfafb41a39">
+                    <Add.Item>
+                        <Group GroupName="Group" Opacity="0" Id="17a4dfc3-22d7-4c75-ac00-761cc2173389" Panel.Bounds="59,64,0*,0*">
+                            <Polyline Thickness="0" IsClosed="True" Background="#FFF79646" Id="d6aa8c6f-6912-4b43-ac46-23a744b5a911" Panel.Bounds="-5,0,249,38">
+                                <Polyline.StartPoint>
+                                    <Point Id="aed5af78-a8c6-4661-8ac6-d7b8217c51c2" />
+                                </Polyline.StartPoint>
+                                <Polyline.Segments>
+                                    <Segment Id="431ae6f4-d9ed-4b09-b89b-d4cee1588f29">
+                                        <Segment.EndPoint>
+                                            <Point Y="100" Id="e355892a-9f0e-4712-9564-fc043fffbcdd" />
+                                        </Segment.EndPoint>
+                                    </Segment>
+                                    <Segment Id="56d56ff9-532f-4251-9749-34b690f40637">
+                                        <Segment.EndPoint>
+                                            <Point X="490" Y="100" Id="63e4c9d9-6473-4c31-bab2-ff6ad3b35895" />
+                                        </Segment.EndPoint>
+                                    </Segment>
+                                    <Segment Id="07f2c475-f7d4-476c-82f5-281593580310">
+                                        <Segment.EndPoint>
+                                            <Point X="450" Y="52" Id="93b09076-c428-4cf7-8312-be6ec9cd3037" />
+                                        </Segment.EndPoint>
+                                    </Segment>
+                                    <Segment Id="fe542e8d-66f2-4f12-a292-a4a37b88245c">
+                                        <Segment.EndPoint>
+                                            <Point X="490" Id="a743e78f-7991-49be-87ae-663025c7ef1d" />
+                                        </Segment.EndPoint>
+                                    </Segment>
+                                    <Segment Id="e6ce37de-2e60-46c2-aee2-3a8dfd0f7c50">
+                                        <Segment.EndPoint>
+                                            <Point Id="d0b58cc5-93f3-483c-ba08-31dd376c66a0" />
+                                        </Segment.EndPoint>
+                                    </Segment>
+                                </Polyline.Segments>
+                            </Polyline>
+                            <Title Text="In Theaters" Foreground="White" FontSize="16" FontStyle="Normal|Bold" Id="985d0264-7e54-4bc6-8dee-39a1c8412b45" Panel.Bounds="6,8,0*,0*" />
+                            <Line Type="Line" Thickness="1" RotationAngle="90" Color="#FF1C1C1C" Background="Transparent" Opacity="0.2" Id="cdb47e65-c4ee-48a4-ba1b-5fcb42fdd75c" Panel.Bounds="-4,36,247,1">
+                                <Line.StartPoint>
+                                    <Point X="10" Id="dc1f4f8f-7373-4721-b6d1-2d30d0a50e6a" />
+                                </Line.StartPoint>
+                                <Line.Segments>
+                                    <Segment Id="a4d1bf5e-2beb-4f36-aa37-70d78a1c8f5f">
+                                        <Segment.EndPoint>
+                                            <Point X="257" Id="8e6fd473-5955-4b8a-8e56-de0e3fcea250" />
+                                        </Segment.EndPoint>
+                                    </Segment>
+                                </Line.Segments>
+                            </Line>
+                            <Line Type="Line" Thickness="1" RotationAngle="90" Color="#FFE2E2E2" Background="Transparent" Opacity="0.6" Id="f080d51c-98da-4ad0-b969-a1c16829be4e" Panel.Bounds="-3,1,246,1">
+                                <Line.StartPoint>
+                                    <Point Id="aa48e5a1-73f2-44da-acff-a5a3dcb7ebac" />
+                                </Line.StartPoint>
+                                <Line.Segments>
+                                    <Segment Id="b36f8d17-092c-4fc6-8c90-66f6e52587c6">
+                                        <Segment.EndPoint>
+                                            <Point X="246" Id="db53f28d-7f94-48cd-bd6f-86f7484fabb4" />
+                                        </Segment.EndPoint>
+                                    </Segment>
+                                </Line.Segments>
+                            </Line>
+                        </Group>
+                    </Add.Item>
+                </Add>
+                <Add Property="Panel.Children" Target="6de914c4-aade-4f2c-ad8d-24cfafb41a39">
+                    <Add.Item>
+                        <Group GroupName="Group" Opacity="0" Id="2a4ff2a7-496d-40df-9219-6cfa0769a8c7" Panel.Bounds="58,240,0*,0*">
+                            <Polyline Thickness="0" IsClosed="True" Background="#FFF79646" Id="25a91263-7964-4915-b2f3-969e093bbf32" Panel.Bounds="-5,0,249,38">
+                                <Polyline.StartPoint>
+                                    <Point Id="665c0ca3-51fb-47d4-a2de-aae00b49447b" />
+                                </Polyline.StartPoint>
+                                <Polyline.Segments>
+                                    <Segment Id="904987d5-d7b4-4cd5-a73d-088ce9815409">
+                                        <Segment.EndPoint>
+                                            <Point Y="100" Id="41a76a7a-cbbf-4e49-bd8d-3246b70aba35" />
+                                        </Segment.EndPoint>
+                                    </Segment>
+                                    <Segment Id="e9e8938d-8e12-4b2c-b97a-2955aea448aa">
+                                        <Segment.EndPoint>
+                                            <Point X="490" Y="100" Id="fc43786a-1848-443a-a2e9-fa8fcb543359" />
+                                        </Segment.EndPoint>
+                                    </Segment>
+                                    <Segment Id="330434a4-adaf-421c-83a0-c3222ed2fe83">
+                                        <Segment.EndPoint>
+                                            <Point X="450" Y="52" Id="16f9b042-ea18-41ef-88f4-a97fb80752b0" />
+                                        </Segment.EndPoint>
+                                    </Segment>
+                                    <Segment Id="208effa3-a8b2-46de-8dae-72230b9d06b6">
+                                        <Segment.EndPoint>
+                                            <Point X="490" Id="0478e546-fca7-4b86-85b5-a3da1a3cdd91" />
+                                        </Segment.EndPoint>
+                                    </Segment>
+                                    <Segment Id="57059c3e-30eb-4e56-99ba-7a7dd82f76bf">
+                                        <Segment.EndPoint>
+                                            <Point Id="3831155b-5cce-4473-9276-cb2917fb3db5" />
+                                        </Segment.EndPoint>
+                                    </Segment>
+                                </Polyline.Segments>
+                            </Polyline>
+                            <Title Text="Top Box Office" Foreground="White" FontSize="16" FontStyle="Normal|Bold" Id="05db7b7b-5409-42cb-9418-ffe3a4bda38d" Panel.Bounds="6,8,0*,0*" />
+                            <Line Type="Line" Thickness="1" RotationAngle="90" Color="#FF1C1C1C" Background="Transparent" Opacity="0.2" Id="55d4a320-a623-4a47-baaa-2799826d33a2" Panel.Bounds="-4,36,247,1">
+                                <Line.StartPoint>
+                                    <Point X="10" Id="fae48e6c-1c6b-4ae5-a518-09b5ef0dd570" />
+                                </Line.StartPoint>
+                                <Line.Segments>
+                                    <Segment Id="4d93a4f5-c698-444f-8664-0fa9194d14a9">
+                                        <Segment.EndPoint>
+                                            <Point X="257" Id="5462b26f-f49b-4ed9-a240-7956ff664f5d" />
+                                        </Segment.EndPoint>
+                                    </Segment>
+                                </Line.Segments>
+                            </Line>
+                            <Line Type="Line" Thickness="1" RotationAngle="90" Color="#FFE2E2E2" Background="Transparent" Opacity="0.6" Id="9ae7a103-6743-4a5a-acd7-0fc13406f153" Panel.Bounds="-3,1,246,1">
+                                <Line.StartPoint>
+                                    <Point Id="a447bf6b-4a1a-463d-92af-8486b82e5ea0" />
+                                </Line.StartPoint>
+                                <Line.Segments>
+                                    <Segment Id="41e9869e-eed7-484a-9da2-6c351a3e5640">
+                                        <Segment.EndPoint>
+                                            <Point X="246" Id="d0a189f0-c446-41db-a7b9-4f2553a9ab25" />
+                                        </Segment.EndPoint>
+                                    </Segment>
+                                </Line.Segments>
+                            </Line>
+                        </Group>
+                    </Add.Item>
+                </Add>
+                <Set Property="Point.X" Value="325" Target="7e888e4e-688b-4be7-9656-c43c94981525" />
+            </KeyFrame>
+            <KeyFrame Duration="1250" Id="b773b84b-ebb7-4936-b6df-b515025f328e">
+                <Set Property="Control.Opacity" Value="1" Target="7650c704-b627-4d51-8029-cba3f9c81b9e" StartTimeMilliseconds="850" Duration="150" />
+                <Set Property="Control.Opacity" Value="1" Target="1c76c87e-14f4-4f27-9ec5-1cbbbecf8c59" StartTimeMilliseconds="750" Duration="150" />
+                <Set Property="Control.Opacity" Value="1" Target="5e4b872f-4dd5-4447-9e96-0766c8906937" StartTimeMilliseconds="700" Duration="175" />
+                <Set Property="Control.Opacity" Value="1" Target="4bfd9fbb-1366-4515-b328-02d759384846" StartTimeMilliseconds="350" Duration="175" />
+                <Set Property="Control.Opacity" Value="1" Target="833d1459-d672-44be-9667-1512a5f7b596" StartTimeMilliseconds="450" Duration="175" />
+                <Set Property="Control.Opacity" Value="1" Target="567b826e-fb36-4af4-ac74-d0aeff210a7c" StartTimeMilliseconds="550" Duration="175" />
+                <Set Property="Control.Opacity" Value="1" Target="2a4ff2a7-496d-40df-9219-6cfa0769a8c7" StartTimeMilliseconds="250" Duration="175" />
+                <Set Property="Control.Opacity" Value="1" Target="17a4dfc3-22d7-4c75-ac00-761cc2173389" StartTimeMilliseconds="50" Duration="175" />
+                <Move To="5,240" Before="17a4dfc3-22d7-4c75-ac00-761cc2173389" Target="2a4ff2a7-496d-40df-9219-6cfa0769a8c7" StartTimeMilliseconds="250" Duration="175" />
+                <Move To="5,64" Target="17a4dfc3-22d7-4c75-ac00-761cc2173389" StartTimeMilliseconds="50" Duration="175" />
+            </KeyFrame>
+        </Scene>
+    </Page.Scenes>
+</Page>
