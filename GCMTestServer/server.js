@@ -22,8 +22,10 @@ message.timeToLive = 3;
 // END OPTIONAL
 
 // At least one required
+//nexus4
 registrationIds.push('APA91bEGswndqcUNN5TPJezbYAo01xEdDtcr8hmQb5WHEO5BZSIfZK_JQ27Wh3-D9ytmNSKamk76njOljrszgqHjpbhf-SZ9PxvkWmAc2FkeQIWchB2FaLWgxaqFExc7OSfCyq_USzJQNH19toh701CASmi0_GGgRA');
-
+//emulator
+registrationIds.push('APA91bHI0cyBMnqsNtdNx9ED7qH7nPHcQYntGQmXDgrLXPJTxQllYofsuY3_eTTWE_cxjDv95EHdXJJvqbHfO4Lxfr8zLxLpkfNQIMyfezCAj7uPDJuzsW7LqtPH7_CUnJ-JDMCFcUiEzRY4WRL5-KYD6afU_NQeFQ')
 
 /**
  * Params: message-literal, registrationIds-array, No. of retries, callback-function

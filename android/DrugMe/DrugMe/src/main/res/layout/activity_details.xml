@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/layout_bg"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="15dp"
@@ -31,8 +31,9 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/icon"
             android:id="@+id/medication_detail_name_layout">
+
             <ImageView
-                android:id="@+id/row_icon_pills"
+                android:id="@+id/detail_icon_pills"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="6dip"
@@ -40,17 +41,18 @@
                 android:layout_marginRight="6dip"
 
                 android:src="@drawable/ic_action_pills" />
+
             <TextView
-                android:id="@+id/medication_row_name"
+                android:id="@+id/medication_detail_name"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:textColor="@color/light_blue"
                 android:layout_alignWithParentIfMissing="true"
-                android:layout_toRightOf="@id/row_icon_pills"
+                android:layout_toRightOf="@id/detail_icon_pills"
                 android:gravity="center_vertical"
                 android:text="Parkemet"
-                style="@style/Header" />
+                style="@style/Header"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -68,8 +70,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginRight="6dip"
 
-                android:src="@drawable/ic_action_time"
-                />
+                android:src="@drawable/ic_action_time" />
 
             <TextView
                 android:id="@+id/medication_detail_time"
@@ -80,8 +81,7 @@
                 android:layout_alignWithParentIfMissing="true"
                 android:layout_toRightOf="@id/icon_time"
                 android:gravity="center_vertical"
-                android:text="03 hours and 45 minutes"
-                />
+                android:text="03 hours and 45 minutes" />
 
 
         </RelativeLayout>
@@ -99,11 +99,10 @@
                 android:id="@+id/icon_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="6dip"
                 android:layout_alignParentTop="true"
                 android:layout_marginRight="6dip"
-                android:layout_marginLeft="6dip"
-                android:src="@drawable/ic_action_weight"
-                 />
+                android:src="@drawable/ic_action_weight" />
 
             <TextView
                 android:id="@+id/medication_detail_pill"
@@ -138,18 +137,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Header"
-            android:text="Parkemet"
-            android:id="@+id/medication_detail_name"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Take it with water"
+
             android:id="@+id/medication_detail_info"
-            android:layout_below="@id/medication_detail_name"
-            android:textSize="12sp" />
+
+            style="@style/Content" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -168,8 +160,7 @@
             android:layout_height="wrap_content"
             style="@style/Header"
             android:text="Medication plan"
-            android:id="@+id/medication_detail_plan"
-            />
+            android:id="@+id/medication_detail_plan" />
 
         <LinearLayout
             android:id="@+id/medication_detail_timeline"
