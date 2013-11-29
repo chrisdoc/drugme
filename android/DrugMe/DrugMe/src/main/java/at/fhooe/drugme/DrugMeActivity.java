@@ -146,6 +146,13 @@ public class DrugMeActivity extends Activity  {
     private void loadMedicationPlan() {
         SharedPreferences prefs = getSharedPreferences(getString(R.string.shared_pref_name),0);
         String json=  prefs.getString(getString(R.string.pref_medication_plan),"");
+        if(json.isEmpty()){
+            mPlan=new MedicationPlan();
+            mMedications.clear();
+            mMedications.addAll(mPlan.getMedications());
+            mAdapter.notifyDataSetChanged();
+        }
+        else{
         mPlan=new Gson().fromJson(json,MedicationPlan.class);
         mMedications.clear();
         mMedications.addAll(mPlan.getMedications());
@@ -159,6 +166,7 @@ public class DrugMeActivity extends Activity  {
 
             }
         });
+        }
     }
 
     @Override
