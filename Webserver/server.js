@@ -1,23 +1,31 @@
-var express = require('express'),
-    wine = require('./routes/wines');
+/** Some boilerplate stuff **/
+var express = require('express');
+var backbone = require('./routes/backbone');
  
 var app = express();
  
 app.configure(function () {
-    app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
+    app.use(express.logger('dev'));  
     app.use(express.bodyParser());
 });
 
-app.get('/wines', wine.getAllPatients);
-app.get('/wines/:ec', wine.findPatientByEC);
-app.post('wines/:ec', wine.registerPatient);
+/** Patient API **/
+app.get('/patients', backbone.getAllPatients);
+app.get('/patients/:ec', backbone.findPatientByEC);
+app.get('/patients/:ec/img', backbone.findImageByEC);
+app.post('/patients', backbone.registerPatient);
+app.delete('/patients/:ec', backbone.deletePatient);
+app.put('/patients/:ec', backbone.updatePatient);
 
-/*app.get('/wines', wine.findAll);
-app.get('/wines/:id', wine.findById);
-app.post('/wines', wine.addWine);
-app.put('/wines/:id', wine.updateWine);
-app.delete('/wines/:id', wine.deleteWine);*/
- 
+/** Medication API **/
+app.get('/medications', backbone.getAllMedications);
+app.get('/medications/:name', backbone.findMedicationByName);
+app.get('/medications/:name/img', backbone.getMedicationImageByName);
+
+/** Medication plan API **/
+app.get('/medicationplans', backbone.getAllMedicationPlans);
+app.get('/medicationplans/:patient', backbone.getMedicationPlanForUser);
+
+/** Start listening on port 3000 **/
 app.listen(3000);
 console.log('Listening on port 3000 ...');
-console.error('Press CTRL+C to exit ...');
