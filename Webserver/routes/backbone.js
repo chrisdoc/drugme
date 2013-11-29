@@ -186,6 +186,7 @@ var populatePatientsCollection = function() {
         name: "Max Mustermann",
         birthday: "10-01-1990",
 		address: "Softwarepark 11 4132 Hagenberg",
+		apikey: "APA91bEGswndqcUNN5TPJezbYAo01xEdDtcr8hmQb5WHEO5BZSIfZK_JQ27Wh3-D9ytmNSKamk76njOljrszgqHjpbhf-SZ9PxvkWmAc2FkeQIWchB2FaLWgxaqFExc7OSfCyq_USzJQNH19toh701CASmi0_GGgRA",
 		image: "img/users/avatar.png"
     },
     {
@@ -193,6 +194,7 @@ var populatePatientsCollection = function() {
         name: "Maria Musterfrau",
         birthday: "15-04-1988",
 		address: "Softwarepark 11 4132 Hagenberg",
+		apikey: "APA91bEGswndqcUNN5TPJezbYAo01xEdDtcr8hmQb5WHEO5BZSIfZK_JQ27Wh3-D9ytmNSKamk76njOljrszgqHjpbhf-SZ9PxvkWmAc2FkeQIWchB2FaLWgxaqFExc7OSfCyq_USzJQNH19toh701CASmi0_GGgRA",
 		image: "img/users/avatar2.png"
     },
 	{
@@ -200,6 +202,7 @@ var populatePatientsCollection = function() {
         name: "Hannes Weltklasse",
         birthday: "20-06-1990",
 		address: "Am Marktplatz 12 1337 Aschach",
+		apikey: "APA91bEGswndqcUNN5TPJezbYAo01xEdDtcr8hmQb5WHEO5BZSIfZK_JQ27Wh3-D9ytmNSKamk76njOljrszgqHjpbhf-SZ9PxvkWmAc2FkeQIWchB2FaLWgxaqFExc7OSfCyq_USzJQNH19toh701CASmi0_GGgRA",
 		image: "img/users/avatar2.png"
     }];
  
@@ -367,6 +370,80 @@ exports.getMedicationPlanForUser = function(req, res) {
         });
     });
 };
+
+/** Deletes the medication plan which is identified by the given plan name **/
+exports.deleteMedicationPlan = function(req, res) {
+    var name = req.params.name;
+    console.log('Deleting medication plan: ' + name);
+    drugmeDb.collection('medicationplans', function(err, collection) {
+        collection.remove({'name':name}, {safe:true}, function(err, result) {
+            if (err) {
+				res.writeHead(500, {'Content-Type': 'text/plain' });
+				res.end({'error':'An error has occurred - ' + err});
+            } else {
+                console.log('Medication plan ' + name + ' deleted');
+                res.writeHead(200, {'Content-Type': 'text/plain' });
+				res.end("Medication plan " + name + " deleted.");
+            }
+        });
+    });
+}
+
+/** Updates the medication plan identified by the given name **/
+exports.updateMedicationPlan = function(req, res) {
+    var name = req.params.name;
+    var plan = req.body;
+	plan.name = name;
+	
+    console.log('Updating medication plan: ' + name);
+    console.log(JSON.stringify(plan));
+    drugmeDb.collection('medicationplans', function(err, collection) {
+        collection.update({'name':name}, plan, {safe:true}, function(err, result) {
+            if (err) {
+               console.log('Error updating medication plan: ' + err);
+               res.writeHead(500, {'Content-Type': 'text/plain' });
+			   res.end({'error':'An error has occurred - ' + err});
+            } else {
+                console.log('Medication plan ' + name + ' updated');
+                res.writeHead(200, {'Content-Type': 'text/plain' });
+				res.end("Medication plan " + name + " updated.");
+            }
+        });
+    });
+}
+
+/** Updates the medication plan identified by the given name **/
+exports.createMedicationPlan = function(req, res) {
+    var plan = req.body;
+	
+    console.log('Creating new medication plan: ' + plan.name);
+    console.log(JSON.stringify(plan));
+
+	 drugmeDb.collection('medicationplans', function(err, collection) {
+        collection.findOne({'name':plan.name}, function(err, item) {
+			if(!item){
+				drugmeDb.collection('medicationplans', function(err, collection) {
+					collection.insert(plan, {safe:true}, function(err, result) {
+				
+					if(err){
+						console.log('Medication plan could not be created: ' + err);
+					   res.writeHead(500, {'Content-Type': 'text/plain' });
+					   res.end({'error':'An error has occurred - ' + err});
+					}else{
+						console.log('Medication plan ' + plan.name + ' created');
+						res.writeHead(200, {'Content-Type': 'text/plain' });
+						res.end("Medication plan " + plan.name + " created.");
+					}
+				});
+			});
+			}else{
+				console.log("A medication plan called " + plan.name + " already exists.");
+				res.writeHead(500, {'Content-Type': 'text/plain' });
+				res.end("A medication plan called " + plan.name + " already exists.");
+			}
+        });
+    });
+}
 
 /** Populates the 'medicationplan' collection with dummy data **/
 var populateMedicationPlanCollection = function() {

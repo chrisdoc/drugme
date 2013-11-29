@@ -25,6 +25,9 @@ app.get('/medications/:name/img', backbone.getMedicationImageByName);
 /** Medication plan API **/
 app.get('/medicationplans', backbone.getAllMedicationPlans);
 app.get('/medicationplans/:patient', backbone.getMedicationPlanForUser);
+app.delete('/medicationplans/:name', backbone.deleteMedicationPlan);
+app.post('/medicationplans', backbone.createMedicationPlan);
+app.put('/medicationplans/:name', backbone.updateMedicationPlan);
 
 /** Start listening on port 3000 **/
 app.listen(3000);
