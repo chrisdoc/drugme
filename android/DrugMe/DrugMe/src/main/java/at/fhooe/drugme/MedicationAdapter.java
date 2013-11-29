@@ -54,6 +54,13 @@ Context context;
             holder.time.setText(String.format("%d hours %d minutes", diff.getHours(), diff.getMinutes()));
 
         holder.pill.setText(String.format("%d pills",medications.get(position).getNextMedicationValue()));
+
+        if(position%2==0){
+            view.setBackgroundColor(context.getResources().getColor(R.color.bg_blue));
+        }
+        else{
+            view.setBackgroundColor(0);
+        }
         return view;
 
 

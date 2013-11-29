@@ -17,7 +17,9 @@
     <color name="color_dark_green">#5D7466</color>
     <color name="color_blue">#5F89AB</color>
     <color name="color_occa">#E39C66</color>
-    <color name="color_bg">#D6D5D1</color><color name="color_splash">#00ADEF</color>
+    <color name="color_bg">#D6D5D1</color>
+    <color name="color_splash">#00ADEF</color>
     <color name="light_blue">#33b5e5</color>
+    <color name="bg_blue">#d5eeff</color>
 
 </resources>

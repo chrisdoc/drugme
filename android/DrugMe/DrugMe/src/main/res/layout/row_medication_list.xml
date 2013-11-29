@@ -32,12 +32,13 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textColor="@color/light_blue"
             android:layout_alignWithParentIfMissing="true"
             android:layout_toRightOf="@id/row_icon_pills"
             android:gravity="center_vertical"
             android:text="Parkemet"
-            android:textSize="16sp" />
+            style="@style/Header"
+            android:textStyle="bold"
+            />
     </RelativeLayout>
 
     <RelativeLayout
@@ -62,12 +63,11 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textColor="@color/light_blue"
             android:layout_alignWithParentIfMissing="true"
             android:layout_toRightOf="@id/row_icon_time"
             android:gravity="center_vertical"
             android:text="03 hours and 45 minutes"
-            android:textSize="16sp" />
+            style="@style/Header" />
 
 
     </RelativeLayout>
@@ -96,9 +96,8 @@
             android:layout_alignWithParentIfMissing="true"
             android:layout_toRightOf="@id/row_icon_weight"
             android:gravity="center_vertical"
-            android:textColor="@color/light_blue"
             android:text="1 pill"
-            android:textSize="16sp" />
+            style="@style/Header"/>
 
 
     </RelativeLayout>
