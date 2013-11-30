@@ -307,6 +307,103 @@
                 </KeyFrame>
                 <KeyFrame Duration="1450" Id="a15532a7-242a-408d-8714-1d4fdacfbeca">
                     <KeyFrame.Operations>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb" StartTimeMilliseconds="50">
+                            <Add.Item>
+                                <Group GroupName="Group" Opacity="0.4" Id="00aa878b-485f-4b7c-ba40-8e2edda1ab2b" Panel.Bounds="11,207,276*,4*">
+                                    <Group.Children>
+                                        <Line Type="Line" Thickness="1" RotationAngle="90" Color="#FFC6C6C6" Background="Transparent" Id="39ea008c-3053-45c2-b6fd-dffe703db3b4" Panel.Bounds="0,0,274,3">
+                                            <Line.StartPoint>
+                                                <Point Id="4691638c-1a2a-43df-beb3-89729f4da573" />
+                                            </Line.StartPoint>
+                                            <Line.Segments>
+                                                <Segment Id="3e3e3e18-7042-4ffa-afbc-fe955603d942">
+                                                    <Segment.EndPoint>
+                                                        <Point X="274" Id="17111e8a-773b-4090-8dc9-33579c1d1d0e" />
+                                                    </Segment.EndPoint>
+                                                </Segment>
+                                            </Line.Segments>
+                                        </Line>
+                                        <Line Type="Line" Thickness="1" RotationAngle="90" Color="White" Background="Transparent" Id="054beb13-0d06-4e51-9edc-8b1e17080f02" Panel.Bounds="2,1,274,3">
+                                            <Line.StartPoint>
+                                                <Point Id="efbe8b73-5bfd-49c8-8155-7b2bbff720a3" />
+                                            </Line.StartPoint>
+                                            <Line.Segments>
+                                                <Segment Id="994d841f-d8b0-4406-9095-e0df1a69eb4f">
+                                                    <Segment.EndPoint>
+                                                        <Point X="274" Id="9f7562b3-7de9-4ca3-bc00-cfde93fcda47" />
+                                                    </Segment.EndPoint>
+                                                </Segment>
+                                            </Line.Segments>
+                                        </Line>
+                                    </Group.Children>
+                                </Group>
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb" StartTimeMilliseconds="50">
+                            <Add.Item>
+                                <Label Text="Vibration" Foreground="White" FontSize="14" FontStyle="Normal" Id="777400ce-c99a-4939-bda0-08a0150a8517" Panel.Bounds="43,134,60*,20*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb" StartTimeMilliseconds="50">
+                            <Add.Item>
+                                <Label Text="Sound" Foreground="White" FontSize="14" FontStyle="Normal" Id="c0d9288c-045d-4e0c-8272-95370d1437dd" Panel.Bounds="43,154,42*,20*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb" StartTimeMilliseconds="50">
+                            <Add.Item>
+                                <Label Text="Light" Foreground="White" FontSize="14" FontStyle="Normal" Id="60131f64-38e3-4bba-8d25-a2d0cf20a7a8" Panel.Bounds="43,175,33*,20*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb" StartTimeMilliseconds="50">
+                            <Add.Item>
+                                <CheckBox Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="8a5eabfc-b038-4da4-9500-7bbf9d6b541c" Panel.Bounds="269,129,22*,30*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb" StartTimeMilliseconds="50">
+                            <Add.Item>
+                                <CheckBox Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="a46f2dc6-165c-40c5-90f8-df338cc80e8e" Panel.Bounds="269,149,22*,30*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb" StartTimeMilliseconds="50">
+                            <Add.Item>
+                                <CheckBox Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="00a02217-5f01-40fa-88ed-d762bf2c0e52" Panel.Bounds="269,170,22*,30*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb" StartTimeMilliseconds="50">
+                            <Add.Item>
+                                <Label Text="Notification types" Foreground="White" FontSize="14" FontStyle="Normal" Id="0eaa8459-c2f3-4649-86b7-1beeffdc9d76" Panel.Bounds="15,98,0*,0*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb" StartTimeMilliseconds="50">
+                            <Add.Item>
+                                <Label Text="Morning" Foreground="White" FontSize="14" FontStyle="Normal" Id="e882c0ca-15cd-4b61-9004-21162133a0a4" Panel.Bounds="38,250,0*,0*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb" StartTimeMilliseconds="50">
+                            <Add.Item>
+                                <Label Text="Noon" Foreground="White" FontSize="14" FontStyle="Normal" Id="ced53b68-9d46-4769-8306-e8e81302fe9b" Panel.Bounds="38,279,0*,0*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb" StartTimeMilliseconds="50">
+                            <Add.Item>
+                                <Label Text="Evening" Foreground="White" FontSize="14" FontStyle="Normal" Id="234c7955-ef1c-4388-a402-b46c38edc977" Panel.Bounds="38,309,0*,0*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb" StartTimeMilliseconds="50">
+                            <Add.Item>
+                                <TextBox Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="23f7f955-98e5-4242-bb02-a996b887d2d7" Panel.Bounds="165,248,120{5,2147483647},0*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb" StartTimeMilliseconds="50">
+                            <Add.Item>
+                                <TextBox Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="6596a81c-cab4-44f2-b58c-4f7b05fe7187" Panel.Bounds="165,276,120,0*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb" StartTimeMilliseconds="50">
+                            <Add.Item>
+                                <TextBox Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="04f24a65-8146-4e30-8173-f1f83919ea8a" Panel.Bounds="165,307,120,0*" />
+                            </Add.Item>
+                        </Add>
                         <Set Property="Control.Opacity" Value="1" Target="fafb7876-5529-4709-bfaa-a783a88836eb" StartTimeMilliseconds="350" Duration="200" />
                         <Set Property="Control.Opacity" Value="1" Target="bc4287e9-8242-44ee-86df-7c38afd50466" StartTimeMilliseconds="550" Duration="200" />
                         <Set Property="Control.Opacity" Value="1" Target="34e37cb0-2c3a-4c40-8e18-1d7cbd014da6" StartTimeMilliseconds="750" Duration="200" />
@@ -323,6 +420,16 @@
                         <Set Property="Control.Opacity" Value="1" Target="0cd04a76-fa05-40b4-b594-2c9d82738a9e" StartTimeMilliseconds="650" Duration="200" />
                         <Set Property="Control.Opacity" Value="1" Target="a6dd3b50-d71a-4a0b-a776-1fe44e88821c" StartTimeMilliseconds="850" Duration="200" />
                         <Set Property="Control.Opacity" Value="1" Target="cb831efd-613c-428a-8a71-0f58033bc6f2" StartTimeMilliseconds="650" Duration="200" />
+                        <Move To="15,224" Target="d3c5ebb8-58c1-4355-907e-27242ae3007d" StartTimeMilliseconds="50" />
+                        <Move To="12,346" Target="a871b1f3-dfce-44e0-9089-6882e1da040c" StartTimeMilliseconds="50" />
+                        <Move To="260,361" Target="7cf7bdd6-9d10-494b-82ac-6f218138a408" StartTimeMilliseconds="50" />
+                        <Move To="14,366" Target="54fb7bb9-62ca-4634-95e7-4b34fc35f771" StartTimeMilliseconds="50" />
+                        <Move To="12,399" Target="25198883-9d4b-4250-a4f1-cfad0b44aa04" StartTimeMilliseconds="50" />
+                        <Remove Target="4b2a9110-59c9-4659-9d6e-f9c1547d1a52" StartTimeMilliseconds="50" />
+                        <Remove Target="dd44382e-4c87-4267-a6f8-03055b80ab4a" StartTimeMilliseconds="50" />
+                        <Remove Target="6570c69b-fca3-4a9b-950a-af0bfc1ccb72" StartTimeMilliseconds="50" />
+                        <Remove Target="49d1cf90-fb53-4bfe-8747-a1ccc236c906" StartTimeMilliseconds="50" />
+                        <Remove Target="76a5a8a6-8a46-4a92-88f3-44dfca9232d0" StartTimeMilliseconds="50" />
                     </KeyFrame.Operations>
                 </KeyFrame>
             </Scene.KeyFrames>
@@ -331,9 +438,11 @@
             <Scene.KeyFrames>
                 <KeyFrame Id="dba2544b-d09d-4eb2-beb8-ca845e9c5fc9">
                     <KeyFrame.Operations>
-                        <Remove Target="4b2a9110-59c9-4659-9d6e-f9c1547d1a52" />
-                        <Remove Target="dd44382e-4c87-4267-a6f8-03055b80ab4a" />
-                        <Remove Target="6570c69b-fca3-4a9b-950a-af0bfc1ccb72" />
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb">
+                            <Add.Item>
+                                <Label Text="Notification times" Foreground="White" FontSize="14" FontStyle="Normal" Id="8d66ed5a-749a-47d4-8d00-5e51b117986a" Panel.Bounds="6,93,0*,0*" />
+                            </Add.Item>
+                        </Add>
                     </KeyFrame.Operations>
                 </KeyFrame>
             </Scene.KeyFrames>
@@ -342,15 +451,41 @@
             <Scene.KeyFrames>
                 <KeyFrame Id="c5ce51b4-bce4-4634-a439-407e7edf8630">
                     <KeyFrame.Operations>
-                        <Move To="11,197" Target="76a5a8a6-8a46-4a92-88f3-44dfca9232d0" />
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb">
+                            <Add.Item>
+                                <Label Text="Vibration" Foreground="White" FontSize="14" FontStyle="Normal" Id="9b6f6252-ca50-49c6-bf87-61c350cf2d56" Panel.Bounds="33,124,0*,0*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb">
+                            <Add.Item>
+                                <Label Text="Sound" Foreground="White" FontSize="14" FontStyle="Normal" Id="da5e6e81-7ff2-49c2-a4e4-54b97e733032" Panel.Bounds="33,144,0*,0*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb">
+                            <Add.Item>
+                                <Label Text="Light" Foreground="White" FontSize="14" FontStyle="Normal" Id="8ab50760-a325-478a-86ac-1640e1e0af28" Panel.Bounds="33,165,0*,0*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb">
+                            <Add.Item>
+                                <CheckBox Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="1011cf91-afd6-4427-bd8c-263976186a93" Panel.Bounds="259,119,0*,0*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb">
+                            <Add.Item>
+                                <CheckBox Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="ce656bd7-9f31-4a36-a30b-e84f09d71f66" Panel.Bounds="259,139,23*,30*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="30d95a80-8d2e-49f1-b668-f54dd331abcb">
+                            <Add.Item>
+                                <CheckBox Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="d9be844a-634b-4af5-87ae-9b08ee19f541" Panel.Bounds="259,160,23*,30*" />
+                            </Add.Item>
+                        </Add>
                         <Move To="13,219" Target="d3c5ebb8-58c1-4355-907e-27242ae3007d" />
                         <Move To="11,253" Target="a871b1f3-dfce-44e0-9089-6882e1da040c" />
                         <Move To="13,273" Target="54fb7bb9-62ca-4634-95e7-4b34fc35f771" />
                         <Move To="11,306" Target="25198883-9d4b-4250-a4f1-cfad0b44aa04" />
                         <Move To="259,268" Target="7cf7bdd6-9d10-494b-82ac-6f218138a408" />
-                        <Remove Target="4b2a9110-59c9-4659-9d6e-f9c1547d1a52" />
-                        <Remove Target="dd44382e-4c87-4267-a6f8-03055b80ab4a" />
-                        <Remove Target="6570c69b-fca3-4a9b-950a-af0bfc1ccb72" />
                     </KeyFrame.Operations>
                 </KeyFrame>
             </Scene.KeyFrames>

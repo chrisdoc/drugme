@@ -69,4 +69,7 @@ public class MedicationPlan implements Parcelable {
         in.readList(medications,null);
         name=in.readString();
     }
+    public MedicationPlan(){
+        name="";
+    }
 }

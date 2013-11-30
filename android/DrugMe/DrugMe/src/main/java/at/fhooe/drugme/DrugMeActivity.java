@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -16,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,6 +27,7 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.gson.Gson;
 import com.squareup.okhttp.OkHttpClient;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,6 +42,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -55,7 +59,9 @@ import com.google.android.gms.*;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
 
-public class DrugMeActivity extends Activity  {
+import org.joda.time.DateTime;
+
+public class DrugMeActivity extends Activity {
 
 
     public static final String EXTRA_MESSAGE = "message";
@@ -82,13 +88,14 @@ public class DrugMeActivity extends Activity  {
 
     String regid;
 
-@InjectView(R.id.medication_listview)
+    @InjectView(R.id.medication_listview)
     ListView medicationListView;
 
 
     MedicationAdapter mAdapter;
+    MedicationPlan mPlan;
+    List<Medication> mMedications;
 
-    ArrayList<Medication> mMedicationList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,15 +103,11 @@ public class DrugMeActivity extends Activity  {
 
         ButterKnife.inject(this);
 
-       // DownloadWebPageTask task =new DownloadWebPageTask();
-       // task.execute(new String[]{"https://gist.github.com/chriskies/7672921/raw/370f7fe03d6fc6f35e16ac1538253f544247a824/medication.json"});
-
-
-
 
         context = getApplicationContext();
 
-
+        mPlan = new MedicationPlan();
+        mMedications = new ArrayList<Medication>();
         // Check device for Play Services APK. If check succeeds, proceed with
         //  GCM registration.
         if (checkPlayServices()) {
@@ -117,16 +120,60 @@ public class DrugMeActivity extends Activity  {
         } else {
             Log.i(TAG, "No valid Google Play Services APK found.");
         }
-        mMedicationList= new ArrayList<Medication>();
-        mAdapter= new MedicationAdapter(this,R.layout.row_medication_list,mMedicationList);
+        //mMedicationList= new ArrayList<Medication>();
+        mAdapter = new MedicationAdapter(this, R.layout.row_medication_list, mMedications);
+        mAdapter.sort(new Comparator<Medication>() {
+            @Override
+            public int compare(Medication lhs, Medication rhs) {
+
+                return new DateTime(lhs.getNextMedicationTime()).compareTo(new DateTime(rhs));
+
+            }
+        });
         medicationListView.setAdapter(mAdapter);
+        medicationListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(DrugMeActivity.this, MedicationDetailsActivity.class);
+                i.putExtra("medication", mMedications.get(position));
+                startActivity(i);
+            }
+        });
+        loadMedicationPlan();
+
 
     }
+
+    private void loadMedicationPlan() {
+        SharedPreferences prefs = getSharedPreferences(getString(R.string.shared_pref_name), 0);
+        String json = prefs.getString(getString(R.string.pref_medication_plan), "");
+        if (json.isEmpty()) {
+            mPlan = new MedicationPlan();
+            mMedications.clear();
+            mMedications.addAll(mPlan.getMedications());
+            mAdapter.notifyDataSetChanged();
+        } else {
+            mPlan = new Gson().fromJson(json, MedicationPlan.class);
+            mMedications.clear();
+            mMedications.addAll(mPlan.getMedications());
+            mAdapter.notifyDataSetChanged();
+
+            mAdapter.sort(new Comparator<Medication>() {
+                @Override
+                public int compare(Medication lhs, Medication rhs) {
+
+                    return new DateTime(lhs.getNextMedicationTime()).compareTo(new DateTime(rhs.getNextMedicationTime()));
+
+                }
+            });
+        }
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
         BusProvider.getInstance().register(this);
-          }
+    }
 
     @Override
     protected void onPause() {
@@ -154,6 +201,7 @@ public class DrugMeActivity extends Activity  {
         }
         return true;
     }
+
     /**
      * @return Application's {@code SharedPreferences}.
      */
@@ -163,6 +211,7 @@ public class DrugMeActivity extends Activity  {
         return getSharedPreferences(DrugMeActivity.class.getSimpleName(),
                 Context.MODE_PRIVATE);
     }
+
     /**
      * @return Application's version code from the {@code PackageManager}.
      */
@@ -176,13 +225,14 @@ public class DrugMeActivity extends Activity  {
             throw new RuntimeException("Could not get package name: " + e);
         }
     }
+
     /**
      * Gets the current registration ID for application on GCM service.
-     * <p>
+     * <p/>
      * If result is empty, the app needs to register.
      *
      * @return registration ID, or empty string if there is no existing
-     *         registration ID.
+     * registration ID.
      */
     private String getRegistrationId(Context context) {
         final SharedPreferences prefs = getGCMPreferences(context);
@@ -204,15 +254,14 @@ public class DrugMeActivity extends Activity  {
     }
 
 
-
     /**
      * Registers the application with GCM servers asynchronously.
-     * <p>
+     * <p/>
      * Stores the registration ID and app versionCode in the application's
      * shared preferences.
      */
     private void registerInBackground() {
-        new AsyncTask<Void, Void, String> () {
+        new AsyncTask<Void, Void, String>() {
 
             protected String doInBackground(Void... params) {
                 String msg = "";
@@ -246,13 +295,14 @@ public class DrugMeActivity extends Activity  {
 
 
             protected void onPostExecute(String msg) {
-                Log.d(TAG,msg);
+                Log.d(TAG, msg);
             }
 
 
         }.execute(null, null, null);
 
     }
+
     /**
      * Sends the registration ID to your server over HTTP, so it can use GCM/HTTP
      * or CCS to send messages to your app. Not needed for this demo since the
@@ -262,12 +312,13 @@ public class DrugMeActivity extends Activity  {
     private void sendRegistrationIdToBackend() {
         // Your implementation here.
     }
+
     /**
      * Stores the registration ID and app versionCode in the application's
      * {@code SharedPreferences}.
      *
      * @param context application's context.
-     * @param regId registration ID
+     * @param regId   registration ID
      */
     private void storeRegistrationId(Context context, String regId) {
         final SharedPreferences prefs = getGCMPreferences(context);
@@ -281,7 +332,7 @@ public class DrugMeActivity extends Activity  {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.drug_me, menu);
         return true;
@@ -301,14 +352,30 @@ public class DrugMeActivity extends Activity  {
 
 
     @Subscribe
-    public void answerAvailable(MedicationPlan plan) {
+    public void newMedicationPlan(MedicationPlan plan) {
+        mPlan = plan;
+        //mMedicationList.clear();
+        //mMedicationList.addAll(plan.getMedications());
+        Log.d(TAG, "otto " + plan);
+        mMedications.clear();
+        mMedications.addAll(mPlan.getMedications());
 
-        mMedicationList.clear();
-        mMedicationList.addAll(plan.getMedications());
-        Log.d(TAG,"otto "+plan);
         mAdapter.notifyDataSetChanged();
-        Crouton.makeText(this,"Medication plan has been updated", Style.INFO).show();
+        mAdapter.sort(new Comparator<Medication>() {
+            @Override
+            public int compare(Medication lhs, Medication rhs) {
+                try {
+                    return new DateTime(lhs.getNextMedicationTime()).compareTo(new DateTime(rhs));
+                } catch (Exception e) {
+                    return -1;
+                }
+
+
+            }
+        });
+        Crouton.makeText(this, "Medication plan has been updated", Style.INFO).show();
     }
+
     private class DownloadWebPageTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {
@@ -317,27 +384,24 @@ public class DrugMeActivity extends Activity  {
             String response = "";
             for (String url : urls) {
 
-                HttpURLConnection connection =null;
+                HttpURLConnection connection = null;
                 InputStream in = null;
                 try {
-                    connection=client.open(new URL(url));
+                    connection = client.open(new URL(url));
                     // Read the response.
 
                     in = connection.getInputStream();
 
-                    Reader r=new InputStreamReader(in);
+                    Reader r = new InputStreamReader(in);
 
 
                     return readFully(r);//new String(responseB, "UTF-8");
-                }
-                catch (MalformedURLException e) {
-                    Log.e( getString(R.string.app_name),e.getMessage());
-                }
-                catch(Exception e){
-                    Log.e( getString(R.string.app_name),e.getMessage());
+                } catch (MalformedURLException e) {
+                    Log.e(getString(R.string.app_name), e.getMessage());
+                } catch (Exception e) {
+                    Log.e(getString(R.string.app_name), e.getMessage());
 
-                }
-                finally {
+                } finally {
 
                     if (in != null) try {
                         in.close();
@@ -352,8 +416,8 @@ public class DrugMeActivity extends Activity  {
         @Override
         protected void onPostExecute(String result) {
             Gson gson = new Gson();
-            MedicationPlan plan=gson.fromJson(result, MedicationPlan.class);
-            Log.d( getString(R.string.app_name),result);
+            MedicationPlan plan = gson.fromJson(result, MedicationPlan.class);
+            Log.d(getString(R.string.app_name), result);
         }
     }
 
@@ -368,7 +432,7 @@ public class DrugMeActivity extends Activity  {
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
+                                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             return rootView;
         }

@@ -31,6 +31,7 @@ import at.fhooe.drugme.DrugMeActivity;
 import at.fhooe.drugme.R;
 import at.fhooe.drugme.model.MedicationPlan;
 import at.fhooe.drugme.model.MedicationTask;
+import at.fhooe.drugme.model.MedicationTaskListener;
 
 import static com.squareup.okhttp.internal.Util.readFully;
 
@@ -88,68 +89,26 @@ public class GcmIntentService extends IntentService {
 
     private void loadMedicationPlan(String url) {
 
-        new AsyncTask<String, Void, String>() {
-            String TAG="DragMe";
 
+        MedicationTask task = new MedicationTask();
+        task.setListener(new MedicationTaskListener() {
             @Override
-            protected String doInBackground(String... urls) {
-                OkHttpClient client = new OkHttpClient();
-
-                String response = "";
-                for (String url : urls) {
-
-                    HttpURLConnection connection =null;
-                    InputStream in = null;
-                    try {
-                        connection=client.open(new URL(url));
-                        // Read the response.
-
-                        in = connection.getInputStream();
-
-                        Reader r=new InputStreamReader(in);
-
-                        return readFully(r);
-                    }
-                    catch (MalformedURLException e) {
-                        Log.e(TAG, e.getMessage());
-                    }
-                    catch(Exception e){
-                        Log.e( TAG,e.getMessage());
-
-                    }
-                    finally {
-
-                        if (in != null) try {
-                            in.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-                return response;
-            }
-
-            @Override
-            protected void onPostExecute(String result) {
-                Gson gson = new Gson();
-                MedicationPlan plan=gson.fromJson(result, MedicationPlan.class);
-
-                // We need an Editor object to make preference changes.
-                // All objects are from android.context.Context
-
+            public void medicationTaskFinished(MedicationPlan _plan) {
                 SharedPreferences settings = getSharedPreferences(getString(R.string.shared_pref_name), 0);
                 SharedPreferences.Editor editor = settings.edit();
 
-                editor.putString(getString(R.string.pref_medication_plan),result);
+
+                editor.putString(getString(R.string.pref_medication_plan),new Gson().toJson(_plan));
 
                 // Commit the edits!
                 editor.commit();
                 Log.d(TAG,"stored new medication plan");
 
-                BusProvider.getInstance().post(plan);
+                BusProvider.getInstance().post(_plan);
             }
+        });
+        task.execute(new String[]{url});
 
-        }.execute(new String[]{url});
 
     }
 
