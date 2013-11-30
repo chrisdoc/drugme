@@ -42,6 +42,16 @@ public class PreferenceStorage {
 		prefEditor.putString(key, value);
 		prefEditor.commit();
 	}
+
+    /**
+     *
+     * @param key
+     * @return
+     */
+    public String getString(String key){
+        sPreferences = context.getApplicationContext().getSharedPreferences(key, Context.MODE_PRIVATE);
+        return sPreferences.getString(key, null);
+    }
 	
 	/**
 	 * 
@@ -62,7 +72,8 @@ public class PreferenceStorage {
 	 */
 	public byte[] getBytes(String key){
 		sPreferences = context.getApplicationContext().getSharedPreferences(key, Context.MODE_PRIVATE);
-		String encoded = sPreferences.getString(key, "");
+		String encoded = sPreferences.getString(key, null);
+
 		return Converter.base64DecodeToBytes(encoded);
 	}
 	/**
