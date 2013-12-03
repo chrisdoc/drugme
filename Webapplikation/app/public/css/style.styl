@@ -8,13 +8,7 @@ body
 	margin  0
 	padding  0
 	height  100%
-	background rgb(242,249,254)
-	background -moz-radial-gradient(center, ellipse cover,  rgba(242,249,254,1) 0%, rgba(214,240,253,1) 100%) /* FF3.6+ */
-	background -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(242,249,254,1)), color-stop(100%,rgba(214,240,253,1))) /* Chrome,Safari4+ */
-	background -webkit-radial-gradient(center, ellipse cover,  rgba(242,249,254,1) 0%,rgba(214,240,253,1) 100%) /* Chrome10+,Safari5.1+ */
-	background -o-radial-gradient(center, ellipse cover,  rgba(242,249,254,1) 0%,rgba(214,240,253,1) 100%) /* Opera 12+ */
-	background -ms-radial-gradient(center, ellipse cover,  rgba(242,249,254,1) 0%,rgba(214,240,253,1) 100%) /* IE10+ */
-	background radial-gradient(center, ellipse cover,  rgba(242,249,254,1) 0%,rgba(214,240,253,1) 100%) /* W3C */
+	background-color #ffffff	
 
 #header{
 	background:url(ic_launcher.png)
@@ -24,7 +18,7 @@ body
 	padding-left 400px
 	background-origin content-box
 	height 80px
-	background-color #2F2EB8
+	background-color #b1cbe2
 	text-align center
 }
 
@@ -34,12 +28,12 @@ body
 	left 500px
 	font-size 26px
 	font-family "Helvetica"
-	color #34b5e4
+	color #167ec2
 }
 
 #header-border{
 	height 1px
-	background-color #40C6FF
+	background-color #b1cbe2
 }
 
 #footer{
@@ -47,7 +41,7 @@ body
 	bottom 0
 	width 100%
 	height 80px
-	background-color #2F2EB8
+	background-color #b1cbe2
 	float center
 	text-align center
 }
@@ -55,7 +49,7 @@ body
 #footer-border{
 	margin-top 0px
 	height 1px
-	background-color #40C6FF
+	background-color #b1cbe2
 }
 
 #footer-text{
@@ -64,7 +58,7 @@ body
 	left 515px
 	font-size 16px
 	font-family "Helvetica"
-	color #34b5e4
+	color #167ec2
 }
 
 #loggedIn{
@@ -73,7 +67,296 @@ body
 	right 140px
 	font-size 12px
 	font-family "Helvetica"
-	color #34b5e4
+	color #167ec2
+}
+
+#listTitle{
+	position absolute
+	top 24%
+	left 25%
+	font-size 16px
+	font-weight bold
+	font-family "Helvetica"
+	color #167ec2
+}
+
+listItem{
+	position absolute
+	background:url(arrow.png)
+	background-size 80px 60px
+	background-repeat no-repeat
+	background-position right
+	top 28%
+	left 25%
+	width 50%
+	height 14%
+	background-color #D8ECFF
+	border-bottom-right-radius 60px
+	
+	labelImg{
+		position absolute
+		background:url(avatar.png)
+		background-size 80px 80px
+		background-repeat no-repeat
+		background-position center
+		top 5px
+		left 5px
+		width 80px
+		height 80px
+		background-color #ffffff
+	}
+	
+	labelPatient{
+		position absolute
+		top 30%
+		left 15%
+		font-size 18px
+		font-weight bold
+		font-family "Helvetica"
+		color #167ec2
+	}
+	
+	labelId{
+		position absolute
+		top 50%
+		left 15%
+		font-size 14px
+		font-family "Helvetica"
+		color #167ec2
+	}
+}
+
+patientContainer{
+	position absolute
+	top 20%
+	left 30%
+	width 40%
+	height 60%
+	background-color #D8ECFF
+	border-radius 30px
+	
+	labelImg{
+		position absolute
+		background:url(avatar.png)
+		background-size 180px 150px
+		background-repeat no-repeat
+		background-position center
+		top 20px
+		left 5%
+		width 180px
+		height 150px
+		background-color #ffffff
+		border-radius 10px
+	}
+	
+	labelPatient{
+		position absolute
+		top 6%
+		left 42%
+		font-size 22px
+		font-weight bold
+		font-family "Helvetica"
+		color #167ec2
+	}
+	
+	labelId{
+		position absolute
+		top 12%
+		left 42%
+		font-size 16px
+		font-family "Helvetica"
+		color #167ec2
+	}
+	
+	labelAddress{
+		position absolute
+		top 22%
+		left 42%
+		font-size 16px
+		font-family "Helvetica"
+		color #167ec2
+	}
+	
+	#inputAddress{
+		position absolute
+		top 21%
+		left 64%
+		width 30%
+	}
+	
+	labelBirthday{
+		position absolute
+		top 32%
+		left 42%
+		font-size 16px
+		font-family "Helvetica"
+		color #167ec2
+	}
+	
+	#inputDate{
+		position absolute
+		top 31%
+		left 64%
+		width 30%
+	}
+	
+	labelPlans{
+		position absolute
+		top 50%
+		left 5%
+		font-size 16px
+		font-weight bold
+		font-family "Helvetica"
+		color #167ec2
+	}
+	
+	#btn-new-plan{
+		width 120px
+		height 30px
+		top 48%
+		right 5%
+		position absolute
+	}
+	
+	#btn-confirm{
+		width 90%
+		height 30px
+		top 90%
+		right 5%
+		position absolute
+		background-color #0DFF65
+		border-color #0DFF65
+		color #ffffff
+		border-radius 5px
+	}
+}
+
+listItem:hover{
+	background-color #12CBEF
+}
+
+// login form //
+#medicationContainer{
+	width 380px
+	margin 30px auto
+	
+	#planname{
+		text-align center
+	}
+	
+	#btn-create{
+		width  100%
+	}
+	
+	#inputForm{
+		position absolute
+		top 210px
+		left 600px
+		width  190px
+	}
+	
+	#inputMedication{
+		position absolute
+		top 178px
+		left 600px
+		width  190px
+	}
+	
+	#frequencyLabel{
+		margin 15px 0 0px 5px
+	}
+	
+	label{
+		margin 15px 0 5px 5px
+	}
+	
+	#mo{
+		position absolute
+		top 40%
+		left 37.8%
+	}
+	
+	#mo-check{
+		position absolute
+		top 0%
+		left 37.8%
+	}
+	
+	#tu{
+		position absolute
+		top 40%
+		left 41.1%
+	}
+	
+	#tu-check{
+		position absolute
+		top 0%
+		left 41.1%
+	}
+	
+	#we{
+		position absolute
+		top 40%
+		left 44%
+	}
+	
+	#we-check{
+		position absolute
+		top 0%
+		left 44%
+	}
+	
+	#th{
+		position absolute
+		top 40%
+		left 47.3%
+	}
+	
+	#th-check{
+		position absolute
+		top 0%
+		left 47.3%
+	}
+	
+	#fr{
+		position absolute
+		top 40%
+		left 50.6%
+	}
+	
+	#fr-check{
+		position absolute
+		top 0%
+		left 50.6%
+	}
+	
+	#sa{
+		position absolute
+		top 40%
+		left 53.7%
+	}
+	
+	#sa-check{
+		position absolute
+		top 0%
+		left 53.7%
+	}
+	
+	#su{
+		position absolute
+		top 40%
+		left 56.8%
+	}
+	
+	#su-check{
+		position absolute
+		top 0%
+		left 57.7%
+	}
+	
+	#separator{
+		margin 40px 0px 20px 0px
+	}
 }
 
 // login form //

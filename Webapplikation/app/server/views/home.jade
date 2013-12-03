@@ -5,12 +5,19 @@ block content
 
 	#header
 	div#title Medication Plan Monitoring System
-	div#loggedIn Logged in as ''
+	div#loggedIn Logged in as '#{udata.name}'
 	button#btn-logout.btn.btn-primary
 					i.icon-lock.icon-white
 					| Sign Out
 	#header-border
 
+	div#listTitle Patients
+
+	listItem
+		labelImg
+		labelPatient#patient0 #{udata.name}
+		labelId#ec0 EC: 1234 121290
+		
 	include modals/alert
 	include modals/confirm
 

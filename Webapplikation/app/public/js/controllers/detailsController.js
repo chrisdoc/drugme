@@ -1,5 +1,5 @@
 
-function HomeController()
+function DetailsController()
 {
 
 // bind event listeners to button clicks //
@@ -7,10 +7,9 @@ function HomeController()
 
 // handle user logout //
 	$('#btn-logout').click(function(){ that.attemptLogout(); });
-
+	$('#btn-new-plan').click(function(){that.showMedicationPlanPage();});
+	
 // handle click on list item //
-	$('listItem').click(function(){that.showPatientPage()});
-
 	this.attemptLogout = function()
 	{
 		var that = this;
@@ -27,15 +26,14 @@ function HomeController()
 		});
 	}
 
-	this.showPatientPage = function()
+	this.showMedicationPlanPage = function()
 	{
 		var that = this;
 		$.ajax({
-			url: "/details",
+			url: "/medicationplan",
 			type: "GET",
-			data: {logout: true},
 			success: function(data){
-				window.location.href = '/details';
+				window.location.href = '/medicationplan';
 			},
 			error: function(jqXHR){
 				console.log(jqXHR.responseText+' :: '+jqXHR.statusText);
@@ -53,7 +51,7 @@ function HomeController()
 	}
 }
 
-HomeController.prototype.onUpdateSuccess = function()
+DetailsController.prototype.onUpdateSuccess = function()
 {
 	$('.modal-alert').modal({ show : false, keyboard : true, backdrop : true });
 	$('.modal-alert .modal-header h3').text('Success!');

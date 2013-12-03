@@ -1,0 +1,54 @@
+extends layout
+
+block content				
+
+	#header
+	div#title Medication Plan Monitoring System
+	div#loggedIn Logged in as '#{udata.name}'
+	button#btn-logout.btn.btn-primary
+					i.icon-lock.icon-white
+					| Sign Out
+	#header-border
+	
+	#medicationContainer
+		form( method="post").well.span4
+				h1#planname Medication Plan 1
+				label Medication 
+				input(type="select", name="medication", id='medication-tf')#inputMedication.span4.required
+				label Form
+				input(type="select", name="form", id='form-tf')#inputForm.span4.required
+				label#frequencyLabel Frequency
+				label#mo.checkbox Mo
+					input(type="checkbox", checked='checked')#mo-check
+				label#tu.checkbox Tu
+					input(type="checkbox", checked='checked')#tu-check
+				label#we.checkbox We
+					input(type="checkbox", checked='checked')#we-check
+				label#th.checkbox Th
+					input(type="checkbox", checked='checked')#th-check
+				label#fr.checkbox Fr
+					input(type="checkbox", checked='checked')#fr-check
+				label#sa.checkbox Sa
+					input(type="checkbox", checked='checked')#sa-check
+				label#su.checkbox Su
+					input(type="checkbox", checked='checked')#su-check
+				hr#separator
+				button(type="submit")#btn-create.btn.btn-primary
+					| Create medication plan
+					
+	include modals/alert
+	include modals/confirm
+
+	#footer
+		div#footer-border 
+	div#footer-text (C) FH Hagenberg, 2013 Mobile Health & Sports
+	
+block scripts
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
+	script(src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js')
+	script(src='/vendor/jquery.form.js')
+	script(src='/vendor/bootstrap-modal.js')
+	script(src='/vendor/bootstrap-transition.js')
+	script(src='/js/views/medicationplan.js')
+	script(src='/js/controllers/medicationplanController.js')
+	link(rel='stylesheet', href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css')
