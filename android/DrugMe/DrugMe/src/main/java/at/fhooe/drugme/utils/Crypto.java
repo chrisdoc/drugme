@@ -107,8 +107,11 @@ public class Crypto {
              */
 
             byte[] keyBytes = Arrays.copyOfRange(decryptedKeyParam, 0, 32);
-            byte[] ivBytes = Arrays.copyOfRange(decryptedKeyParam, 32, 48);
+            byte[] ivBytes = Arrays.copyOfRange(decryptedKeyParam, 32, 44);
 
+            Log.d(" key " , Converter.getHex(keyBytes));
+            Log.d(" iv " , Converter.getHex(ivBytes));
+            Log.d(" encoded msg len :" , String.valueOf(decodedInput.length));
             Key key;
             Cipher out;
 
@@ -146,7 +149,7 @@ public class Crypto {
         return null;
     }
 
-    private byte[] AES_GCM_Encrypt(byte[] keyParam, byte[] ivParam, byte[] msg) {
+    public byte[] AES_GCM_Encrypt(byte[] keyParam, byte[] ivParam, byte[] msg) {
         Key key;
         Cipher in;
 
@@ -224,14 +227,15 @@ public class Crypto {
 
         try {
 
-             publicKey =
+            publicKey =
                     KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(pStorage.getBytes("pub")));
+
 
             String x = Converter.base64Encode((rsaEncrypt("This is fun".getBytes(), publicKey)));
 
             SecureRandom secureRandom = new SecureRandom();
             byte[] randomKey = new byte[32];
-            byte[] randomIv = new byte[16];
+            byte[] randomIv = new byte[12];
 
             secureRandom.nextBytes(randomIv);
             secureRandom.nextBytes(randomKey);
@@ -245,7 +249,7 @@ public class Crypto {
 
             byte[] encryptedPacket = Converter.concatArray(encryptedKeyParam, encryptedMsg);
 
-           //  Log.d(" encrypted packet length  = ", encryptedKeyParam.length + "  + " + encryptedMsg.length);
+            //  Log.d(" encrypted packet length  = ", encryptedKeyParam.length + "  + " + encryptedMsg.length);
 
             return Converter.base64Encode(encryptedPacket);
 
@@ -262,15 +266,25 @@ public class Crypto {
     }
 
     public String getPublicKey() {
-       return pStorage.getString("pub");
+        return pStorage.getString("pub");
     }
 
-    public String encode(String input) {
-        return null;
-    }
 
-    public String decode(String input) {
-        return null;
+    public void testRSAdecrypt() {
+        byte[] encrypted = Converter.base64DecodeToBytes("NGTwgo7jcn716yKS9xC2eQuDDkyPixtGoOQB2IMuDIjq7q11HIh7NDiSsCFBo6TdszO3gAzf2kE0FrRkwbYqsc+9vcetigrv/TCmedf8YZZs8oHQraa9Cvv0s7ync+5F3z3LQP/5aGGU2/TF33enhglORkq9+qkfbIyrJEF0IoCcTNCmeAaKiBYbx2kPNRr2JWyr0JQG023HFVQ7LIGjfkVcu1BM6zviudROKP01j2PgWfnNSJ7Ovk+EVMrd0Zk/A8zbbNYbFR/l4Kh1G95ibIpaYOEHpIs6oSJlanzq3djLaq8o+OTCwRldqmftRtL3uQDzfp2N/MAxM+ArQuYTlA==");
+        try {
+            privateKey = (PrivateKey) KeyFactory.getInstance("RSA").generatePrivate(
+                    new PKCS8EncodedKeySpec(pStorage.getBytes("prk")));
+            byte[] decrypted = rsaDecrypt(encrypted, privateKey);
+
+            Log.d("decrypted ", new String(decrypted));
+
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
