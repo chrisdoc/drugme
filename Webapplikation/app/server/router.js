@@ -7,11 +7,11 @@ module.exports = function(app) {
 // main login page //
 
 	app.get('/', function(req, res){
-	// check if the user's credentials are saved in a cookie //
+		// check if the user's credentials are saved in a cookie //
 		if (req.cookies.user == undefined || req.cookies.pass == undefined){
 			res.render('login', { title: 'Hello - Please Login To Your Account' });
 		}	else{
-	// attempt automatic login //
+			// attempt automatic login //
 			AM.autoLogin(req.cookies.user, req.cookies.pass, function(o){
 				if (o != null){
 				    req.session.user = o;
@@ -36,6 +36,22 @@ module.exports = function(app) {
 				res.send(o, 200);
 			}
 		});
+	});
+	
+	// patient details page //
+	app.get('/details', function(req, res) {
+			res.render('details', {
+				title : 'Control Panel',
+				udata : req.session.user
+			});
+	});
+	
+	// medication plan page //
+	app.get('/medicationplan', function(req, res) {
+			res.render('medicationplan', {
+				title : 'Control Panel',
+				udata : req.session.user
+			});
 	});
 	
 // logged-in user homepage //

@@ -1,0 +1,40 @@
+extends layout
+
+block content				
+
+	#header
+	div#title Medication Plan Monitoring System
+	div#loggedIn Logged in as '#{udata.name}'
+	button#btn-logout.btn.btn-primary
+					i.icon-lock.icon-white
+					| Sign Out
+	#header-border
+	
+	patientContainer
+		labelImg
+		labelPatient #{udata.name}
+		labelId EC: 1234 121290
+		labelAddress Address 
+		input(type="text", name="address", id='address-tf')#inputAddress.span4.required
+		labelBirthday Date of birth
+		input(type="text", name="date", id='date-tf')#inputDate.span4.required
+		labelPlans Active medication plans
+		button#btn-new-plan.btn.btn-primary + Add new plan
+		button#btn-confirm Confirm
+	
+	include modals/alert
+	include modals/confirm
+
+	#footer
+		div#footer-border 
+	div#footer-text (C) FH Hagenberg, 2013 Mobile Health & Sports
+	
+block scripts
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
+	script(src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js')
+	script(src='/vendor/jquery.form.js')
+	script(src='/vendor/bootstrap-modal.js')
+	script(src='/vendor/bootstrap-transition.js')
+	script(src='/js/views/details.js')
+	script(src='/js/controllers/detailsController.js')
+	link(rel='stylesheet', href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css')

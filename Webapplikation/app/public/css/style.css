@@ -2,19 +2,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: #f2f9fe;
-  background: -moz-radial-gradient(center, ellipse cover, #f2f9fe 0%, #d6f0fd 100%);
-/* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #f2f9fe), color-stop(100%, #d6f0fd));
-/* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover, #f2f9fe 0%, #d6f0fd 100%);
-/* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover, #f2f9fe 0%, #d6f0fd 100%);
-/* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover, #f2f9fe 0%, #d6f0fd 100%);
-/* IE10+ */
-  background: radial-gradient(center, ellipse cover, #f2f9fe 0%, #d6f0fd 100%);
-/* W3C */
+  background-color: #fff;
 }
 #header {
   background: url("ic_launcher.png");
@@ -24,7 +12,7 @@ body {
   padding-left: 400px;
   background-origin: content-box;
   height: 80px;
-  background-color: #2f2eb8;
+  background-color: #b1cbe2;
   text-align: center;
 }
 #title {
@@ -33,25 +21,25 @@ body {
   left: 500px;
   font-size: 26px;
   font-family: "Helvetica";
-  color: #34b5e4;
+  color: #167ec2;
 }
 #header-border {
   height: 1px;
-  background-color: #40c6ff;
+  background-color: #b1cbe2;
 }
 #footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 80px;
-  background-color: #2f2eb8;
+  background-color: #b1cbe2;
   float: center;
   text-align: center;
 }
 #footer-border {
   margin-top: 0px;
   height: 1px;
-  background-color: #40c6ff;
+  background-color: #b1cbe2;
 }
 #footer-text {
   position: absolute;
@@ -59,7 +47,7 @@ body {
   left: 515px;
   font-size: 16px;
   font-family: "Helvetica";
-  color: #34b5e4;
+  color: #167ec2;
 }
 #loggedIn {
   position: absolute;
@@ -67,7 +55,256 @@ body {
   right: 140px;
   font-size: 12px;
   font-family: "Helvetica";
-  color: #34b5e4;
+  color: #167ec2;
+}
+#listTitle {
+  position: absolute;
+  top: 24%;
+  left: 25%;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Helvetica";
+  color: #167ec2;
+}
+listItem {
+  position: absolute;
+  background: url("arrow.png");
+  background-size: 80px 60px;
+  background-repeat: no-repeat;
+  background-position: right;
+  top: 28%;
+  left: 25%;
+  width: 50%;
+  height: 14%;
+  background-color: #d8ecff;
+  border-bottom-right-radius: 60px;
+}
+listItem labelImg {
+  position: absolute;
+  background: url("avatar.png");
+  background-size: 80px 80px;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 5px;
+  left: 5px;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+}
+listItem labelPatient {
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Helvetica";
+  color: #167ec2;
+}
+listItem labelId {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  font-size: 14px;
+  font-family: "Helvetica";
+  color: #167ec2;
+}
+patientContainer {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  height: 60%;
+  background-color: #d8ecff;
+  border-radius: 30px;
+}
+patientContainer labelImg {
+  position: absolute;
+  background: url("avatar.png");
+  background-size: 180px 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 20px;
+  left: 5%;
+  width: 180px;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+patientContainer labelPatient {
+  position: absolute;
+  top: 6%;
+  left: 42%;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Helvetica";
+  color: #167ec2;
+}
+patientContainer labelId {
+  position: absolute;
+  top: 12%;
+  left: 42%;
+  font-size: 16px;
+  font-family: "Helvetica";
+  color: #167ec2;
+}
+patientContainer labelAddress {
+  position: absolute;
+  top: 22%;
+  left: 42%;
+  font-size: 16px;
+  font-family: "Helvetica";
+  color: #167ec2;
+}
+patientContainer #inputAddress {
+  position: absolute;
+  top: 21%;
+  left: 64%;
+  width: 30%;
+}
+patientContainer labelBirthday {
+  position: absolute;
+  top: 32%;
+  left: 42%;
+  font-size: 16px;
+  font-family: "Helvetica";
+  color: #167ec2;
+}
+patientContainer #inputDate {
+  position: absolute;
+  top: 31%;
+  left: 64%;
+  width: 30%;
+}
+patientContainer labelPlans {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Helvetica";
+  color: #167ec2;
+}
+patientContainer #btn-new-plan {
+  width: 120px;
+  height: 30px;
+  top: 48%;
+  right: 5%;
+  position: absolute;
+}
+patientContainer #btn-confirm {
+  width: 90%;
+  height: 30px;
+  top: 90%;
+  right: 5%;
+  position: absolute;
+  background-color: #0dff65;
+  border-color: #0dff65;
+  color: #fff;
+  border-radius: 5px;
+}
+listItem:hover {
+  background-color: #12cbef;
+}
+#medicationContainer {
+  width: 380px;
+  margin: 30px auto;
+}
+#medicationContainer #planname {
+  text-align: center;
+}
+#medicationContainer #btn-create {
+  width: 100%;
+}
+#medicationContainer #inputForm {
+  position: absolute;
+  top: 210px;
+  left: 600px;
+  width: 190px;
+}
+#medicationContainer #inputMedication {
+  position: absolute;
+  top: 178px;
+  left: 600px;
+  width: 190px;
+}
+#medicationContainer #frequencyLabel {
+  margin: 15px 0 0px 5px;
+}
+#medicationContainer label {
+  margin: 15px 0 5px 5px;
+}
+#medicationContainer #mo {
+  position: absolute;
+  top: 40%;
+  left: 37.8%;
+}
+#medicationContainer #mo-check {
+  position: absolute;
+  top: 0%;
+  left: 37.8%;
+}
+#medicationContainer #tu {
+  position: absolute;
+  top: 40%;
+  left: 41.1%;
+}
+#medicationContainer #tu-check {
+  position: absolute;
+  top: 0%;
+  left: 41.1%;
+}
+#medicationContainer #we {
+  position: absolute;
+  top: 40%;
+  left: 44%;
+}
+#medicationContainer #we-check {
+  position: absolute;
+  top: 0%;
+  left: 44%;
+}
+#medicationContainer #th {
+  position: absolute;
+  top: 40%;
+  left: 47.3%;
+}
+#medicationContainer #th-check {
+  position: absolute;
+  top: 0%;
+  left: 47.3%;
+}
+#medicationContainer #fr {
+  position: absolute;
+  top: 40%;
+  left: 50.6%;
+}
+#medicationContainer #fr-check {
+  position: absolute;
+  top: 0%;
+  left: 50.6%;
+}
+#medicationContainer #sa {
+  position: absolute;
+  top: 40%;
+  left: 53.7%;
+}
+#medicationContainer #sa-check {
+  position: absolute;
+  top: 0%;
+  left: 53.7%;
+}
+#medicationContainer #su {
+  position: absolute;
+  top: 40%;
+  left: 56.8%;
+}
+#medicationContainer #su-check {
+  position: absolute;
+  top: 0%;
+  left: 57.7%;
+}
+#medicationContainer #separator {
+  margin: 40px 0px 20px 0px;
 }
 #login-container {
   width: 340px;
