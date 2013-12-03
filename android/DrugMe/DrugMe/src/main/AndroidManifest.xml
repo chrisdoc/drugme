@@ -7,15 +7,20 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
-<uses-permission android:name="android.permission.READ_PROFILE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
-    <permission android:name="com.example.gcm.permission.C2D_MESSAGE"
+
+    <permission
+        android:name="com.example.gcm.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
 
     <application
@@ -24,7 +29,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="at.fhooe.drugme.DrugMeActivity"
+            android:name="at.fhooe.drugme.LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,20 +37,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<activity android:name=".MedicationDetailsActivity"/>
+        <activity android:name="at.fhooe.drugme.MedicationDetailsActivity" />
+        <activity android:name="at.fhooe.drugme.DrugMeActivity" />
+
         <receiver
             android:name="at.fhooe.drugme.gcm.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
                 <category android:name="at.fhooe.drugme" />
             </intent-filter>
         </receiver>
+
         <service android:name="at.fhooe.drugme.gcm.GcmIntentService" />
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-    </application>
 
+
+    </application>
 
 </manifest>
