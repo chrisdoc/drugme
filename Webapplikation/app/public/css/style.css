@@ -108,99 +108,77 @@ listItem labelId {
   font-family: "Helvetica";
   color: #167ec2;
 }
-patientContainer {
-  position: absolute;
-  top: 20%;
-  left: 30%;
-  width: 40%;
-  height: 60%;
-  background-color: #d8ecff;
-  border-radius: 30px;
+#patientContainer {
+  width: 380px;
+  margin-top: 30px;
+  margin-left: 30%;
 }
-patientContainer labelImg {
-  position: absolute;
+#patientContainer #labelImg {
   background: url("avatar.png");
   background-size: 180px 150px;
   background-repeat: no-repeat;
   background-position: center;
-  top: 20px;
-  left: 5%;
   width: 180px;
   height: 150px;
   background-color: #fff;
   border-radius: 10px;
 }
-patientContainer labelPatient {
-  position: absolute;
-  top: 6%;
-  left: 42%;
+#patientContainer #labelPatient {
   font-size: 22px;
   font-weight: bold;
   font-family: "Helvetica";
   color: #167ec2;
+  margin-left: 45%;
+  margin-top: -30%;
 }
-patientContainer labelId {
-  position: absolute;
-  top: 12%;
-  left: 42%;
+#patientContainer #labelId {
   font-size: 16px;
   font-family: "Helvetica";
   color: #167ec2;
+  margin-left: 45%;
+  margin-top: 1%;
 }
-patientContainer labelAddress {
-  position: absolute;
-  top: 22%;
-  left: 42%;
+#patientContainer #labelAddress {
   font-size: 16px;
   font-family: "Helvetica";
   color: #167ec2;
+  margin-left: 45%;
+  margin-top: 3%;
 }
-patientContainer #inputAddress {
-  position: absolute;
-  top: 21%;
-  left: 64%;
-  width: 30%;
+#patientContainer #inputAddress {
+  width: 50%;
+  margin-left: 20%;
 }
-patientContainer labelBirthday {
-  position: absolute;
-  top: 32%;
-  left: 42%;
+#patientContainer #labelBirthday {
   font-size: 16px;
   font-family: "Helvetica";
   color: #167ec2;
+  margin-left: 45%;
 }
-patientContainer #inputDate {
-  position: absolute;
-  top: 31%;
-  left: 64%;
-  width: 30%;
+#patientContainer #inputDate {
+  width: 50%;
+  margin-left: 10%;
 }
-patientContainer labelPlans {
-  position: absolute;
-  top: 50%;
-  left: 5%;
+#patientContainer #labelPlans {
   font-size: 16px;
   font-weight: bold;
   font-family: "Helvetica";
   color: #167ec2;
+  margin-top: 6%;
 }
-patientContainer #btn-new-plan {
+#patientContainer #btn-new-plan {
   width: 120px;
   height: 30px;
-  top: 48%;
-  right: 5%;
-  position: absolute;
+  margin-left: 33%;
 }
-patientContainer #btn-confirm {
-  width: 90%;
+#patientContainer #btn-confirm {
+  width: 100%;
   height: 30px;
-  top: 90%;
-  right: 5%;
-  position: absolute;
   background-color: #0dff65;
   border-color: #0dff65;
   color: #fff;
   border-radius: 5px;
+  margin-top: 34%;
 }
 listItem:hover {
   background-color: #12cbef;
@@ -209,6 +187,14 @@ listItem:hover {
   width: 380px;
   margin: 30px auto;
 }
+#medicationContainer #labelName {
+  margin-left: 15px;
+}
+#medicationContainer #name {
+  margin-top: -8%;
+  margin-left: 26%;
+  width: 190px;
+}
 #medicationContainer #planname {
   text-align: center;
 }
@@ -216,95 +202,138 @@ listItem:hover {
   width: 100%;
 }
 #medicationContainer #inputForm {
-  position: absolute;
-  top: 210px;
-  left: 600px;
-  width: 190px;
+  width: 200px;
+  margin-top: -14%;
+  margin-left: 30%;
 }
 #medicationContainer #inputMedication {
-  position: absolute;
-  top: 178px;
-  left: 600px;
-  width: 190px;
+  margin-top: -13%;
+  margin-left: 30%;
+  width: 200px;
 }
 #medicationContainer #frequencyLabel {
-  margin: 15px 0 0px 5px;
+  margin-left: 15px;
+  margin-top: 0px;
 }
-#medicationContainer label {
-  margin: 15px 0 5px 5px;
+#medicationContainer #labelMedication {
+  margin-left: 15px;
+  margin-top: 16px;
+}
+#medicationContainer #labelForm {
+  margin-left: 15px;
+  margin-top: 0px;
 }
 #medicationContainer #mo {
-  position: absolute;
-  top: 40%;
-  left: 37.8%;
+  margin-left: 32%;
+  margin-top: -10%;
 }
 #medicationContainer #mo-check {
-  position: absolute;
-  top: 0%;
-  left: 37.8%;
+  margin-right: 1%;
 }
 #medicationContainer #tu {
-  position: absolute;
-  top: 40%;
-  left: 41.1%;
+  margin-left: 48%;
+  margin-top: -8%;
 }
 #medicationContainer #tu-check {
-  position: absolute;
-  top: 0%;
-  left: 41.1%;
+  margin-right: 1%;
 }
 #medicationContainer #we {
-  position: absolute;
-  top: 40%;
-  left: 44%;
+  margin-left: 64%;
+  margin-top: -8%;
 }
 #medicationContainer #we-check {
-  position: absolute;
-  top: 0%;
-  left: 44%;
+  margin-right: 1%;
 }
 #medicationContainer #th {
-  position: absolute;
-  top: 40%;
-  left: 47.3%;
+  margin-left: 80%;
+  margin-top: -8%;
 }
 #medicationContainer #th-check {
-  position: absolute;
-  top: 0%;
-  left: 47.3%;
+  margin-right: 1%;
 }
 #medicationContainer #fr {
-  position: absolute;
-  top: 40%;
-  left: 50.6%;
+  margin-left: 40%;
+  margin-top: 2%;
 }
 #medicationContainer #fr-check {
-  position: absolute;
-  top: 0%;
-  left: 50.6%;
+  margin-right: 1%;
 }
 #medicationContainer #sa {
-  position: absolute;
-  top: 40%;
-  left: 53.7%;
+  margin-left: 16%;
+  margin-top: -12%;
 }
 #medicationContainer #sa-check {
-  position: absolute;
-  top: 0%;
-  left: 53.7%;
+  margin-right: 1%;
 }
 #medicationContainer #su {
-  position: absolute;
-  top: 40%;
-  left: 56.8%;
+  margin-left: 24%;
+  margin-top: -16%;
 }
 #medicationContainer #su-check {
-  position: absolute;
-  top: 0%;
-  left: 57.7%;
+  margin-right: 1%;
 }
-#medicationContainer #separator {
-  margin: 40px 0px 20px 0px;
+#medicationContainer #labelInterval {
+  margin-left: 15px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+#medicationContainer #morning-check {
+  margin-right: 4%;
+  margin-left: 5%;
+}
+#medicationContainer #noon-check {
+  margin-right: 4%;
+  margin-left: 5%;
+}
+#medicationContainer #evening-check {
+  margin-right: 4%;
+  margin-left: 5%;
+}
+#medicationContainer amountLabel {
+  margin-left: 8%;
+}
+#medicationContainer #noonAmount {
+  margin-left: 14%;
+}
+#medicationContainer #inputMorning {
+  width: 80px;
+  margin-left: 72%;
+  margin-top: -8%;
+}
+#medicationContainer #inputNoon {
+  width: 80px;
+  margin-left: 72%;
+  margin-top: -8%;
+}
+#medicationContainer #inputEvening {
+  width: 80px;
+  margin-left: 72%;
+  margin-top: -8%;
+}
+#medicationContainer #startDateLabel {
+  margin-left: 15px;
+}
+#medicationContainer #endDateLabel {
+  margin-left: 52%;
+  margin-top: -12%;
+}
+#medicationContainer #endDate {
+  width: 80px;
+  margin-left: 24%;
+  margin-top: -14%;
+}
+#medicationContainer #startDate {
+  width: 80px;
+  margin-left: 14%;
+  margin-top: -7%;
+}
+#medicationContainer #infoLabel {
+  margin-left: 15px;
+}
+#medicationContainer #inputIntakeInfo {
+  width: 176px;
+  margin-left: 30%;
+  margin-top: -7%;
 }
 #login-container {
   width: 340px;

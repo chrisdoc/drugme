@@ -2,7 +2,35 @@
 $(document).ready(function(){
 
 	var dc = new MedicationPlanController();
-	 
+
+	//Handle check events
+	/*$('#morning-check').live('change', function(){
+	    if($('#morning-check').is(':checked')){
+
+	    } else {
+
+	    }
+	});
+
+	$('#noon-check').live('change', function(){
+	    if($('#noon-check').).is(':checked')){
+	       
+	    } else {
+	       
+	    }
+	});
+
+	$('#evening-check').live('change', function(){
+	    if($('#evening-check').is(':checked')){
+	        
+	    } else {
+	        
+	    }
+	});*/
+
+	$("#startDate").datepicker();
+	$("#endDate").datepicker();
+	
 	$('#name-tf').focus();
 
 // customize the account settings form //

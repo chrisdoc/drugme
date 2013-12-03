@@ -7,6 +7,12 @@ $(document).ready(function(){
 	 
 	$('#name-tf').focus();
 
+	$('#details-form').ajaxForm({
+		success	: function(responseText, status, xhr, $form){
+			dc.showConfirmationAlert();
+		}
+	}); 
+
 // customize the account settings form //
 	$('#account-form h1').text('Account Settings');
 	$('#account-form #sub1').text('Here are the current settings for your account.');

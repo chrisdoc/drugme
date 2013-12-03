@@ -1,6 +1,7 @@
 
 var CT = require('./modules/country-list');
 var AM = require('./modules/account-manager');
+var WM = require('./modules/web-manager');
 
 module.exports = function(app) {
 
@@ -50,7 +51,8 @@ module.exports = function(app) {
 	app.get('/medicationplan', function(req, res) {
 			res.render('medicationplan', {
 				title : 'Control Panel',
-				udata : req.session.user
+				udata : req.session.user,
+				page : '0'
 			});
 	});
 	
@@ -60,11 +62,11 @@ module.exports = function(app) {
 	// if user is not logged-in redirect back to login page //
 	        res.redirect('/');
 	    }   else{
-			res.render('home', {
-				title : 'Control Panel',
-				countries : CT,
-				udata : req.session.user
-			});
+
+				res.render('home', {
+						countries : CT,
+						udata : req.session.user,
+				});
 	    }
 	});
 	

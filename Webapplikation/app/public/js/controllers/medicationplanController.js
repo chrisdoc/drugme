@@ -24,7 +24,7 @@ function MedicationPlanController()
 			}
 		});
 	}
-	
+
 	this.showLockedAlert = function(msg){
 		$('.modal-alert').modal({ show : false, keyboard : false, backdrop : 'static' });
 		$('.modal-alert .modal-header h3').text('Success!');
@@ -35,7 +35,7 @@ function MedicationPlanController()
 	}
 }
 
-DetailsController.prototype.onUpdateSuccess = function()
+MedicationPlanController.prototype.onUpdateSuccess = function()
 {
 	$('.modal-alert').modal({ show : false, keyboard : true, backdrop : true });
 	$('.modal-alert .modal-header h3').text('Success!');

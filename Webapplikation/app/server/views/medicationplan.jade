@@ -2,6 +2,8 @@ extends layout
 
 block content				
 
+	- var intakeForms = [{name: 'tablet'}, {name: 'spray'}, {name: 'injection'},{name: 'fluid'}]
+
 	#header
 	div#title Medication Plan Monitoring System
 	div#loggedIn Logged in as '#{udata.name}'
@@ -12,29 +14,63 @@ block content
 	
 	#medicationContainer
 		form( method="post").well.span4
-				h1#planname Medication Plan 1
-				label Medication 
-				input(type="select", name="medication", id='medication-tf')#inputMedication.span4.required
-				label Form
-				input(type="select", name="form", id='form-tf')#inputForm.span4.required
+			- if(page == '0'){
+				label#labelName Name
+					input(type="text", name="name", id='name-tf')#name.span4.required
+			- }else{
+				h1#planname MedicationPlan1
+			- }
+				label#labelMedication Medication 
+				select#inputMedication
+				label#labelForm Form
+				mixin intake_list(name)
+					option(value="#{name}") #{name}
+				select#inputForm
+					for intake in intakeForms
+						+intake_list(intake.name)
 				label#frequencyLabel Frequency
-				label#mo.checkbox Mo
-					input(type="checkbox", checked='checked')#mo-check
-				label#tu.checkbox Tu
-					input(type="checkbox", checked='checked')#tu-check
-				label#we.checkbox We
-					input(type="checkbox", checked='checked')#we-check
-				label#th.checkbox Th
-					input(type="checkbox", checked='checked')#th-check
-				label#fr.checkbox Fr
-					input(type="checkbox", checked='checked')#fr-check
-				label#sa.checkbox Sa
-					input(type="checkbox", checked='checked')#sa-check
-				label#su.checkbox Su
-					input(type="checkbox", checked='checked')#su-check
-				hr#separator
+					label#mo.checkbox Mo
+						input(type="checkbox")#mo-check
+					label#tu.checkbox Tu
+						input(type="checkbox")#tu-check
+					label#we.checkbox We
+						input(type="checkbox")#we-check
+					label#th.checkbox Th
+						input(type="checkbox")#th-check
+					label#fr.checkbox Fr
+						input(type="checkbox")#fr-check
+						label#sa.checkbox Sa
+							input(type="checkbox")#sa-check
+							label#su.checkbox Su
+								input(type="checkbox")#su-check
+				label#labelInterval Interval
+					label#morning.checkbox Morning
+						input(type="checkbox")#morning-check
+						amountLabel Amount
+						input(type="number", name="amountMorning", id='amountMorning-tf', min="0", max="50", value="0")#inputMorning.span4.required
+					label#noon.checkbox Noon
+						input(type="checkbox")#noon-check
+						amountLabel#noonAmount Amount
+						input(type="number", name="amountNoon", id='amountNoon-tf', min="0", max="50", value="0")#inputNoon.span4.required
+					label#evening.checkbox Evening
+						input(type="checkbox")#evening-check
+						amountLabel Amount
+						input(type="number", name="amountEvening", id='amountEvening-tf', min="0", max="50", value="0")#inputEvening.span4.required
+				label#startDateLabel Start
+					input(type="text", name="startDate", id='startDate-tf')#startDate.span4.required
+					label#endDateLabel End
+						input(type="text", name="endDate", id='endDate-tf')#endDate.span4.required
+				label#infoLabel Intake advise
+					input(type="text", name="intake", id='intake-tf')#inputIntakeInfo.span4.required
+			- if(page == '0'){
 				button(type="submit")#btn-create.btn.btn-primary
 					| Create medication plan
+			- }else{
+				button(type="submit")#btn-create.btn.btn-primary
+					| Modify medication plan
+			- }
+				
+
 					
 	include modals/alert
 	include modals/confirm

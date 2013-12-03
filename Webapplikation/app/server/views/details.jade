@@ -10,17 +10,18 @@ block content
 					| Sign Out
 	#header-border
 	
-	patientContainer
-		labelImg
-		labelPatient #{udata.name}
-		labelId EC: 1234 121290
-		labelAddress Address 
-		input(type="text", name="address", id='address-tf')#inputAddress.span4.required
-		labelBirthday Date of birth
-		input(type="text", name="date", id='date-tf')#inputDate.span4.required
-		labelPlans Active medication plans
-		button#btn-new-plan.btn.btn-primary + Add new plan
-		button#btn-confirm Confirm
+	#patientContainer
+		form( method="get")#details-form.well.span6
+			#labelImg
+			#labelPatient #{udata.name}
+			#labelId EC: 1234 121290
+			#labelAddress Address 
+				input(type="text", name="address", id='address-tf')#inputAddress.span4.required
+			#labelBirthday Date of birth
+				input(type="text", name="date", id='date-tf')#inputDate.span4.required
+			#labelPlans Active medication plans
+				button#btn-new-plan.btn.btn-primary + Add new plan
+			button(type="submit")#btn-confirm Confirm
 	
 	include modals/alert
 	include modals/confirm
