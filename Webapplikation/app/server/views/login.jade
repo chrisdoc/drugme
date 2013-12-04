@@ -2,6 +2,11 @@
 extends layout
 
 block content
+
+	#header
+	div#title Medication Plan Monitoring System
+	#header-border
+		
 	#login-container
 		form( method="post")#login-form.well.span4
 			h1 Welcome
@@ -13,15 +18,17 @@ block content
 			button(type="submit")#btn-login.btn.btn-primary
 				i.icon-lock.icon-white
 				| Sign in
-			label#remember-me.checkbox Remember Me
+			label#remember-me.checkbox Remember me
 				input(type="checkbox", checked='checked')
 			div.clear-fix
 			hr
 			div.btm-links
-				a(href='/signup')#create-account Create An Account
-
+				a(href='/signup')#create-account Create a new account
+	#footer
+		div#footer-border 
+	div#footer-text (C) FH Hagenberg, 2013 Mobile Health & Sports
+		
 	include modals/alert
-	include modals/lost-password
 
 block scripts
 	script(src='/vendor/jquery.min.js')

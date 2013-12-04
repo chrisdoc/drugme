@@ -8,19 +8,408 @@ body
 	margin  0
 	padding  0
 	height  100%
-	background rgb(242,249,254)
-	background -moz-radial-gradient(center, ellipse cover,  rgba(242,249,254,1) 0%, rgba(214,240,253,1) 100%) /* FF3.6+ */
-	background -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(242,249,254,1)), color-stop(100%,rgba(214,240,253,1))) /* Chrome,Safari4+ */
-	background -webkit-radial-gradient(center, ellipse cover,  rgba(242,249,254,1) 0%,rgba(214,240,253,1) 100%) /* Chrome10+,Safari5.1+ */
-	background -o-radial-gradient(center, ellipse cover,  rgba(242,249,254,1) 0%,rgba(214,240,253,1) 100%) /* Opera 12+ */
-	background -ms-radial-gradient(center, ellipse cover,  rgba(242,249,254,1) 0%,rgba(214,240,253,1) 100%) /* IE10+ */
-	background radial-gradient(center, ellipse cover,  rgba(242,249,254,1) 0%,rgba(214,240,253,1) 100%) /* W3C */
+	background-color #ffffff	
+
+#header{
+	background:url(ic_launcher.png)
+	background-size 80px 60px
+	background-repeat no-repeat
+	background-position left
+	padding-left 400px
+	background-origin content-box
+	height 80px
+	background-color #b1cbe2
+	text-align center
+}
+
+#title{
+	position absolute
+	top 36px
+	left 500px
+	font-size 26px
+	font-family "Helvetica"
+	color #167ec2
+}
+
+#header-border{
+	height 1px
+	background-color #b1cbe2
+}
+
+#footer{
+	position absolute
+	bottom 0
+	width 100%
+	height 80px
+	background-color #b1cbe2
+	float center
+	text-align center
+}
+
+#footer-border{
+	margin-top 0px
+	height 1px
+	background-color #b1cbe2
+}
+
+#footer-text{
+	position absolute
+	bottom 30px
+	left 515px
+	font-size 16px
+	font-family "Helvetica"
+	color #167ec2
+}
+
+#loggedIn{
+	position absolute
+	top 30px
+	right 140px
+	font-size 12px
+	font-family "Helvetica"
+	color #167ec2
+}
+
+#listTitle{
+	position absolute
+	top 24%
+	left 25%
+	font-size 16px
+	font-weight bold
+	font-family "Helvetica"
+	color #167ec2
+}
+
+listItem{
+	position absolute
+	background:url(arrow.png)
+	background-size 80px 60px
+	background-repeat no-repeat
+	background-position right
+	top 28%
+	left 25%
+	width 50%
+	height 14%
+	background-color #D8ECFF
+	border-bottom-right-radius 60px
 	
+	labelImg{
+		position absolute
+		background:url(avatar.png)
+		background-size 80px 80px
+		background-repeat no-repeat
+		background-position center
+		top 5px
+		left 5px
+		width 80px
+		height 80px
+		background-color #ffffff
+	}
+	
+	labelPatient{
+		position absolute
+		top 30%
+		left 15%
+		font-size 18px
+		font-weight bold
+		font-family "Helvetica"
+		color #167ec2
+	}
+	
+	labelId{
+		position absolute
+		top 50%
+		left 15%
+		font-size 14px
+		font-family "Helvetica"
+		color #167ec2
+	}
+}
+
+#patientContainer{
+	width 380px
+	margin-top 30px
+	margin-left 30%
+
+	#labelImg{
+		background:url(avatar.png)
+		background-size 180px 150px
+		background-repeat no-repeat
+		background-position center
+		width 180px
+		height 150px
+		background-color #ffffff
+		border-radius 10px
+	}
+	
+	#labelPatient{
+		font-size 22px
+		font-weight bold
+		font-family "Helvetica"
+		color #167ec2
+		margin-left 45%
+		margin-top -30%
+	}
+	
+	#labelId{
+		font-size 16px
+		font-family "Helvetica"
+		color #167ec2
+		margin-left 45%
+		margin-top 1%
+	}
+	
+	#labelAddress{
+		font-size 16px
+		font-family "Helvetica"
+		color #167ec2
+		margin-left 45%
+		margin-top 3%
+	}
+	
+	#inputAddress{
+		width 50%
+		margin-left 20%
+	}
+	
+	#labelBirthday{
+		font-size 16px
+		font-family "Helvetica"
+		color #167ec2
+		margin-left 45%
+	}
+	
+	#inputDate{
+		width 50%
+		margin-left 10%
+	}
+	
+	#labelPlans{
+		font-size 16px
+		font-weight bold
+		font-family "Helvetica"
+		color #167ec2
+		margin-top 6%
+	}
+	
+	#btn-new-plan{
+		width 120px
+		height 30px
+		margin-left 33%
+	}
+	
+	#btn-confirm{
+		width 100%
+		height 30px
+		background-color #0DFF65
+		border-color #0DFF65
+		color #ffffff
+		border-radius 5px
+		margin-top 34%
+	}
+}
+
+listItem:hover{
+	background-color #12CBEF
+}
+
 // login form //
-    
+#medicationContainer{
+	width 380px
+	margin 30px auto
+	
+	#labelName{
+		margin-left 15px
+	}
+
+	#name{
+		margin-top -8%
+		margin-left 26%
+		width  190px
+	}
+
+	#planname{
+		text-align center
+	}
+	
+	#btn-create{
+		width  100%
+	}
+	
+	#inputForm{
+		width  200px
+		margin-top -14%
+		margin-left 30%
+	}
+	
+	#inputMedication{
+		margin-top -13%
+		margin-left 30%
+		width  200px
+	}
+	
+	#frequencyLabel{
+		margin-left 15px
+		margin-top 0px
+	}
+	
+	#labelMedication{
+		margin-left 15px
+		margin-top 16px
+	}
+	
+	#labelForm{
+		margin-left 15px
+		margin-top 0px
+	}
+
+	#mo{
+		margin-left 32%
+		margin-top -10%
+	}
+	
+	#mo-check{
+		margin-right 1%
+	}
+	
+	#tu{
+		margin-left 48%
+		margin-top -8%
+	}
+	
+	#tu-check{
+		margin-right 1%
+	}
+	
+	#we{
+		margin-left 64%
+		margin-top -8%
+	}
+	
+	#we-check{
+		margin-right 1%
+	}
+	
+	#th{
+		margin-left 80%
+		margin-top -8%
+	}
+	
+	#th-check{
+		margin-right 1%
+	}
+	
+	#fr{
+		margin-left 40%
+		margin-top 2%
+	}
+	
+	#fr-check{
+		margin-right 1%
+	}
+	
+	#sa{
+		margin-left 16%
+		margin-top -12%
+	}
+	
+	#sa-check{
+		margin-right 1%
+	}
+	
+	#su{
+		margin-left 24%
+		margin-top -16%
+	}
+	
+	#su-check{
+		margin-right 1%
+	}
+
+	#labelInterval{
+		margin-left 15px
+		margin-top 0px
+		margin-bottom 10px
+	}
+
+	#morning-check{
+		margin-right 4%
+		margin-left 5%
+	}
+
+	#noon-check{
+		margin-right 4%
+		margin-left 5%
+	}
+
+	#evening-check{
+		margin-right 4%
+		margin-left 5%
+	}
+	
+	amountLabel{
+		margin-left 8%
+	}
+
+	#noonAmount{
+		margin-left 14%
+	}
+
+	#inputMorning{
+		width 80px
+		margin-left 72%
+		margin-top -8%
+	}
+
+	#inputNoon{
+		width 80px
+		margin-left 72%
+		margin-top -8%
+	}
+
+	#inputEvening{
+		width 80px
+		margin-left 72%
+		margin-top -8%
+	}
+
+	#startDateLabel{
+		margin-left 15px
+	}
+
+	#endDateLabel{
+		margin-left 52%
+		margin-top -12%
+	}
+
+	#endDate{
+		width 80px
+		margin-left 24%
+		margin-top -14%
+	}
+
+	#startDate{
+		width 80px
+		margin-left 14%
+		margin-top -7%
+	}
+
+	#infoLabel{
+		margin-left 15px
+	}
+
+	#inputIntakeInfo{
+		width 176px
+		margin-left 30%
+		margin-top -7%
+	}
+}
+
+// login form //
 #login-container{
 	width 340px
-	margin 160px auto	
+	margin 60px auto
+
 	label{
 		margin 15px 0 5px 5px
 	}
@@ -38,7 +427,7 @@ body
 		margin-top 10px
 	}
 	#create-account{
-		float:right
+		float:center
 		margin-right:13px
 	}	
 	#forgot-password{
@@ -48,10 +437,9 @@ body
 }
 
 // account form on signup & home page //
-
 #account-form-container
 	width 460px
-	margin 100px auto
+	margin 25px auto
 #country-list
 	width 280px
 .modal-form-errors li
@@ -97,10 +485,10 @@ body
     
 #btn-logout
 	width 100px
-	top 1px
-	right 8px
+	top 25px
+	right 15px
 	position absolute
-	 
+	
 // support pages //
 
 #print

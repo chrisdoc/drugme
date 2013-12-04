@@ -26,12 +26,6 @@ function AccountValidator(){
 		}
 	}
 	
-	this.validateEmail = function(e)
-	{
-		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		return re.test(e);
-	}
-	
 	this.showErrors = function(a)
 	{
 		$('.modal-form-errors .modal-body p').text('Please correct the following problems :');
@@ -61,9 +55,6 @@ AccountValidator.prototype.validateForm = function()
 	for (var i=0; i < this.controlGroups.length; i++) this.controlGroups[i].removeClass('error');
 	if (this.validateName(this.formFields[0].val()) == false) {
 		this.controlGroups[0].addClass('error'); e.push('Please Enter Your Name');
-	}
-	if (this.validateEmail(this.formFields[1].val()) == false) {
-		this.controlGroups[1].addClass('error'); e.push('Please Enter A Valid Email');
 	}
 	if (this.validateName(this.formFields[2].val()) == false) {
 		this.controlGroups[2].addClass('error');
