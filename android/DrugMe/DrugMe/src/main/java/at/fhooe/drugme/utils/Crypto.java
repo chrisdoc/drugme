@@ -109,9 +109,8 @@ public class Crypto {
             byte[] keyBytes = Arrays.copyOfRange(decryptedKeyParam, 0, 32);
             byte[] ivBytes = Arrays.copyOfRange(decryptedKeyParam, 32, 44);
 
-            Log.d(" key " , Converter.getHex(keyBytes));
-            Log.d(" iv " , Converter.getHex(ivBytes));
-            Log.d(" encoded msg len :" , String.valueOf(decodedInput.length));
+           // Log.d(" key " , Converter.getHex(keyBytes));
+           // Log.d(" iv " , Converter.getHex(ivBytes));
             Key key;
             Cipher out;
 
