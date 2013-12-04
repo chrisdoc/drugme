@@ -1,0 +1,14 @@
+
+required node modules
+- node-gyp 
+- node-ursa -( requires openSSL)
+- node-aes-256-gcm 
+
+
+usage :   encrypted_message = encodeCipher(clientPublicKey, 'Message to encrypt'));
+
+
+
+
+
+  
