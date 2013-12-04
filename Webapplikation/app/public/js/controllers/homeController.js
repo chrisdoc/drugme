@@ -9,7 +9,10 @@ function HomeController()
 	$('#btn-logout').click(function(){ that.attemptLogout(); });
 
 // handle click on list item //
-	$('listItem').click(function(){that.showPatientPage()});
+	$('listItem').click(function(){
+		var idx = this.id;
+		that.showPatientPage(idx);
+	});
 
 	this.attemptLogout = function()
 	{
@@ -27,13 +30,14 @@ function HomeController()
 		});
 	}
 
-	this.showPatientPage = function()
+	this.showPatientPage = function(index)
 	{
 		var that = this;
+		var idx = index;
 		$.ajax({
 			url: "/details",
 			type: "GET",
-			data: {logout: true},
+			data: {ec : idx},
 			success: function(data){
 				window.location.href = '/details';
 			},

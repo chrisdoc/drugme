@@ -63,7 +63,7 @@ exports.getAllPatients = function(callback) {
    db.collection('patients', function(err, collection) {
         collection.find().toArray(function(err, items) {
 			if(err){
-				callback(err,null);
+				callback(err);
 			} else{
 				callback(null, items);
 			}
@@ -72,17 +72,15 @@ exports.getAllPatients = function(callback) {
 };
 
 /** Get's the patient which is identified by the given EC number **/
-exports.findPatientByEC = function(req, res) {
-    var ec = req.params.ec;
-    console.log('Retrieving patient: ' + ec);
+exports.findPatientByEC = function(eccard, callback) {
+    var ec = eccard;
+
     db.collection('patients', function(err, collection) {
         collection.findOne({'ec':ec}, function(err, item) {
-			if(!item){
-				console.log("A patient with EC '" + ec + "' does not exist.");
-				res.writeHead(500, {'Content-Type': 'text/plain' });
-				res.end("");
+			if(err){
+				callback(err);
 			}else{
-				res.send(item);
+				callback(null, item);
 			}
         });
     });
@@ -188,7 +186,7 @@ var populatePatientsCollection = function() {
     {
 		ec: "123456789",
         name: "Max Mustermann",
-        birthday: "10-01-1990",
+        birthday: "10/01/1990",
 		address: "Softwarepark 11 4132 Hagenberg",
 		apikey: "APA91bEGswndqcUNN5TPJezbYAo01xEdDtcr8hmQb5WHEO5BZSIfZK_JQ27Wh3-D9ytmNSKamk76njOljrszgqHjpbhf-SZ9PxvkWmAc2FkeQIWchB2FaLWgxaqFExc7OSfCyq_USzJQNH19toh701CASmi0_GGgRA",
 		image: "img/users/avatar.png"
@@ -196,18 +194,18 @@ var populatePatientsCollection = function() {
     {
 		ec: "987654321",
         name: "Maria Musterfrau",
-        birthday: "15-04-1988",
+        birthday: "15/04/1988",
 		address: "Softwarepark 11 4132 Hagenberg",
 		apikey: "APA91bEGswndqcUNN5TPJezbYAo01xEdDtcr8hmQb5WHEO5BZSIfZK_JQ27Wh3-D9ytmNSKamk76njOljrszgqHjpbhf-SZ9PxvkWmAc2FkeQIWchB2FaLWgxaqFExc7OSfCyq_USzJQNH19toh701CASmi0_GGgRA",
-		image: "img/users/avatar2.png"
+		image: "img/users/avatar.png"
     },
 	{
 		ec: "123454321",
         name: "Hannes Weltklasse",
-        birthday: "20-06-1990",
+        birthday: "20/06/1990",
 		address: "Am Marktplatz 12 1337 Aschach",
 		apikey: "APA91bEGswndqcUNN5TPJezbYAo01xEdDtcr8hmQb5WHEO5BZSIfZK_JQ27Wh3-D9ytmNSKamk76njOljrszgqHjpbhf-SZ9PxvkWmAc2FkeQIWchB2FaLWgxaqFExc7OSfCyq_USzJQNH19toh701CASmi0_GGgRA",
-		image: "img/users/avatar2.png"
+		image: "img/users/avatar.png"
     }];
  
     db.collection('patients', function(err, collection) {
@@ -222,15 +220,13 @@ var populatePatientsCollection = function() {
 /****************************************************************************/
 
 /** Get's a list of all medications **/
-exports.getAllMedications = function(req, res) {
+exports.getAllMedications = function(callback) {
     db.collection('medications', function(err, collection) {
         collection.find().toArray(function(err, items) {
-		
-			if(!items){
-				res.writeHead(500, {'Content-Type': 'text/plain' });
-				res.end("");
-			}else{
-				res.send(items);
+			if(err){
+				callback(err);
+			} else{
+				callback(null, items);
 			}
 		});
 	});
@@ -370,6 +366,22 @@ exports.getMedicationPlanForUser = function(req, res) {
 				res.end("");
 			}else{
 				res.send(items);
+			}
+        });
+    });
+};
+
+/** Get's all medication plans assigned to a given patient **/
+exports.getPlansForPatient = function(eccard, callback) {
+    var ec = eccard;
+	
+    console.log('Retrieving medication plans for patient ' + ec);
+    db.collection('medicationplans', function(err, collection) {
+        collection.find({'patient':ec}).toArray(function(err, items) {
+			if(!items){
+				callback(err);
+			}else{
+				callback(null, items);
 			}
         });
     });

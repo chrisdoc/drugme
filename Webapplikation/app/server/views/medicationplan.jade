@@ -3,6 +3,7 @@ extends layout
 block content				
 
 	- var intakeForms = [{name: 'tablet'}, {name: 'spray'}, {name: 'injection'},{name: 'fluid'}]
+	- var medications = JSON.parse(mdata)
 
 	#header
 	div#title Medication Plan Monitoring System
@@ -20,8 +21,12 @@ block content
 			- }else{
 				h1#planname MedicationPlan1
 			- }
-				label#labelMedication Medication 
+				label#labelMedication Medication
+				mixin medication_list(name)
+					option(value="#{name}") #{name}
 				select#inputMedication
+					for medication in medications
+						+medication_list(medication.name)
 				label#labelForm Form
 				mixin intake_list(name)
 					option(value="#{name}") #{name}

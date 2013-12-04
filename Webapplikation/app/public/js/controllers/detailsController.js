@@ -4,7 +4,7 @@ function DetailsController()
 
 // bind event listeners to button clicks //
 	var that = this;
-	
+
 // handle user logout //
 	$('#btn-logout').click(function(){ that.attemptLogout(); });
 	$('#btn-new-plan').click(function(){that.showMedicationPlanPage();});

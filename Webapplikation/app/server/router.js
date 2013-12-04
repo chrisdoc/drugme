@@ -3,6 +3,8 @@ var CT = require('./modules/country-list');
 var AM = require('./modules/account-manager');
 var WM = require('./modules/web-manager');
 
+var patientEC = undefined;
+
 module.exports = function(app) {
 
 // main login page //
@@ -41,18 +43,42 @@ module.exports = function(app) {
 	
 	// patient details page //
 	app.get('/details', function(req, res) {
-			res.render('details', {
-				title : 'Control Panel',
-				udata : req.session.user
-			});
+		if(req.param('ec') != undefined){
+			patientEC = req.param('ec');
+		}
+
+		WM.getAllPatients(function(err,items){
+	    	var patient = items[patientEC];
+
+	    	WM.getPlansForPatient(patient.ec, function(err, plans){
+	    		res.render('details', {
+					udata : req.session.user,
+					pdata : patient,
+					plandata : JSON.stringify(plans)
+				});
+	    	});
+		});
 	});
 	
 	// medication plan page //
 	app.get('/medicationplan', function(req, res) {
-			res.render('medicationplan', {
-				title : 'Control Panel',
-				udata : req.session.user,
-				page : '0'
+
+			WM.getAllMedications(function(err,items){
+
+				var medications = null;
+
+				if(!err){
+	    			medications = items;
+	    			console.log("Medications received");
+	    		}else{
+	    			console.log("Error retreiving medication information");
+	    		}
+
+				res.render('medicationplan', {
+					udata : req.session.user,
+					page : '0',
+					mdata : JSON.stringify(medications)
+				});
 			});
 	});
 	
@@ -63,10 +89,26 @@ module.exports = function(app) {
 	        res.redirect('/');
 	    }   else{
 
-				res.render('home', {
+	    		console.log("homepage");
+
+	    		WM.getAllPatients(function(err,items){
+
+	    			var patients = null;
+
+	    			if(!err){
+	    				patients = items;
+	    				console.log("Patients received");
+	    			}else{
+	    				console.log("Error retreiving patient information");
+	    			}
+
+	    			res.render('home', {
 						countries : CT,
 						udata : req.session.user,
-				});
+						pdata : JSON.stringify(patients)
+					});
+
+	    		});
 	    }
 	});
 	

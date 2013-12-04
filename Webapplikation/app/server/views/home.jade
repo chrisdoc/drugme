@@ -1,7 +1,10 @@
 
 extends layout
 
+
 block content				
+
+	- var patients = JSON.parse(pdata)
 
 	#header
 	div#title Medication Plan Monitoring System
@@ -10,14 +13,16 @@ block content
 					i.icon-lock.icon-white
 					| Sign Out
 	#header-border
-
 	div#listTitle Patients
 
-	listItem
+	- if(patients !== null){
+	- for (var i = 0; i < patients.length; ++i) {
+	listItem(id="#{i}")
 		labelImg
-		labelPatient#patient0 #{udata.name}
-		labelId#ec0 EC: 1234 121290
-		
+		labelPatient(id="patient-#{i}") #{patients[i].name}
+		labelId(id="ec-#{i}", text="#{patients[i].ec}") EC: #{patients[i].ec}
+	- }
+	- }
 	include modals/alert
 	include modals/confirm
 

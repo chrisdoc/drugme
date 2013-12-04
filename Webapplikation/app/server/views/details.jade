@@ -1,6 +1,8 @@
 extends layout
 
-block content				
+block content	
+
+	- var medicationPlans = JSON.parse(plandata)
 
 	#header
 	div#title Medication Plan Monitoring System
@@ -13,14 +15,20 @@ block content
 	#patientContainer
 		form( method="get")#details-form.well.span6
 			#labelImg
-			#labelPatient #{udata.name}
-			#labelId EC: 1234 121290
+			#labelPatient #{pdata.name}
+			#labelId EC: #{pdata.ec}
 			#labelAddress Address 
-				input(type="text", name="address", id='address-tf')#inputAddress.span4.required
+				input(type="text", name="address", id='address-tf', value="#{pdata.address}")#inputAddress.span4.required
 			#labelBirthday Date of birth
-				input(type="text", name="date", id='date-tf')#inputDate.span4.required
+				input(type="text", name="date", id='date-tf', value="#{pdata.birthday}")#inputDate.span4.required
 			#labelPlans Active medication plans
 				button#btn-new-plan.btn.btn-primary + Add new plan
+			#scrollList
+				- for (var i = 0; i < medicationPlans.length; ++i) {
+				#planItem(name="plan-{i}")
+					#planImg
+						#planLabel #{medicationPlans[i].name}
+				- }
 			button(type="submit")#btn-confirm Confirm
 	
 	include modals/alert
