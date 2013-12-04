@@ -11,7 +11,6 @@ block content
 					i.icon-lock.icon-white
 					| Sign Out
 	#header-border
-	
 	#patientContainer
 		form( method="get")#details-form.well.span6
 			#labelImg
@@ -25,11 +24,11 @@ block content
 				button#btn-new-plan.btn.btn-primary + Add new plan
 			#scrollList
 				- for (var i = 0; i < medicationPlans.length; ++i) {
-				#planItem(name="plan-{i}")
-					#planImg
+				planItem(id="#{medicationPlans[i].name}")
+					div#planImg
 						#planLabel #{medicationPlans[i].name}
 				- }
-			button(type="submit")#btn-confirm Confirm
+			button(type="submit")#btn-sync Confirm
 	
 	include modals/alert
 	include modals/confirm

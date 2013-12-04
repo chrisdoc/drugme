@@ -13,6 +13,7 @@ $(document).ready(function(){
 		}
 	}); 
 
+
 // customize the account settings form //
 	$('#account-form h1').text('Account Settings');
 	$('#account-form #sub1').text('Here are the current settings for your account.');

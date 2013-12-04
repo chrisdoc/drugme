@@ -14,12 +14,12 @@ block content
 	#header-border
 	
 	#medicationContainer
-		form( method="post").well.span4
+		form( method="post")#medication-form.well.span4
 			- if(page == '0'){
 				label#labelName Name
 					input(type="text", name="name", id='name-tf')#name.span4.required
 			- }else{
-				h1#planname MedicationPlan1
+				h1#planname #{plandata.name}
 			- }
 				label#labelMedication Medication
 				mixin medication_list(name)
@@ -61,12 +61,21 @@ block content
 						input(type="checkbox")#evening-check
 						amountLabel Amount
 						input(type="number", name="amountEvening", id='amountEvening-tf', min="0", max="50", value="0")#inputEvening.span4.required
+				- if(page == 1){
+				label#startDateLabel Start
+					input(type="text", name="startDate", id='startDate-tf', value="#{plandata.startdate}")#startDate.span4.required
+					label#endDateLabel End
+						input(type="text", name="endDate", id='endDate-tf', value="#{plandata.enddate}")#endDate.span4.required
+				label#infoLabel Intake advise
+					input(type="text", name="intake", id='intake-tf', value="#{plandata.info}")#inputIntakeInfo.span4.required
+				- }else{
 				label#startDateLabel Start
 					input(type="text", name="startDate", id='startDate-tf')#startDate.span4.required
 					label#endDateLabel End
 						input(type="text", name="endDate", id='endDate-tf')#endDate.span4.required
 				label#infoLabel Intake advise
 					input(type="text", name="intake", id='intake-tf')#inputIntakeInfo.span4.required
+				- }
 			- if(page == '0'){
 				button(type="submit")#btn-create.btn.btn-primary
 					| Create medication plan
@@ -92,4 +101,5 @@ block scripts
 	script(src='/vendor/bootstrap-transition.js')
 	script(src='/js/views/medicationplan.js')
 	script(src='/js/controllers/medicationplanController.js')
+	script(src='/js/form-validators/planValidator.js')
 	link(rel='stylesheet', href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css')

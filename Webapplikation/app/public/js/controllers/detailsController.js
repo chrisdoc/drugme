@@ -7,8 +7,13 @@ function DetailsController()
 
 // handle user logout //
 	$('#btn-logout').click(function(){ that.attemptLogout(); });
-	$('#btn-new-plan').click(function(){that.showMedicationPlanPage();});
-	$('#btn-confirm').click(function(){that.showConfirmationAlert();});
+	$('#btn-new-plan').click(function(){that.showMedicationPlanPage(0, 0);});
+	$('#btn-sync').click(function(){that.showConfirmationAlert();});
+
+	$('planItem').click(function(){
+		var idx = this.id;
+		that.showMedicationPlanPage(1, idx);
+	});
 
 // handle click on list item //
 	this.attemptLogout = function()
@@ -27,12 +32,13 @@ function DetailsController()
 		});
 	}
 
-	this.showMedicationPlanPage = function()
+	this.showMedicationPlanPage = function(pageIndex, name)
 	{
 		var that = this;
 		$.ajax({
 			url: "/medicationplan",
 			type: "GET",
+			data: {page : pageIndex, plan : name},
 			success: function(data){
 				window.location.href = '/medicationplan';
 			},
@@ -45,7 +51,7 @@ function DetailsController()
 	this.showConfirmationAlert = function(){
 		$('.modal-alert').modal({ show : false, keyboard : false, backdrop : 'static' });
 		$('.modal-alert .modal-header h3').text('Success');
-		$('.modal-alert .modal-body p').html("All currently active medication plans have been forwarded to patient ''");
+		$('.modal-alert .modal-body p').html("All currently active medication plans have been forwarded to patient '" + $('#patientContainer #labelPatient').text() + "'");
 		$('.modal-alert').modal('show');
 		$('.modal-alert button').click(function(){window.location.href = '/';})
 	}
@@ -58,13 +64,4 @@ function DetailsController()
 		$('.modal-alert button').click(function(){window.location.href = '/home';})
 		setTimeout(function(){window.location.href = '/';}, 3000);
 	}
-}
-
-DetailsController.prototype.onUpdateSuccess = function()
-{
-	$('.modal-alert').modal({ show : false, keyboard : true, backdrop : true });
-	$('.modal-alert .modal-header h3').text('Success!');
-	$('.modal-alert .modal-body p').html('Your account has been updated.');
-	$('.modal-alert').modal('show');
-	$('.modal-alert button').off('click');
 }

@@ -371,6 +371,21 @@ exports.getMedicationPlanForUser = function(req, res) {
     });
 };
 
+/** Get's the medication plan which is identified by the given name */
+exports.getMedicationPlanByName = function(planName, callback) {
+    var name = planName;
+    console.log('Retrieving medication plan: ' + name);
+    db.collection('medicationplans', function(err, collection) {
+        collection.findOne({'name':name}, function(err, item) {
+			if(!item){
+				callback(err);
+			}else{
+				callback(null,item);
+			}
+        });
+    });
+};
+
 /** Get's all medication plans assigned to a given patient **/
 exports.getPlansForPatient = function(eccard, callback) {
     var ec = eccard;
@@ -407,55 +422,47 @@ exports.deleteMedicationPlan = function(req, res) {
 
 /** Updates the medication plan identified by the given name **/
 exports.updateMedicationPlan = function(req, res) {
-    var name = req.params.name;
     var plan = req.body;
-	plan.name = name;
 	
-    console.log('Updating medication plan: ' + name);
+    console.log('Updating medication plan: ' + plan.name);
     console.log(JSON.stringify(plan));
     db.collection('medicationplans', function(err, collection) {
-        collection.update({'name':name}, plan, {safe:true}, function(err, result) {
+        collection.update({'name':plan.name}, plan, {safe:true}, function(err, result) {
             if (err) {
                console.log('Error updating medication plan: ' + err);
                res.writeHead(500, {'Content-Type': 'text/plain' });
 			   res.end({'error':'An error has occurred - ' + err});
             } else {
-                console.log('Medication plan ' + name + ' updated');
+                console.log('Medication plan ' + plan.name + ' updated');
                 res.writeHead(200, {'Content-Type': 'text/plain' });
-				res.end("Medication plan " + name + " updated.");
+				res.end("Medication plan " + plan.name + " updated.");
             }
         });
     });
 }
 
 /** Updates the medication plan identified by the given name **/
-exports.createMedicationPlan = function(req, res) {
-    var plan = req.body;
+exports.createMedicationPlan = function(medPlan, callback) {
+    var plan = medPlan;
 	
-    console.log('Creating new medication plan: ' + plan.name);
-    console.log(JSON.stringify(plan));
-
 	 db.collection('medicationplans', function(err, collection) {
-        collection.findOne({'name':plan.name}, function(err, item) {
+        collection.findOne({'name':plan.name}, function(er, item) {
 			if(!item){
-				db.collection('medicationplans', function(err, collection) {
-					collection.insert(plan, {safe:true}, function(err, result) {
+				console.log('Creating new medication plan: ' + plan.name);
+    			console.log(JSON.stringify(plan));
+				db.collection('medicationplans', function(error, collection) {
+					collection.insert(plan, {safe:true}, function(e, result) {
 				
-					if(err){
-						console.log('Medication plan could not be created: ' + err);
-					   res.writeHead(500, {'Content-Type': 'text/plain' });
-					   res.end({'error':'An error has occurred - ' + err});
+					if(e){
+					  	callback(e);
 					}else{
-						console.log('Medication plan ' + plan.name + ' created');
-						res.writeHead(200, {'Content-Type': 'text/plain' });
-						res.end("Medication plan " + plan.name + " created.");
+						callback(null, "Plan created");
 					}
 				});
 			});
 			}else{
-				console.log("A medication plan called " + plan.name + " already exists.");
-				res.writeHead(500, {'Content-Type': 'text/plain' });
-				res.end("A medication plan called " + plan.name + " already exists.");
+				console.log('A plan called ' + plan.name + ' already exists...');
+				callback(er, null);
 			}
         });
     });
@@ -474,8 +481,8 @@ var populateMedicationPlanCollection = function() {
 		dose: "1 tablet",
 		intake: "1-1-1",
 		frequency : "1-0-1-0-1-0-1",
-		startdate : "2013-12-02",
-		enddate : "2013-12-16",
+		startdate : "02/12/2013",
+		enddate : "16/12/2013",
 		info : "cillum fugiat ullamco deserunt eu labore fugiat cillum est incididunt ex nulla adipisicing eiusmod magna non laboris tempor ex officia et voluptate nisi culpa est eu mollit quis magna aliquip"
     },
 	{
@@ -485,8 +492,8 @@ var populateMedicationPlanCollection = function() {
 		dose: "6 drops",
 		intake: "0-1-1",
 		frequency : "1-1-1-1-1-1-1",
-		startdate : "2013-12-17",
-		enddate : "2013-12-27",
+		startdate : "17/12/2013",
+		enddate : "27/12/2013",
 		info : "cillum fugiat ullamco deserunt eu labore fugiat cillum est incididunt ex nulla adipisicing eiusmod magna non laboris tempor ex officia et voluptate nisi culpa est eu mollit quis magna aliquip"
     },
 	{
@@ -496,8 +503,8 @@ var populateMedicationPlanCollection = function() {
 		dose: "4 drops",
 		intake: "0-1-1",
 		frequency : "0-1-1-0-1-1-0",
-		startdate : "2013-12-19",
-		enddate : "2013-12-24",
+		startdate : "19/12/2013",
+		enddate : "24/12/2013",
 		info : "cillum fugiat ullamco deserunt eu labore fugiat cillum est incididunt ex nulla adipisicing eiusmod magna non laboris tempor ex officia et voluptate nisi culpa est eu mollit quis magna aliquip"
     }];
  

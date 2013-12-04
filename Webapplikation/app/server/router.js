@@ -4,6 +4,8 @@ var AM = require('./modules/account-manager');
 var WM = require('./modules/web-manager');
 
 var patientEC = undefined;
+var pageIdx = undefined;
+var planName = undefined;
 
 module.exports = function(app) {
 
@@ -63,6 +65,14 @@ module.exports = function(app) {
 	// medication plan page //
 	app.get('/medicationplan', function(req, res) {
 
+			if(req.param('page') != undefined){
+				pageIdx = req.param('page');
+			}
+
+			if(req.param('plan') != undefined){
+				planName = req.param('plan');
+			}
+
 			WM.getAllMedications(function(err,items){
 
 				var medications = null;
@@ -74,12 +84,40 @@ module.exports = function(app) {
 	    			console.log("Error retreiving medication information");
 	    		}
 
-				res.render('medicationplan', {
-					udata : req.session.user,
-					page : '0',
-					mdata : JSON.stringify(medications)
-				});
+	    		// Load plan
+	    		if(pageIdx == 1){
+	    			WM.getMedicationPlanByName(planName, function(err, item){
+		    			res.render('medicationplan', {
+							udata : req.session.user,
+							page : pageIdx,
+							mdata : JSON.stringify(medications),
+							plandata : item
+						});
+	    			});
+	    		}else{
+					res.render('medicationplan', {
+						udata : req.session.user,
+						page : pageIdx,
+						mdata : JSON.stringify(medications),
+						plandata : undefined
+					});
+				}
 			});
+	});
+
+	app.post('/medicationplan', function(req, res) {
+		console.log("Create plan");
+		var plan = req.body;
+
+		WM.createMedicationPlan(plan, function(err, response){
+			if(response == null){
+				console.log("error occurred");
+				res.send('error',400);
+			}else{
+				console.log("success");
+				res.send('ok',200);
+			}
+		});
 	});
 	
 // logged-in user homepage //
@@ -88,9 +126,6 @@ module.exports = function(app) {
 	// if user is not logged-in redirect back to login page //
 	        res.redirect('/');
 	    }   else{
-
-	    		console.log("homepage");
-
 	    		WM.getAllPatients(function(err,items){
 
 	    			var patients = null;
