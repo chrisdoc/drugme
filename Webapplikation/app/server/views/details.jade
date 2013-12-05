@@ -28,8 +28,9 @@ block content
 			#scrollList
 				- for (var i = 0; i < medicationPlans.length; ++i) {
 				planItem(id="#{medicationPlans[i].name}")
-					planImg
-						planLabel #{medicationPlans[i].name}
+					#back
+						#planImg
+							#planLabel #{medicationPlans[i].name}
 				- }
 			button(type="submit")#btn-sync Confirm
 	

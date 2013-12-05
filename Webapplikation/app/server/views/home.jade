@@ -15,14 +15,15 @@ block content
 	#header-border
 	div#listTitle Patients
 
-	- if(patients !== null){
-	- for (var i = 0; i < patients.length; ++i) {
-	listItem(id="#{i}")
-		labelImg
-		labelPatient(id="patient-#{i}") #{patients[i].name}
-		labelId(id="ec-#{i}", text="#{patients[i].ec}") EC: #{patients[i].ec}
-	- }
-	- }
+	#patientList
+		- if(patients !== null){
+		- for (var i = 0; i < patients.length; ++i) {
+		listItem(id="#{i}")
+			#itemBack
+				#labell #{patients[i].name}
+				#labelImg
+		- }
+		- }
 	include modals/alert
 	include modals/confirm
 
