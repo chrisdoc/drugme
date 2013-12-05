@@ -4,9 +4,12 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.google.gson.annotations.Expose;
+
+import org.joda.time.DateTime;
 
 
 public class MedicationPlan implements Parcelable {
@@ -27,6 +30,19 @@ public class MedicationPlan implements Parcelable {
     public MedicationPlan withMedications(List<Medication> medications) {
         this.medications = medications;
         return this;
+    }
+    public List<Medication> getCurrentMedications(){
+        ArrayList<Medication> current= new ArrayList<Medication>();
+        DateTime end=null;
+        DateTime start=null;
+        for(Medication med:medications){
+            end=new DateTime(med.getEndDate());
+            start=new DateTime(med.getStartDate());
+            if(end.isAfterNow()&&start.isBeforeNow()){
+                current.add(med);
+            }
+        }
+        return current;
     }
 
     public String getName() {

@@ -181,7 +181,8 @@ public class LoginActivity extends Activity {
                 progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                 progressDialog.setCancelable(false);
                 progressDialog.show();
-                client.post("http://95.85.6.247:3000/patients", params, new AsyncHttpResponseHandler() {
+                String url=String.format("http://%s/patients",getString(R.string.api_base_url));
+                client.post(url, params, new AsyncHttpResponseHandler() {
                     @Override
                     public void onSuccess(String response) {
                         if (response.contains("Patient added:")) {
@@ -206,7 +207,7 @@ public class LoginActivity extends Activity {
             }
         });
         if (checkRegistration()) {
-           // showDrugMeActivity();
+            showDrugMeActivity();
         }
 
 

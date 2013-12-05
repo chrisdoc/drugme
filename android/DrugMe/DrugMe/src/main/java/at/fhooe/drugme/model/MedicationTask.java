@@ -13,6 +13,8 @@ import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import at.fhooe.drugme.R;
 
@@ -71,7 +73,15 @@ public class MedicationTask extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         Gson gson = new Gson();
-        MedicationPlan plan=gson.fromJson(result, MedicationPlan.class);
+        Medication[] medication=gson.fromJson(result,Medication[].class);
+
+        if(medication==null){
+            return;
+        }
+        MedicationPlan plan= new MedicationPlan();
+        plan.setName("");
+        plan.setMedications(Arrays.asList(medication));
+        //n=gson.fromJson(result, MedicationPlan.class);
         if(listener!=null){
             listener.medicationTaskFinished(plan);
         }

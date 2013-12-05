@@ -1,6 +1,7 @@
 package at.fhooe.drugme.gcm;
 
 import android.app.IntentService;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -9,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 
 import android.util.Log;
@@ -129,6 +131,16 @@ public class GcmIntentService extends IntentService {
                         .setStyle(new NotificationCompat.BigTextStyle()
                                 .bigText(msg))
                         .setContentText(msg);
+
+        SharedPreferences prefs= PreferenceManager
+                .getDefaultSharedPreferences(this);
+
+        if(prefs.getBoolean("notifications_new_message_light",false)){
+            mBuilder.setLights(getResources().getColor(R.color.light_blue), 500, 2000);
+        }
+        if(prefs.getBoolean("notifications_new_message_vibrate",false)){
+            mBuilder.setVibrate(new long[]{100, 200, 100, 500});
+        }
 
         mBuilder.setContentIntent(contentIntent);
         mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());

@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import org.joda.time.DateTime;
@@ -21,6 +23,8 @@ public class MedicationAdapter extends ArrayAdapter<Medication> {
 
  List<Medication> medications;
 Context context;
+    private Filter filter;
+
     public MedicationAdapter(Context context, int textViewResourceId,
                               List<Medication> medications) {
         super(context, textViewResourceId, medications);
@@ -44,7 +48,7 @@ Context context;
             view.setTag(holder);
         }
 
-        holder.name.setText(medications.get(position).getName());
+        holder.name.setText(medications.get(position).getMedication());
         DateTime next = new DateTime(medications.get(position).getNextMedicationTime());
         DateTime now = new DateTime(new Date());
         Period diff = new Period(now, next);
@@ -79,4 +83,25 @@ Context context;
         }
     }
 
+    @Override
+    public Filter getFilter() {
+        if(filter == null)
+            filter = new MedicationDateFilter();
+        return filter;
+
+    }
+
+    private class MedicationDateFilter extends Filter {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            FilterResults results=new FilterResults();
+
+            return null;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+
+        }
+    }
 }

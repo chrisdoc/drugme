@@ -1,0 +1,9 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceCategory android:title="@string/pref_header_general">
+    <CheckBoxPreference
+        android:key="generate_calendar"
+        android:title="@string/pref_title_generate_calendar"
+        android:defaultValue="true" />
+</PreferenceCategory>
+
+</PreferenceScreen>

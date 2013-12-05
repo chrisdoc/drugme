@@ -8,13 +8,16 @@ var message = new gcm.Message({
     
 });
 var urls=['https://gist.github.com/chriskies/7672921/raw/370f7fe03d6fc6f35e16ac1538253f544247a824/medication.json','https://gist.github.com/chriskies/7679573/raw/8e5542bbec30e0e645a5aa2d0ded84ff0e5bf8df/medication2.json','https://gist.github.com/chriskies/7679583/raw/890ca9597d6004942fd951605cb1436d07f224c0/medication3.json','https://gist.github.com/chriskies/7679594/raw/medication4.json'];
+
+var urls	=['http://kieslich.tk:3000/medicationplans/987654321','http://kieslich.tk:3000/medicationplans/123456789'];
 var sender = new gcm.Sender('AIzaSyDtpBF0NjtQSaCSQNF6EhB2zEqW9HJrJiA');
 var registrationIds = [];
 
 message.addDataWithKeyValue('method','updateMedication');
-//message.addDataWithKeyValue('url',urls[Math.floor((Math.random()*4))]);
+message.addDataWithKeyValue('url',urls[Math.floor((Math.random()*urls.length))]);
 
-message.addDataWithKeyValue('url','https://gist.github.com/chriskies/7679594/raw/medication4.json');
+//message.addDataWithKeyValue('url','http://kieslich.tk:3000/medicationplans/123456789');
+//message.addDataWithKeyValue('url','https://gist.github.com/chriskies/7679594/raw/medication4.json');
 
 message.collapseKey = 'demo';
 message.delayWhileIdle = true;

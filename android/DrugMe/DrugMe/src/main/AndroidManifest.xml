@@ -15,8 +15,9 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-
-
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+       
     <permission
         android:name="com.example.gcm.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
@@ -37,7 +38,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="at.fhooe.drugme.MedicationDetailsActivity" />
+        <activity android:name="at.fhooe.drugme.MedicationDetailsActivity"
+            android:parentActivityName="at.fhooe.drugme.DrugMeActivity"/>
         <activity android:name="at.fhooe.drugme.DrugMeActivity" />
 
         <receiver
@@ -50,13 +52,27 @@
             </intent-filter>
         </receiver>
 
+        <service
+            android:name="at.fhooe.drugme.alarm.AlarmService"
+            android:enabled="true" />
+
+        <receiver android:name="at.fhooe.drugme.alarm.Alarm" />
+
         <service android:name="at.fhooe.drugme.gcm.GcmIntentService" />
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-
+        <activity
+            android:name="at.fhooe.drugme.SettingsActivity"
+            android:parentActivityName="at.fhooe.drugme.DrugMeActivity"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name="at.fhooe.drugme.MedicationIntake"
+            android:parentActivityName="at.fhooe.drugme.DrugMeActivity"
+            android:label="@string/title_activity_medication" >
+        </activity>
     </application>
 
 </manifest>
