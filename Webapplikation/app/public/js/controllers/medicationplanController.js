@@ -16,6 +16,8 @@ function MedicationPlanController()
 	var noonChecked = false;
 	var eveningChecked = false;
 
+	$('#btn-delete').click(function(){ that.deleteMedicationPlan(); });
+
 // handle user logout //
 	$('#btn-logout').click(function(){ that.attemptLogout(); });
 
@@ -106,15 +108,45 @@ function MedicationPlanController()
 			if (pv.validateForm(mondayChecked,tuesdayChecked,wednesdayChecked,thursdayChecked,fridayChecked,saturdayChecked,sundayChecked, morningChecked, noonChecked, eveningChecked) == false){
 				return false;
 			} 	else{
+				formData.push({name:'monday', value:mondayChecked});
+				formData.push({name:'tuesday', value:tuesdayChecked});
+				formData.push({name:'wednesday', value:wednesdayChecked});
+				formData.push({name:'thursday', value:thursdayChecked});
+				formData.push({name:'friday', value:fridayChecked});
+				formData.push({name:'saturday', value:saturdayChecked});
+				formData.push({name:'sunday', value:sundayChecked});
+
+				formData.push({name:'morning', value:morningChecked});
+				formData.push({name:'noon', value:noonChecked});
+				formData.push({name:'evening', value:eveningChecked});
+
+				formData.push({name:'medication', value:$('#inputMedication').val()});
+				formData.push({name:'patient', value:$('#ec').val()});
+				formData.push({name: 'page', value:$('#page').val()});
+
+				if($('#page').val() == '0'){
+					formData.push({name: 'planName', value:$('#name').val()});
+				}else{
+					formData.push({name: 'planName', value:$('#namePlan').val()});
+				}
+
 				return true;
 			}
 		},
 		success	: function(responseText, status, xhr, $form){
-			$('.modal-alert').modal({ show : false, keyboard : false, backdrop : 'static' });
-			$('.modal-alert .modal-header h3').text('Success!');
-			$('.modal-alert .modal-body p').html("A new medication plan has been created.");
-			$('.modal-alert').modal('show');
-			$('.modal-alert button').click(function(){window.location.href = '/details';})
+			if($('#page').val() == '0'){
+				$('.modal-alert').modal({ show : false, keyboard : false, backdrop : 'static' });
+				$('.modal-alert .modal-header h3').text('Success!');
+				$('.modal-alert .modal-body p').html("A new medication plan has been created.");
+				$('.modal-alert').modal('show');
+				$('.modal-alert button').click(function(){window.location.href = '/details';});
+			}else{
+				$('.modal-alert').modal({ show : false, keyboard : false, backdrop : 'static' });
+				$('.modal-alert .modal-header h3').text('Success!');
+				$('.modal-alert .modal-body p').html("The medication plan has been updated.");
+				$('.modal-alert').modal('show');
+				$('.modal-alert button').click(function(){window.location.href = '/details';});
+			}
 		},
 		error : function(e){
 			$('.modal-alert').modal({ show : false, keyboard : false, backdrop : 'static' });
@@ -134,6 +166,22 @@ function MedicationPlanController()
 			data: {logout : true},
 			success: function(data){
 	 			that.showLockedAlert('You are now logged out.<br>Redirecting you back to the homepage.');
+			},
+			error: function(jqXHR){
+				console.log(jqXHR.responseText+' :: '+jqXHR.statusText);
+			}
+		});
+	}
+
+	this.deleteMedicationPlan = function()
+	{
+		var that = this;
+		$.ajax({
+			url: "/medicationplan",
+			type: "POST",
+			data: {page : '2', plan : $('#namePlan').val()},
+			success: function(data){
+				window.location.href = '/details';
 			},
 			error: function(jqXHR){
 				console.log(jqXHR.responseText+' :: '+jqXHR.statusText);

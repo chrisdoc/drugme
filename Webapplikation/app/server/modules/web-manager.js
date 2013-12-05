@@ -155,24 +155,18 @@ exports.deletePatient = function(req, res) {
 }
 
 /** Updates the information of the patient who is identified by the given EC number **/
-exports.updatePatient = function(req, res) {
-    var ec = req.params.ec;
-    var user = req.body;
-	user.ec = ec;
+exports.updatePatient = function(u, callback) {
+    var user = u;
 	
-    console.log('Updating user: ' + ec);
+    console.log('Updating user: ' + user.ec);
     console.log(JSON.stringify(user));
     db.collection('patients', function(err, collection) {
-        collection.update({'ec':ec}, user, {safe:true}, function(err, result) {
-            if (err) {
-               console.log('Error updating user: ' + err);
-               res.writeHead(500, {'Content-Type': 'text/plain' });
-			   res.end({'error':'An error has occurred - ' + err});
-            } else {
-                console.log('Patient ' + ec + ' updated');
-                res.writeHead(200, {'Content-Type': 'text/plain' });
-				res.end("Patient " + ec + " updated.");
-            }
+        collection.update({'ec':user.ec}, user, {safe:true}, function(err, result) {
+           			if(err){
+					  	callback(e);
+					}else{
+						callback(null, "Plan created");
+					}	
         });
     });
 }
@@ -403,39 +397,31 @@ exports.getPlansForPatient = function(eccard, callback) {
 };
 
 /** Deletes the medication plan which is identified by the given plan name **/
-exports.deleteMedicationPlan = function(req, res) {
-    var name = req.params.name;
+exports.deleteMedicationPlan = function(planName, callback) {
+    var name = planName;
     console.log('Deleting medication plan: ' + name);
     db.collection('medicationplans', function(err, collection) {
         collection.remove({'name':name}, {safe:true}, function(err, result) {
             if (err) {
-				res.writeHead(500, {'Content-Type': 'text/plain' });
-				res.end({'error':'An error has occurred - ' + err});
+				callback(err);
             } else {
-                console.log('Medication plan ' + name + ' deleted');
-                res.writeHead(200, {'Content-Type': 'text/plain' });
-				res.end("Medication plan " + name + " deleted.");
+                callback(null, 'Plan deleted');
             }
         });
     });
 }
 
 /** Updates the medication plan identified by the given name **/
-exports.updateMedicationPlan = function(req, res) {
-    var plan = req.body;
+exports.updateMedicationPlan = function(medPlan, callback) {
+    var plan = medPlan;
 	
     console.log('Updating medication plan: ' + plan.name);
-    console.log(JSON.stringify(plan));
     db.collection('medicationplans', function(err, collection) {
         collection.update({'name':plan.name}, plan, {safe:true}, function(err, result) {
             if (err) {
-               console.log('Error updating medication plan: ' + err);
-               res.writeHead(500, {'Content-Type': 'text/plain' });
-			   res.end({'error':'An error has occurred - ' + err});
+	        	callback(err);
             } else {
-                console.log('Medication plan ' + plan.name + ' updated');
-                res.writeHead(200, {'Content-Type': 'text/plain' });
-				res.end("Medication plan " + plan.name + " updated.");
+                callback(null, "Plan updated");
             }
         });
     });
@@ -478,7 +464,6 @@ var populateMedicationPlanCollection = function() {
 		name: "ParkemedPlan",
 		patient: "123456789",
 		medication : "Parkemed",
-		dose: "1 tablet",
 		intake: "1-1-1",
 		frequency : "1-0-1-0-1-0-1",
 		startdate : "02/12/2013",
@@ -489,7 +474,6 @@ var populateMedicationPlanCollection = function() {
 		name: "TimophtalPlan",
 		patient: "123456789",
 		medication : "Timophtal",
-		dose: "6 drops",
 		intake: "0-1-1",
 		frequency : "1-1-1-1-1-1-1",
 		startdate : "17/12/2013",
@@ -500,7 +484,6 @@ var populateMedicationPlanCollection = function() {
 		name: "TimophtalPlan2",
 		patient: "987654321",
 		medication : "Timophtal",
-		dose: "4 drops",
 		intake: "0-1-1",
 		frequency : "0-1-1-0-1-1-0",
 		startdate : "19/12/2013",

@@ -2,10 +2,12 @@
 var CT = require('./modules/country-list');
 var AM = require('./modules/account-manager');
 var WM = require('./modules/web-manager');
+var gcm = require('node-gcm');
 
 var patientEC = undefined;
 var pageIdx = undefined;
 var planName = undefined;
+var patientIdentifier = undefined;
 
 module.exports = function(app) {
 
@@ -62,6 +64,56 @@ module.exports = function(app) {
 		});
 	});
 	
+	app.post('/details', function(req, res) {
+		// User
+		var user = {
+			name : req.param('patientName'),
+			ec : req.param('patientEc'),
+			birthday : req.param('patientBirthday'),
+			address : req.param('patientAddress'),
+			apikey : req.param('patientApi')
+		}
+
+		var message = new gcm.Message({
+		    collapseKey: 'demo',
+		    delayWhileIdle: true,
+		    timeToLive: 3,
+		});
+
+		var sender = new gcm.Sender('AIzaSyDtpBF0NjtQSaCSQNF6EhB2zEqW9HJrJiA');
+		var registrationIds = [];
+
+		message.addDataWithKeyValue('method','updateMedication');
+		message.addDataWithKeyValue('url','http://kieslich.tk:3000/medicationplans/' + user.ec);
+
+		message.collapseKey = 'demo';
+		message.delayWhileIdle = true;
+		message.timeToLive = 3;
+
+		// At least one required
+		//nexus4
+		registrationIds.push(user.apikey);
+		//emulator
+		registrationIds.push('APA91bHI0cyBMnqsNtdNx9ED7qH7nPHcQYntGQmXDgrLXPJTxQllYofsuY3_eTTWE_cxjDv95EHdXJJvqbHfO4Lxfr8zLxLpkfNQIMyfezCAj7uPDJuzsW7LqtPH7_CUnJ-JDMCFcUiEzRY4WRL5-KYD6afU_NQeFQ')
+
+		/**
+		 * Params: message-literal, registrationIds-array, No. of retries, callback-function
+		 **/
+		sender.send(message, registrationIds, 4, function (err, result) {
+		    console.log(result);
+		});
+
+		WM.updatePatient(user, function(err, response){
+				if(response == null){
+					console.log("error occurred");
+					res.send('error',400);
+				}else{
+					console.log("success");
+					res.send('ok',200);
+				}
+			});
+	});
+
 	// medication plan page //
 	app.get('/medicationplan', function(req, res) {
 
@@ -72,6 +124,12 @@ module.exports = function(app) {
 			if(req.param('plan') != undefined){
 				planName = req.param('plan');
 			}
+
+			if(req.param('ec') != undefined){
+				patientIdentifier = req.param('ec');
+			}
+
+			console.log(req.param('ec'));
 
 			WM.getAllMedications(function(err,items){
 
@@ -91,6 +149,7 @@ module.exports = function(app) {
 							udata : req.session.user,
 							page : pageIdx,
 							mdata : JSON.stringify(medications),
+							patient : patientIdentifier,
 							plandata : item
 						});
 	    			});
@@ -99,6 +158,7 @@ module.exports = function(app) {
 						udata : req.session.user,
 						page : pageIdx,
 						mdata : JSON.stringify(medications),
+						patient : patientIdentifier,
 						plandata : undefined
 					});
 				}
@@ -106,18 +166,123 @@ module.exports = function(app) {
 	});
 
 	app.post('/medicationplan', function(req, res) {
-		console.log("Create plan");
-		var plan = req.body;
+		var intakeAmount = '';
+		var intakeFrequency = '';
 
-		WM.createMedicationPlan(plan, function(err, response){
-			if(response == null){
-				console.log("error occurred");
-				res.send('error',400);
-			}else{
-				console.log("success");
-				res.send('ok',200);
-			}
-		});
+		if(req.param('page') == '2'){
+			console.log("Delete medication plan " + req.param('plan'));
+			WM.deleteMedicationPlan(req.param('plan'), function(err, response){
+		    	if(response == null){
+					console.log("error occurred");
+					res.send('error',400);
+				}else{
+					console.log("success");
+					res.send('ok',200);
+				}	
+	    	});
+		}
+
+		// Frequency
+		if(req.param('monday') == 'true'){
+			intakeFrequency += '1-';
+		}else{
+			intakeFrequency += '0-';
+		}
+
+		if(req.param('tuesday') == 'true'){
+			intakeFrequency += '1-';
+		}else{
+			intakeFrequency += '0-';
+		}
+
+		if(req.param('wednesday') == 'true'){
+			intakeFrequency += '1-';
+		}else{
+			intakeFrequency += '0-';
+		}
+
+		if(req.param('thursday') == 'true'){
+			intakeFrequency += '1-';
+		}else{
+			intakeFrequency += '0-';
+		}
+
+		if(req.param('friday') == 'true'){
+			intakeFrequency += '1-';
+		}else{
+			intakeFrequency += '0-';
+		}
+
+		if(req.param('saturday') == 'true'){
+			intakeFrequency += '1-';
+		}else{
+			intakeFrequency += '0-';
+		}
+
+		if(req.param('sunday') == 'true'){
+			intakeFrequency += '1';
+		}else{
+			intakeFrequency += '0';
+		}
+
+		// Intake
+		if(req.param('morning') == 'true'){
+			intakeAmount += req.param('amountMorning') + '-';
+		}else{
+			intakeAmount += '0-';
+		}
+
+		if(req.param('noon') == 'true'){ 
+			intakeAmount += req.param('amountNoon') + '-';
+		}else{
+			intakeAmount += '0-';
+		}
+
+		if(req.param('evening') == 'true'){
+			intakeAmount += req.param('amountEvening');
+		}else{
+			intakeAmount += '0';
+		}
+
+		// Plan
+		var plan = {
+			name : req.param('planName'),
+			patient : req.param('patient'),
+			medication : req.param('medication'),
+			intake : intakeAmount,
+			frequency : intakeFrequency,
+			startdate : req.param('startDate'),
+			enddate : req.param('endDate'),
+			info : req.param('intake')
+		}
+
+		// Either create or update the medication plan
+		if(req.param('page') == '0'){
+			console.log("Create new medication plan... " + plan.name);
+			WM.createMedicationPlan(plan, function(err, response){
+				if(response == null){
+					console.log("error occurred");
+					res.send('error',400);
+				}else{
+					console.log("success");
+					res.send('ok',200);
+				}
+			});
+		}else if(req.param('page') == '1'){
+			console.log("Update medication plan " + plan.name);
+			console.log(intakeAmount);
+			console.log(intakeFrequency);
+
+			WM.updateMedicationPlan(plan, function(err, response){
+				if(response == null){
+					console.log("error occurred");
+					res.send('error',400);
+				}else{
+					console.log("success");
+					res.send('ok',200);
+				}
+			});
+		}
 	});
 	
 // logged-in user homepage //

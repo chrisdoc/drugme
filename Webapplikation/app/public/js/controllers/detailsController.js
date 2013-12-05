@@ -7,12 +7,12 @@ function DetailsController()
 
 // handle user logout //
 	$('#btn-logout').click(function(){ that.attemptLogout(); });
-	$('#btn-new-plan').click(function(){that.showMedicationPlanPage(0, 0);});
+	$('#btn-new-plan').click(function(){that.showMedicationPlanPage(0, 0, $('#ec').val());});
 	$('#btn-sync').click(function(){that.showConfirmationAlert();});
 
 	$('planItem').click(function(){
 		var idx = this.id;
-		that.showMedicationPlanPage(1, idx);
+		that.showMedicationPlanPage(1, idx, $('#ec').val());
 	});
 
 // handle click on list item //
@@ -32,13 +32,13 @@ function DetailsController()
 		});
 	}
 
-	this.showMedicationPlanPage = function(pageIndex, name)
+	this.showMedicationPlanPage = function(pageIndex, name, patient)
 	{
 		var that = this;
 		$.ajax({
 			url: "/medicationplan",
 			type: "GET",
-			data: {page : pageIndex, plan : name},
+			data: {page : pageIndex, plan : name, ec : patient},
 			success: function(data){
 				window.location.href = '/medicationplan';
 			},
@@ -53,7 +53,7 @@ function DetailsController()
 		$('.modal-alert .modal-header h3').text('Success');
 		$('.modal-alert .modal-body p').html("All currently active medication plans have been forwarded to patient '" + $('#patientContainer #labelPatient').text() + "'");
 		$('.modal-alert').modal('show');
-		$('.modal-alert button').click(function(){window.location.href = '/';})
+		$('.modal-alert button').click(function(){window.location.href = '/home';})
 	}
 
 	this.showLockedAlert = function(msg){

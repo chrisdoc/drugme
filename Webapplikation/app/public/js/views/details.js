@@ -8,11 +8,18 @@ $(document).ready(function(){
 	$('#name-tf').focus();
 
 	$('#details-form').ajaxForm({
+		beforeSubmit : function(formData, jqForm, options){
+			formData.push({name:'patientName', value:$('#patientName').val()});
+			formData.push({name: 'patientEc', value:$('#ec').val()});
+			formData.push({name:'patientApi', value:$('#api').val()});
+			formData.push({name: 'patientAddress', value:$('#inputAddress').val()});
+			formData.push({name: 'patientBirthday', value:$('#inputDate').val()});
+			return true;
+		},
 		success	: function(responseText, status, xhr, $form){
 			dc.showConfirmationAlert();
 		}
 	}); 
-
 
 // customize the account settings form //
 	$('#account-form h1').text('Account Settings');

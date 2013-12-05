@@ -12,7 +12,10 @@ block content
 					| Sign Out
 	#header-border
 	#patientContainer
-		form( method="get")#details-form.well.span6
+		form( method="post")#details-form.well.span6
+			input(type='hidden', id='ec', value='#{pdata.ec}')
+			input(type='hidden', id='api', value='#{pdata.apikey}')
+			input(type='hidden', id='patientName', value='#{pdata.name}')
 			#labelImg
 			#labelPatient #{pdata.name}
 			#labelId EC: #{pdata.ec}
@@ -25,8 +28,8 @@ block content
 			#scrollList
 				- for (var i = 0; i < medicationPlans.length; ++i) {
 				planItem(id="#{medicationPlans[i].name}")
-					div#planImg
-						#planLabel #{medicationPlans[i].name}
+					planImg
+						planLabel #{medicationPlans[i].name}
 				- }
 			button(type="submit")#btn-sync Confirm
 	

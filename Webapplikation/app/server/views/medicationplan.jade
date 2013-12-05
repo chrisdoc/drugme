@@ -12,14 +12,21 @@ block content
 					i.icon-lock.icon-white
 					| Sign Out
 	#header-border
-	
+
 	#medicationContainer
-		form( method="post")#medication-form.well.span4
+		- if(page == '1'){
+		button#btn-delete.btn.btn-primary 
+					| X
+		- }
+		form(method="post")#medication-form.well.span4
+			input(type='hidden', id='ec', value='#{patient}')
+			input(type='hidden', id='page', value='#{page}')
 			- if(page == '0'){
 				label#labelName Name
 					input(type="text", name="name", id='name-tf')#name.span4.required
 			- }else{
 				h1#planname #{plandata.name}
+				input(type='hidden', id='namePlan', value='#{plandata.name}')
 			- }
 				label#labelMedication Medication
 				mixin medication_list(name)

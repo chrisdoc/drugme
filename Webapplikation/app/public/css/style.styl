@@ -185,12 +185,6 @@ listItem{
 		margin-left 33%
 	}
 
-	#scrollList{
-		margin-top 8px
-		height 130px
-		overflow auto
-	}
-
 	#btn-sync{
 		width 100%
 		height 30px
@@ -202,10 +196,17 @@ listItem{
 	}
 }
 
+#scrollList{
+	margin-top 8px auto
+	height 130px
+	width 100%
+	overflow auto
+}
+
 planItem{
 	margin-top 1%
 	width 100%
-	height 40px
+	height 60px
 	background:url(arrow.png)
 	background-size 40px 40px
 	background-repeat no-repeat
@@ -213,21 +214,17 @@ planItem{
 	background-color #b1cbe2
 	border-radius 10px
 
-	#planImg{
+	planImg{
 		background-image url(drugme.png)
 		background-size 40px 40px
 		background-repeat no-repeat
 		background-position center
-		width 40px
-		margin-left 10px
-		height 40px
-		border-radius 2px
 	}
 
-	#planLabel{
-		margin-left 50px
-		padding-top 30%
-		font-size 12px
+	planLabel{
+		margin-left 70px
+		padding-top 40%
+		font-size 14px
 		font-weight bold
 		font-family "Helvetica"
 		color #167ec2
@@ -244,6 +241,18 @@ planItem:hover{
 
 listItem:hover{
 	background-color #12CBEF
+}
+
+#btn-delete{
+	width 30px
+	height 30px
+	margin-left -10px
+	margin-top -10px
+}
+
+#delete-label{
+	margin-top -4px
+	margin-left -3px
 }
 
 // login form //

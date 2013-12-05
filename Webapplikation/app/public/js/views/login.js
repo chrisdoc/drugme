@@ -12,7 +12,7 @@ $(document).ready(function(){
 				return false;
 			} 	else{
 			// append 'remember-me' option to formData to write local cookie //
-				formData.push({name:'remember-me', value:$("input:checkbox:checked").length == 1})
+				formData.push({name:'monday', value:$("input:checkbox:checked").length == 1})
 				return true;
 			}
 		},
