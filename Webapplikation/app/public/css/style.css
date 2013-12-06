@@ -184,10 +184,14 @@ labelPatient {
   color: #167ec2;
   margin-top: 6%;
 }
-#patientContainer #btn-new-plan {
+#patientContainer #btn-new {
   width: 120px;
   height: 30px;
   margin-left: 33%;
+  background-color: #ff2036;
+  color: #fff;
+  border-color: #ff2036;
+  border-radius: 5px;
 }
 #patientContainer #btn-sync {
   width: 100%;
@@ -331,15 +335,15 @@ listItem:hover {
   margin-right: 1%;
 }
 #medicationContainer #sa {
-  margin-left: 16%;
-  margin-top: -12%;
+  margin-left: 57%;
+  margin-top: -22px;
 }
 #medicationContainer #sa-check {
   margin-right: 1%;
 }
 #medicationContainer #su {
-  margin-left: 24%;
-  margin-top: -16%;
+  margin-left: 74%;
+  margin-top: -23px;
 }
 #medicationContainer #su-check {
   margin-right: 1%;
@@ -464,6 +468,8 @@ listItem:hover {
   width: 80px;
   top: 213px;
   position: absolute;
+  background-color: #0dff65;
+  border-color: #0dff65;
 }
 .modal-single-input form #cancel {
   right: 110px;

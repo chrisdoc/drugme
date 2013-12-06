@@ -4,6 +4,7 @@ function MedicationPlanController()
 	var pv = new PlanValidator();
 // bind event listeners to button clicks //
 	var that = this;
+
 	var mondayChecked = false;
 	var tuesdayChecked = false;
 	var wednesdayChecked = false;
@@ -105,6 +106,67 @@ function MedicationPlanController()
 // Handle form submission
 	$('#medication-form').ajaxForm({
 		beforeSubmit : function(formData, jqForm, options){
+
+			if($('#mo-check').is(':checked')){
+				mondayChecked = true;
+			}else{
+				mondayChecked = false;
+			}
+
+			if($('#tu-check').is(':checked')){
+				tuesdayChecked = true;
+			}else{
+				tuesdayChecked = false;
+			}
+
+			if($('#we-check').is(':checked')){
+				wednesdayChecked = true;
+			}else{
+				wednesdayChecked = false;
+			}
+
+			if($('#th-check').is(':checked')){
+				thursdayChecked = true;
+			}else{
+				thursdayChecked = false;
+			}
+
+			if($('#fr-check').is(':checked')){
+				fridayChecked = true;
+			}else{
+				fridayChecked = false;
+			}
+
+			if($('#sa-check').is(':checked')){
+				saturdayChecked = true;
+			}else{
+				saturdayChecked = false;
+			}
+
+			if($('#su-check').is(':checked')){
+				sundayChecked = true;
+			}else{
+				sundayChecked = false;
+			}
+
+			if($('#morning-check').is(':checked')){
+				morningChecked = true;
+			}else{
+				morningChecked = false;
+			}
+
+			if($('#noon-check').is(':checked')){
+				noonChecked = true;
+			}else{
+				noonChecked = false;
+			}
+
+			if($('#evening-check').is(':checked')){
+				eveningChecked = true;
+			}else{
+				eveningChecked = false;
+			}
+
 			if (pv.validateForm(mondayChecked,tuesdayChecked,wednesdayChecked,thursdayChecked,fridayChecked,saturdayChecked,sundayChecked, morningChecked, noonChecked, eveningChecked) == false){
 				return false;
 			} 	else{
@@ -121,6 +183,7 @@ function MedicationPlanController()
 				formData.push({name:'evening', value:eveningChecked});
 
 				formData.push({name:'medication', value:$('#inputMedication').val()});
+				formData.push({name:'medicationType', value:$('#inputForm').val()});
 				formData.push({name:'patient', value:$('#ec').val()});
 				formData.push({name: 'page', value:$('#page').val()});
 

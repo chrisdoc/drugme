@@ -6,8 +6,8 @@ function DetailsController()
 	var that = this;
 
 // handle user logout //
+	$('#btn-new').click(function(){that.showMedicationPlanPage(0, 0, $('#ec').val());});
 	$('#btn-logout').click(function(){ that.attemptLogout(); });
-	$('#btn-new-plan').click(function(){that.showMedicationPlanPage(0, 0, $('#ec').val());});
 	$('#btn-sync').click(function(){that.showConfirmationAlert();});
 
 	$('planItem').click(function(){

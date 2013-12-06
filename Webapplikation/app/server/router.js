@@ -20,6 +20,7 @@ module.exports = function(app) {
 		}	else{
 			// attempt automatic login //
 			AM.autoLogin(req.cookies.user, req.cookies.pass, function(o){
+
 				if (o != null){
 				    req.session.user = o;
 					res.redirect('/home');
@@ -32,6 +33,7 @@ module.exports = function(app) {
 	
 	app.post('/', function(req, res){
 		AM.manualLogin(req.param('user'), req.param('pass'), function(e, o){
+
 			if (!o){
 				res.send(e, 400);
 			}	else{
@@ -47,6 +49,7 @@ module.exports = function(app) {
 	
 	// patient details page //
 	app.get('/details', function(req, res) {
+
 		if(req.param('ec') != undefined){
 			patientEC = req.param('ec');
 		}
@@ -54,17 +57,22 @@ module.exports = function(app) {
 		WM.getAllPatients(function(err,items){
 	    	var patient = items[patientEC];
 
-	    	WM.getPlansForPatient(patient.ec, function(err, plans){
-	    		res.render('details', {
-					udata : req.session.user,
-					pdata : patient,
-					plandata : JSON.stringify(plans)
-				});
-	    	});
+	    	if(req.session.user == undefined){
+	    		res.redirect('/home');
+	    	}else{
+		    	WM.getPlansForPatient(patient.ec, function(err, plans){
+		    		res.render('details', {
+						udata : req.session.user,
+						pdata : patient,
+						plandata : JSON.stringify(plans)
+					});
+		    	});
+		    }
 		});
 	});
 	
 	app.post('/details', function(req, res) {
+
 		// User
 		var user = {
 			name : req.param('patientName'),
@@ -99,16 +107,12 @@ module.exports = function(app) {
 		/**
 		 * Params: message-literal, registrationIds-array, No. of retries, callback-function
 		 **/
-		sender.send(message, registrationIds, 4, function (err, result) {
-		    console.log(result);
-		});
+		sender.send(message, registrationIds, 4, function (err, result) {});
 
 		WM.updatePatient(user, function(err, response){
 				if(response == null){
-					console.log("error occurred");
 					res.send('error',400);
 				}else{
-					console.log("success");
 					res.send('ok',200);
 				}
 			});
@@ -116,6 +120,7 @@ module.exports = function(app) {
 
 	// medication plan page //
 	app.get('/medicationplan', function(req, res) {
+
 
 			if(req.param('page') != undefined){
 				pageIdx = req.param('page');
@@ -129,29 +134,31 @@ module.exports = function(app) {
 				patientIdentifier = req.param('ec');
 			}
 
-			console.log(req.param('ec'));
-
 			WM.getAllMedications(function(err,items){
 
 				var medications = null;
 
 				if(!err){
 	    			medications = items;
-	    			console.log("Medications received");
 	    		}else{
-	    			console.log("Error retreiving medication information");
 	    		}
 
 	    		// Load plan
 	    		if(pageIdx == 1){
+
 	    			WM.getMedicationPlanByName(planName, function(err, item){
-		    			res.render('medicationplan', {
-							udata : req.session.user,
-							page : pageIdx,
-							mdata : JSON.stringify(medications),
-							patient : patientIdentifier,
-							plandata : item
-						});
+
+	    				if(item == undefined){
+							res.redirect('/home');
+	    				}else{	
+			    			res.render('medicationplan', {
+								udata : req.session.user,
+								page : pageIdx,
+								mdata : JSON.stringify(medications),
+								patient : patientIdentifier,
+								plandata : item
+							});
+		    			}
 	    			});
 	    		}else{
 					res.render('medicationplan', {
@@ -166,17 +173,15 @@ module.exports = function(app) {
 	});
 
 	app.post('/medicationplan', function(req, res) {
+
 		var intakeAmount = '';
 		var intakeFrequency = '';
 
 		if(req.param('page') == '2'){
-			console.log("Delete medication plan " + req.param('plan'));
 			WM.deleteMedicationPlan(req.param('plan'), function(err, response){
 		    	if(response == null){
-					console.log("error occurred");
 					res.send('error',400);
 				}else{
-					console.log("success");
 					res.send('ok',200);
 				}	
 	    	});
@@ -249,6 +254,7 @@ module.exports = function(app) {
 			name : req.param('planName'),
 			patient : req.param('patient'),
 			medication : req.param('medication'),
+			type : req.param('medicationType'),
 			intake : intakeAmount,
 			frequency : intakeFrequency,
 			startdate : req.param('startDate'),
@@ -258,27 +264,18 @@ module.exports = function(app) {
 
 		// Either create or update the medication plan
 		if(req.param('page') == '0'){
-			console.log("Create new medication plan... " + plan.name);
 			WM.createMedicationPlan(plan, function(err, response){
 				if(response == null){
-					console.log("error occurred");
 					res.send('error',400);
 				}else{
-					console.log("success");
 					res.send('ok',200);
 				}
 			});
 		}else if(req.param('page') == '1'){
-			console.log("Update medication plan " + plan.name);
-			console.log(intakeAmount);
-			console.log(intakeFrequency);
-
 			WM.updateMedicationPlan(plan, function(err, response){
 				if(response == null){
-					console.log("error occurred");
 					res.send('error',400);
 				}else{
-					console.log("success");
 					res.send('ok',200);
 				}
 			});
@@ -287,6 +284,7 @@ module.exports = function(app) {
 	
 // logged-in user homepage //
 	app.get('/home', function(req, res) {
+
 	    if (req.session.user == null){
 	// if user is not logged-in redirect back to login page //
 	        res.redirect('/');
@@ -297,9 +295,6 @@ module.exports = function(app) {
 
 	    			if(!err){
 	    				patients = items;
-	    				console.log("Patients received");
-	    			}else{
-	    				console.log("Error retreiving patient information");
 	    			}
 
 	    			res.render('home', {
@@ -313,6 +308,7 @@ module.exports = function(app) {
 	});
 	
 	app.post('/home', function(req, res){
+
 		if (req.param('user') != undefined) {
 			AM.updateAccount({
 				user 		: req.param('user'),

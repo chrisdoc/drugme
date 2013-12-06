@@ -4,6 +4,13 @@ block content
 
 	- var intakeForms = [{name: 'tablet'}, {name: 'spray'}, {name: 'injection'},{name: 'fluid'}]
 	- var medications = JSON.parse(mdata)
+	- var intakeTimes
+	- var intakeDays
+
+	- if(page == '1'){
+	- intakeTimes = plandata.intake.split('-')
+	- intakeDays = plandata.frequency.split('-')
+	- }
 
 	#header
 	div#title Medication Plan Monitoring System
@@ -25,49 +32,113 @@ block content
 				label#labelName Name
 					input(type="text", name="name", id='name-tf')#name.span4.required
 			- }else{
-				h1#planname #{plandata.name}
+				h1#planname #{plandata.name} 
 				input(type='hidden', id='namePlan', value='#{plandata.name}')
 			- }
 				label#labelMedication Medication
 				mixin medication_list(name)
+					- if(page == '1' && name == plandata.medication){
+					option(value="#{name}", selected) #{name}
+					- } else {
 					option(value="#{name}") #{name}
+					- }
 				select#inputMedication
 					for medication in medications
 						+medication_list(medication.name)
 				label#labelForm Form
 				mixin intake_list(name)
+					- if(page == '1' && name == plandata.type){
+					option(value="#{name}", selected) #{name}
+					- } else {
 					option(value="#{name}") #{name}
+					- }
 				select#inputForm
 					for intake in intakeForms
 						+intake_list(intake.name)
 				label#frequencyLabel Frequency
+					- if(page == '1' && intakeDays[0] > 0){
+					label#mo.checkbox Mo
+						input(type="checkbox", checked)#mo-check
+					- }else{
 					label#mo.checkbox Mo
 						input(type="checkbox")#mo-check
+					- }
+					- if(page == '1' && intakeDays[1] > 0){
+					label#tu.checkbox Tu
+						input(type="checkbox", checked)#tu-check
+					- }else{
 					label#tu.checkbox Tu
 						input(type="checkbox")#tu-check
+					- }
+					- if(page == '1' && intakeDays[2] > 0){
+					label#we.checkbox We
+						input(type="checkbox",checked)#we-check
+					- }else{
 					label#we.checkbox We
 						input(type="checkbox")#we-check
+					- }
+					- if(page == '1' && intakeDays[3] > 0){
+					label#th.checkbox Th
+						input(type="checkbox", checked)#th-check
+					- }else{
 					label#th.checkbox Th
 						input(type="checkbox")#th-check
+					- }
+					- if(page == '1' && intakeDays[4] > 0){
+					label#fr.checkbox Fr
+						input(type="checkbox", checked)#fr-check
+					- }else{
 					label#fr.checkbox Fr
 						input(type="checkbox")#fr-check
-						label#sa.checkbox Sa
-							input(type="checkbox")#sa-check
-							label#su.checkbox Su
-								input(type="checkbox")#su-check
+					- }
+					- if(page == '1' && intakeDays[5] > 0){
+					label#sa.checkbox Sa
+						input(type="checkbox", checked)#sa-check
+					- }else{
+					label#sa.checkbox Sa
+						input(type="checkbox")#sa-check
+					- }
+					- if(page == '1' && intakeDays[6] > 0){
+					label#su.checkbox Su
+						input(type="checkbox", checked)#su-check
+					- }else{
+					label#su.checkbox Su
+						input(type="checkbox")#su-check
+					- }
 				label#labelInterval Interval
+					- if(page == '1' && intakeTimes[0] > 0){
+					label#morning.checkbox Morning
+						input(type="checkbox", checked)#morning-check
+						amountLabel Amount
+						input(type="number", name="amountMorning", id='amountMorning-tf', min="0", max="50", value="#{intakeTimes[0]}")#inputMorning.span4.required
+					- } else {
 					label#morning.checkbox Morning
 						input(type="checkbox")#morning-check
 						amountLabel Amount
 						input(type="number", name="amountMorning", id='amountMorning-tf', min="0", max="50", value="0")#inputMorning.span4.required
+					- }
+					- if(page == '1' && intakeTimes[1] > 0){
+					label#noon.checkbox Noon
+						input(type="checkbox", checked)#noon-check
+						amountLabel#noonAmount Amount
+						input(type="number", name="amountNoon", id='amountNoon-tf', min="0", max="50", value="#{intakeTimes[1]}")#inputNoon.span4.required
+					- } else {
 					label#noon.checkbox Noon
 						input(type="checkbox")#noon-check
 						amountLabel#noonAmount Amount
 						input(type="number", name="amountNoon", id='amountNoon-tf', min="0", max="50", value="0")#inputNoon.span4.required
+					- }
+					- if(page == '1' && intakeTimes[2] > 0){
+					label#evening.checkbox Evening
+						input(type="checkbox", checked)#evening-check
+						amountLabel Amount
+						input(type="number", name="amountEvening", id='amountEvening-tf', min="0", max="50", value="#{intakeTimes[2]}")#inputEvening.span4.required
+					- } else {
 					label#evening.checkbox Evening
 						input(type="checkbox")#evening-check
 						amountLabel Amount
 						input(type="number", name="amountEvening", id='amountEvening-tf', min="0", max="50", value="0")#inputEvening.span4.required
+					- }
 				- if(page == 1){
 				label#startDateLabel Start
 					input(type="text", name="startDate", id='startDate-tf', value="#{plandata.startdate}")#startDate.span4.required
