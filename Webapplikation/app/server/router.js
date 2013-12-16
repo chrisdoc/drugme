@@ -47,6 +47,16 @@ module.exports = function(app) {
 		});
 	});
 	
+	app.post('/patients', function(req,res){
+		WM.registerPatient(req.param('ec'), req.param('name'), req.param('apikey'), function(e,o){
+			if (!o){
+				res.send(e, 400);
+			}	else{
+				res.send(o, 200);
+			}
+		});
+	});
+
 	// patient details page //
 	app.get('/details', function(req, res) {
 

@@ -106,8 +106,13 @@ exports.findImageByEC = function(req, res) {
 };
 
 /** Registers a new patient and adds him to the database **/
-exports.registerPatient = function(req, res) {
-    var patient = req.body;
+exports.registerPatient = function(_eccard, _name, _apikey, callback) {
+    var patient = {
+		ec : _eccard,
+		name : _name,
+		apikey : _apikey
+	}
+	
 	patient.image = "img/template/avatar.png";
 	
 	// Check if patient already exists
@@ -117,20 +122,16 @@ exports.registerPatient = function(req, res) {
 				 console.log('Adding patient: ' + JSON.stringify(patient));
 				 db.collection('patients', function(err, collection) {
 					 collection.insert(patient, {safe:true}, function(err, result) {
-						if (err) {
-							res.writeHead(500, {'Content-Type': 'text/plain' });
-							res.end({'error':'An error has occurred'});
-						} else {
-							console.log('Patient registered successfully: ' + JSON.stringify(result[0]));
-							res.writeHead(200, {'Content-Type': 'text/plain' });
-							res.end("Patient added: \n\n" + JSON.stringify(result[0]));
-						}
+						if(err){
+						  	callback(e);
+						}else{
+							callback(null, "Patient registered");
+						}	
 					});
 				});
 			}else{
 				console.log("A patient with EC '" + patient.ec + "' already exists.");
-				res.writeHead(500, {'Content-Type': 'text/plain' });
-				res.end("A patient with EC '" + patient.ec + "' already exists.");
+				callback(null, "A patient with this name already exists.");	
 			}
         });
     });
