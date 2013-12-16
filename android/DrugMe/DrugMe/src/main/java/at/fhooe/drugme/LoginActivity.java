@@ -185,9 +185,8 @@ public class LoginActivity extends Activity {
                 client.post(url, params, new AsyncHttpResponseHandler() {
                     @Override
                     public void onSuccess(String response) {
-                        if (response.contains("Patient added:")) {
+
                             BusProvider.getInstance().post(new RegistrationEvent(true));
-                        }
                     }
 
                     @Override

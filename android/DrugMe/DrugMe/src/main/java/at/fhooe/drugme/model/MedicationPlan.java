@@ -1,5 +1,9 @@
 package at.fhooe.drugme.model;
 
+import android.app.Activity;
+import android.app.Application;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -7,9 +11,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.google.gson.Gson;
 import com.google.gson.annotations.Expose;
 
 import org.joda.time.DateTime;
+
+import at.fhooe.drugme.R;
 
 
 public class MedicationPlan implements Parcelable {
@@ -82,10 +89,19 @@ public class MedicationPlan implements Parcelable {
 
     private MedicationPlan(Parcel in) {
         medications = new ArrayList<Medication>();
-        in.readList(medications,null);
+        in.readList(medications,getClass().getClassLoader());
         name=in.readString();
     }
     public MedicationPlan(){
         name="";
+    }
+    static public MedicationPlan loadPlan(Context activity){
+        SharedPreferences prefs = activity.getSharedPreferences(activity.getString(R.string.shared_pref_name), 0);
+        String json = prefs.getString(activity.getString(R.string.pref_medication_plan), "");
+        if (json.isEmpty()) {
+            return new MedicationPlan();
+     } else {
+            return new Gson().fromJson(json, MedicationPlan.class);
+        }
     }
 }

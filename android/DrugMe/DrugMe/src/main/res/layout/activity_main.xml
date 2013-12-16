@@ -6,13 +6,25 @@
     tools:context=".DrugMeActivity"
     tools:ignore="MergeRootFrame">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Your current medication"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        style="@style/Theme.Header"
+        android:textSize="24dp"
+        />
 
     <ListView
+        android:layout_below="@id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/medication_listview"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true" />
+
 
 </RelativeLayout>
 

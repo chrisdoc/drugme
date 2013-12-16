@@ -12,6 +12,6 @@
     <string name="pref_title_light">Notification light</string>
     <string name="pref_title_generate_calendar">Create calendar entries</string>
     <string name="title_activity_medication">Medication</string>
-    <string name="api_base_url">kieslich.tk:3000</string>
+    <string name="api_base_url">kieslich.tk:3002</string>
 
 </resources>

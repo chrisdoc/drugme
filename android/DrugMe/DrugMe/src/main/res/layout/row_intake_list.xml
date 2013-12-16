@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dip">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="6dip"
+        android:src="@drawable/ic_launcher" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/icon"
+        android:id="@+id/medication_row_name_layout">
+        <ImageView
+            android:id="@+id/row_icon_pills"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dip"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="6dip"
+
+            android:src="@drawable/ic_action_pills" />
+        <TextView
+            android:id="@+id/medication_row_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_toRightOf="@id/row_icon_pills"
+            android:gravity="center_vertical"
+            android:text="Parkemet"
+            style="@style/Theme.Header"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+
+    <!--<RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/icon"
+        android:id="@+id/medication_row_time_layout"
+        android:layout_below="@id/medication_row_name_layout">
+
+        <ImageView
+            android:id="@+id/row_icon_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dip"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="6dip"
+
+            android:src="@drawable/ic_action_time" />
+
+        <TextView
+            android:id="@+id/medication_row_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_toRightOf="@id/row_icon_time"
+            android:gravity="center_vertical"
+            android:text="03 hours and 45 minutes"
+            style="@style/Theme.Header" />
+
+
+    </RelativeLayout>-->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/icon"
+        android:id="@+id/medication_row_pill_layout"
+        android:layout_below="@id/medication_row_name_layout">
+
+        <ImageView
+            android:id="@+id/row_icon_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="6dip"
+            android:layout_marginLeft="6dip"
+            android:src="@drawable/ic_action_weight" />
+
+        <TextView
+            android:id="@+id/medication_row_pill"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_toRightOf="@id/row_icon_weight"
+            android:gravity="center_vertical"
+            android:text="1 pill"
+            style="@style/Theme.Header"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -42,6 +42,9 @@
             android:parentActivityName="at.fhooe.drugme.DrugMeActivity"/>
         <activity android:name="at.fhooe.drugme.DrugMeActivity" />
 
+        <activity android:name="at.fhooe.drugme.MedicationIntakeDetailsActivity"
+            android:parentActivityName="at.fhooe.drugme.MedicationDetailsActivity"/>
+
         <receiver
             android:name="at.fhooe.drugme.gcm.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
