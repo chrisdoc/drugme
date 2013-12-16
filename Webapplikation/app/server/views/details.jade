@@ -24,7 +24,7 @@ block content
 				input(type="text", name="address", id='address-tf', value="#{pdata.address}")#inputAddress.span4.required
 			#labelBirthday Date of birth
 				input(type="text", name="date", id='date-tf', value="#{pdata.birthday}")#inputDate.span4.required
-			#labelPlans Active medication plans
+			#labelPlans Medication plans
 				button#btn-new + Add new plan
 			#scrollList
 				- for (var i = 0; i < medicationPlans.length; ++i) {

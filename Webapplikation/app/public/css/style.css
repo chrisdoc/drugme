@@ -187,14 +187,15 @@ labelPatient {
 #patientContainer #btn-new {
   width: 120px;
   height: 30px;
-  margin-left: 33%;
-  background-color: #ff2036;
+  margin-left: 45%;
+  background-color: #f59b0b;
   color: #fff;
-  border-color: #ff2036;
+  border-color: #f59b0b;
   border-radius: 5px;
 }
 #patientContainer #btn-sync {
-  width: 100%;
+  width: 30%;
+  margin-left: 35%;
   height: 30px;
   background-color: #0dff65;
   border-color: #0dff65;
