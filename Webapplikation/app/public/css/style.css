@@ -194,8 +194,8 @@ labelPatient {
   border-radius: 5px;
 }
 #patientContainer #btn-sync {
-  width: 30%;
-  margin-left: 35%;
+  width: 50%;
+  margin-left: 25%;
   height: 30px;
   background-color: #0dff65;
   border-color: #0dff65;
